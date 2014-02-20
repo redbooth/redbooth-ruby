@@ -1,0 +1,11 @@
+*.gem
+.bundle
+Gemfile.lock
+pkg/*
+*.html
+/.rvmrc
+.project
+.ruby-version
+.ruby-gemset
+/spec/integration/*
+/coverage
