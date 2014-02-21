@@ -5,12 +5,9 @@ require 'redbooth/version'
 
 module Redbooth
   DOMAIN_BASE = nil
-  API_BASE    = 'redbooth.com'
   API_BASE_PATH = 'api'
   API_VERSION = '3'
   ROOT_PATH   = File.dirname(__FILE__)
-
-  @@configuration = {}
 
   autoload :Base,           'redbooth/base'
   autoload :Client,         'redbooth/client'
@@ -56,15 +53,18 @@ module Redbooth
   #
   # @return [String] The api key
   def self.config(&block)
+    default_configuration
     yield(@@configuration)
     @@configuration
   end
 
   def self.configuration
+    default_configuration
     @@configuration
   end
 
   def self.configuration=(value)
+    default_configuration
     @@configuration = value
   end
 
@@ -78,5 +78,15 @@ module Redbooth
   def self.request(http_method, domain, api_url, data, options = {})
     info = Request::Info.new(http_method, domain, api_url, data, options)
     Request::Base.new(info).perform
+  end
+
+  def self.default_configuration
+    return if defined?(@@configuration)
+    @@configuration ||= {}
+    @@configuration[:api_base] ||= 'redbooth.com'
+    @@configuration[:domain_base] ||= nil
+    @@configuration[:api_base_path] ||= 'api'
+    @@configuration[:api_version] ||= '3'
+    @@configuration[:use_ssl] ||= true
   end
 end

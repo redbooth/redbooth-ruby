@@ -8,7 +8,7 @@ module Redbooth
         @subdomain   = subdomain || DOMAIN_BASE
         @api_url     = api_url
         @data        = data
-        @base_path   = API_BASE_PATH
+        @base_path   = Redbooth.configuration[:api_base_path]
         @session     = options[:session]
       end
 

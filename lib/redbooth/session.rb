@@ -1,9 +1,9 @@
-require 'oauth'
+require 'oauth2'
 
 module Redbooth
   class Session
 
-    attr_accessor :token, :secret, :access_token
+    attr_accessor :token, :refresh_token, :access_token
     attr_accessor :consumer_key, :consumer_secret
     attr_accessor :oauth_verifier, :oauth_token
 
@@ -14,9 +14,7 @@ module Redbooth
     }
 
     def initialize(opts = {})
-      @secret = opts[:secret]
       @token = opts[:token]
-      @consumer_secret = opts[:secret]
       @consumer_key = opts[:consumer_key] || Redbooth.configuration[:consumer_key]
       @consumer_secret = opts[:consumer_secret] || Redbooth.configuration[:consumer_secret]
       @oauth_verifier = opts[:oauth_verifier]
@@ -25,17 +23,11 @@ module Redbooth
 
     def valid?
       return false unless token
-      return false unless secret
       true
     end
 
-    def consumer
-      @consumer ||= OAuth::Consumer.new(consumer_key, consumer_secret,
-        :site => OAUTH_URLS[:site]
-        # :authorize_url => OAUTH_URLS[:authorize_url],
-        # :request_token_url => OAUTH_URLS[:request_token_url],
-        # :access_token_url =>  get_access_token_url
-      )
+    def client
+      @client ||= OAuth2::Client.new(consumer_key, consumer_secret, OAUTH_URLS)
     end
 
     def get_access_token_url
@@ -45,7 +37,7 @@ module Redbooth
     end
 
     def access_token
-      @access_token ||= OAuth::AccessToken.new(consumer, token, secret)
+      @access_token ||= OAuth2::AccessToken.new(client, token)
     end
 
   end

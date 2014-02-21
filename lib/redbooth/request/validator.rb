@@ -11,7 +11,7 @@ module Redbooth
       def validated_data_for(incoming_response)
         self.response = incoming_response
         verify_response_code
-        info.data = JSON.parse(response.body) if response.code.to_i != 204
+        info.data = JSON.parse(response.body) if response.status.to_i != 204
         info.data ||= {}
         validate_response_data
         info.data
@@ -20,9 +20,9 @@ module Redbooth
       protected
 
       def verify_response_code
-        fail AuthenticationError if response.code.to_i == 401
-        fail APIError if response.code.to_i >= 500
-        fail NotFound if response.code.to_i >= 404
+        fail AuthenticationError if response.status.to_i == 401
+        fail APIError if response.status.to_i >= 500
+        fail NotFound if response.status.to_i >= 404
       end
 
       def validate_response_data

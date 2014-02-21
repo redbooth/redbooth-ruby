@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_dependency 'json'
-  s.add_dependency 'oauth'
+  s.add_dependency 'oauth2'
   s.add_dependency(%q<multipart-post>, ['>= 1.1.0'])
 
   s.add_development_dependency 'rspec'

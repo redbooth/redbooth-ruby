@@ -26,7 +26,7 @@ describe Redbooth do
           configuration[:consumer_secret] = consumer_secret
         end
         WebMock.stub_request(:any,
-                             /#{Redbooth::API_BASE}/
+                             /#{Redbooth.configuration[:api_base]}/
                             ).to_return(body: '{}')
       end
 
@@ -36,7 +36,7 @@ describe Redbooth do
                      { session: session }
                     )
         WebMock.should have_requested(:get,
-                                      "https://#{Redbooth::API_BASE}/#{Redbooth::API_BASE_PATH}/#{Redbooth::API_VERSION}/user?param_name=param_value"
+                                      "https://#{Redbooth.configuration[:api_base]}/#{Redbooth.configuration[:api_base_path]}/#{Redbooth.configuration[:api_version]}/user?param_name=param_value"
                                       )
       end
 

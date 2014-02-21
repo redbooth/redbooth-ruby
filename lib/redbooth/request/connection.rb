@@ -24,11 +24,11 @@ module Redbooth
                                      )
             )
             access_token.sign! req
-            req['X-Api-Version'] = '1'
-            # Todo finish this to work over https
-            http = Net::HTTP.new('api.copy.com', Net::HTTP.https_default_port)
-            http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-            http.use_ssl = true
+            if Redbooth.configuration[:use_ssl]
+              http = Net::HTTP.new('redbooth.com' , Net::HTTP.https_default_port)
+              http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+              http.use_ssl = Redbooth.configuration[:use_ssl]
+            end
             http.start do |inner_http|
               inner_http.request(req)
             end
@@ -45,7 +45,6 @@ module Redbooth
         unless use_url_params?
           @request_data << body_json
         end
-        @request_data << headers
       end
 
       protected
@@ -93,15 +92,12 @@ module Redbooth
         end
       end
 
-      def headers
-        { 'X-Api-Version' => API_VERSION }
-      end
-
       # Returns the api url foir this request or default
       def api_url
-        url = 'https://'
-        domain && url += domain + '.'
-        url += "#{API_BASE}"
+        url =  "#{api_url_method}#{api_url_domain}"
+        url += "#{Redbooth.configuration[:api_base]}"
+        url += "#{api_url_path}"
+        url += "#{api_url_version}"
         if @info
           url += @info.url
           if use_url_params? && !body_hash.empty?
@@ -111,10 +107,33 @@ module Redbooth
         url
       end
 
+      def api_url_method
+        if Redbooth.configuration[:use_ssl]
+          'https://'
+        else
+          'http://'
+        end
+      end
+
+      def api_url_domain
+        return '' unless domain
+        "#{domain}."
+      end
+
+      def api_url_path
+        return '' unless Redbooth.configuration[:api_base_path]
+        "/#{Redbooth.configuration[:api_base_path]}"
+      end
+
+      def api_url_version
+        return '' unless Redbooth.configuration[:api_version]
+        "/#{Redbooth.configuration[:api_version]}"
+      end
+
       # Returns the domain for the current request or the default one
       def domain
         return @info.subdomain if @info
-        DOMAIN_BASE
+        Redbooth.configuration[:domain_base]
       end
     end
   end
