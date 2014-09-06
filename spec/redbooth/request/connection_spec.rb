@@ -62,9 +62,8 @@ describe Redbooth::Request::Connection do
       connection.request_data.should eq(
         [
           :post,
-          'https://redbooth.com/some/path',
-          "{\"email\":\"abc_abc.com\",\"event_types\":[\"user.created\",\"user.failed\",\"team.created\",\"documents.available\"]}",
-          { 'X-Api-Version' => '3' }
+          'https://redbooth.com/api/3/some/path',
+          "{\"email\":\"abc_abc.com\",\"event_types\":[\"user.created\",\"user.failed\",\"team.created\",\"documents.available\"]}"
         ]
       )
     end

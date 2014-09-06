@@ -69,7 +69,7 @@ describe Redbooth::User do
       allow(Redbooth).to receive(:request).and_return(valid_attributes)
     end
     it "makes a new GET request using the correct API endpoint to receive a specific user" do
-      expect(Redbooth).to receive(:request).with(:get, nil, "user", {}, { session: session })
+      expect(Redbooth).to receive(:request).with(:get, nil, "users", {}, { session: session })
       user_show
     end
     it 'returns a user with the correct email' do
@@ -100,7 +100,7 @@ describe Redbooth::User do
       allow(Redbooth).to receive(:request).and_return(valid_attributes.merge(update_attributes))
     end
     it "makes a new GET request using the correct API endpoint to receive a specific user" do
-      expect(Redbooth).to receive(:request).with(:put, nil, "user", update_attributes, { session: session })
+      expect(Redbooth).to receive(:request).with(:put, nil, "users", update_attributes, { session: session })
       user_update
     end
     it 'returns a user with the correct email' do
