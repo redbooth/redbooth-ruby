@@ -68,4 +68,15 @@ describe Redbooth::Me do
       expect(me_show.last_name).to eql('Krammer')
     end
   end
+
+  describe '#update' do
+    let(:update_attributes) { { first_name: 'new_first_name'} }
+    subject { client.me(:update, update_attributes) }
+
+    it 'makes a new PUT request using the correct API endpoint' do
+      expect(Redbooth).to receive(:request).with(:put, nil, 'me', update_attributes, { session: session })
+
+      subject
+    end
+  end
 end
