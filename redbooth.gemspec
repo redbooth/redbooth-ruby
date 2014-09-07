@@ -11,13 +11,13 @@ Gem::Specification.new do |s|
   s.summary     = %q{API wrapper for Redbooth.}
   s.description = %q{API wrapper for Redbooth.}
 
-  s.files         = `git ls-files`.split('\n')
+  s.files         = `git ls-files -- {lib}/*`.split('\n')
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split('\n')
   s.executables   = `git ls-files -- bin/*`.split('\n').map{ |f| File.basename(f) }
   s.require_paths = ['lib']
 
-  s.add_dependency 'json'
-  s.add_dependency 'oauth2'
+  s.add_dependency 'json', '>= 1.8.1'
+  s.add_dependency 'oauth2', '>= 0.9.3'
   s.add_dependency(%q<multipart-post>, ['>= 1.1.0'])
 
   s.add_development_dependency 'rspec'

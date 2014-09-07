@@ -63,7 +63,9 @@ describe Redbooth::Request::Connection do
         [
           :post,
           'https://redbooth.com/api/3/some/path',
-          "{\"email\":\"abc_abc.com\",\"event_types\":[\"user.created\",\"user.failed\",\"team.created\",\"documents.available\"]}"
+          { body: { email: "abc_abc.com",
+                    event_types: ["user.created", "user.failed", "team.created", "documents.available"] }
+          }
         ]
       )
     end
