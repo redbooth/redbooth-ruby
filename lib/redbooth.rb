@@ -17,7 +17,7 @@ module Redbooth
 
   module Operations
     autoload :Base,       'redbooth/operations/base'
-    autoload :All,        'redbooth/operations/all'
+    autoload :Index,      'redbooth/operations/index'
     autoload :Create,     'redbooth/operations/create'
     autoload :Delete,     'redbooth/operations/delete'
     autoload :Find,       'redbooth/operations/find'

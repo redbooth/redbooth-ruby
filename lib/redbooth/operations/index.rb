@@ -1,12 +1,12 @@
 module Redbooth
   module Operations
-    module All
+    module Index
       module ClassMethods
         # Retrieves all available objects from the Copy API
         #
         # @param [Hash] options Options to pass to the API
         # @return [Array] The available objects
-        def all(attributes = {})
+        def index(attributes = {})
           session = attributes.delete(:session)
           response = Redbooth.request(:get, nil, api_collection_url , attributes, options_for_request(session: session))
           results_from response
