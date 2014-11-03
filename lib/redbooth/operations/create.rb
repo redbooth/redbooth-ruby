@@ -13,7 +13,7 @@ module Redbooth
                                       attributes,
                                       options_for_request(session: session)
                                      )
-          new(response)
+          new(response.data)
         end
       end
 

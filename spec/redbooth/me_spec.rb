@@ -1,83 +1,46 @@
 require "spec_helper"
 
-describe Redbooth::Me do
-  let(:consumer_key) { '_your_consumen_key_' }
-  let(:consumer_secret) { '_your_consumen_secret_' }
-  let(:access_token) do
-    {
-      token: '_your_user_token_',
-      secret: '_your_secret_token_'
-    }
-  end
-  let(:client) { Redbooth::Client.new(session) }
-  let(:session) { Redbooth::Session.new(access_token) }
-  let(:valid_attributes) do
-      JSON.parse %{
-        {
-          "id": "me",
-          "email": "yo@gmail.com",
-          "first_name": "Frank",
-          "last_name": "Krammer"
-        }
-      }
-  end
-  let(:me) do
-    Redbooth::Me.new(valid_attributes)
-  end
-
-  before :each do
-    Redbooth.config do |configuration|
-      configuration[:consumer_key] = consumer_key
-      configuration[:consumer_secret] = consumer_secret
-    end
-  end
+describe Redbooth::Me, vcr: 'me' do
+  include_context 'authentication'
+  let(:me) { client.me(:show) }
+  let(:response) { double(:response, data: {})}
 
   describe '#initialize' do
-    it 'initializes all attributes correctly' do
-      expect(me.email).to eql('yo@gmail.com')
-      expect(me.id).to eql('me')
-      expect(me.first_name).to eql('Frank')
-      expect(me.last_name).to eql('Krammer')
-    end
+    subject { me }
+
+    it { expect(subject.email).to eql('example_frank@redbooth.com') }
+    it { expect(subject.id).to eql(1) }
+    it { expect(subject.first_name).to eql('Frank') }
+    it { expect(subject.last_name).to eql('Kramer') }
   end
 
   describe '.show' do
-    let(:me_show) { Redbooth::Me.show(id: '/', session: session) }
-    before :each do
-      allow(Redbooth).to receive(:request).and_return(valid_attributes)
-    end
+    subject { me }
+
     it 'makes a new GET request using the correct API endpoint to receive a specific user' do
-      expect(Redbooth).to receive(:request).with(:get,
-                                             nil,
-                                             'me',
-                                             {},
-                                             { session: session }
-                                            )
-      me_show
+      expect(Redbooth).to receive(:request).with(:get, nil, 'me', {}, { session: session }).and_call_original
+      subject
     end
-    it 'returns a me object with the correct email' do
-      expect(me_show.email).to eql('yo@gmail.com')
-    end
-    it 'returns a me object with the correct id' do
-      expect(me_show.id).to eql('me')
-    end
-    it 'returns a me object with the correct first_name' do
-      expect(me_show.first_name).to eql('Frank')
-    end
-    it 'returns a me object with the correct last_name' do
-      expect(me_show.last_name).to eql('Krammer')
-    end
+
+    it { expect(subject.email).to eql('example_frank@redbooth.com') }
+    it { expect(subject.id).to eql(1) }
+    it { expect(subject.first_name).to eql('Frank') }
+    it { expect(subject.last_name).to eql('Kramer') }
   end
 
   describe '#update' do
     let(:update_attributes) { { first_name: 'new_first_name' } }
     subject { client.me(:update, update_attributes) }
-    before { allow(Redbooth).to receive(:request).and_return(valid_attributes) }
 
     it 'makes a new PUT request using the correct API endpoint' do
-      expect(Redbooth).to receive(:request).with(:put, nil, 'me', update_attributes, { session: session })
-
+      expect(Redbooth).to receive(:request).with(:put, nil, 'me', update_attributes, { session: session }).and_return(response)
       subject
+    end
+
+    context 'integration' do
+      after(:each) { client.me(:update, first_name: 'Frank') }
+
+      it { expect(subject.first_name).to eql('new_first_name') }
     end
   end
 

@@ -33,6 +33,7 @@ module Redbooth
     autoload :Helpers,    'redbooth/request/helpers'
     autoload :Info,       'redbooth/request/info'
     autoload :Validator,  'redbooth/request/validator'
+    autoload :Response,   'redbooth/request/response'
   end
 
   class RedboothError < StandardError; end

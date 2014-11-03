@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/tasks/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"be4fb08f0f2424c84695afefc21bdc08"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0ad803a8355bdb749d9aa6b79e638f98
+      X-Runtime:
+      - '0.103955'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Task","created_at":1415001937,"updated_at":1415006982,"id":1,"name":"Register
+        all EarthworksYoga TLDs","task_list_id":2,"comments_count":2,"assigned_id":8,"is_private":false,"project_id":2,"urgent":false,"user_id":3,"position":0,"last_activity_id":50,"record_conversion_type":null,"record_conversion_id":null,"metadata":{},"subtasks_count":7,"resolved_subtasks_count":2,"watcher_ids":[3,4],"description":"The
+        ships hung in the sky in much the same way that bricks don''t.","description_html":"<p>\nThe
+        ships hung in the sky in much the same way that bricks don''t.</p>","description_updated_by_user_id":3,"updated_by_id":4,"deleted":false,"row_order":0,"status":"resolved","due_on":"2014-11-04"}'
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 14:36:51 GMT
+recorded_with: VCR 2.9.3

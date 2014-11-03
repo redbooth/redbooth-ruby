@@ -12,9 +12,13 @@ module Redbooth
           results_from response
         end
 
+        # Returns the collection object build from the received response
+        #
+        # @param response [Array || Hash] parsed json response
+        # @return [Redbooth::Collection]
         def results_from(response)
           results = []
-          response.each do |obj|
+          response.data.each do |obj|
             results << self.new(obj)
           end
           results

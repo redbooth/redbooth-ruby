@@ -2,27 +2,34 @@ module Redbooth
   module Request
     class Validator
       attr_reader :info
-      attr_accessor :response
+      attr_accessor :raw_response, :response
 
       def initialize(info)
         @info = info
       end
 
-      def validated_data_for(incoming_response)
-        self.response = incoming_response
+      # Validates the given http response creating a response object or
+      # failing with an error and description
+      #
+      # param incoming_response [] http response object
+      # return [Redbooth::Request::Response]
+      def validated_response_for(incoming_response)
+        self.raw_response = incoming_response
         verify_response_code
-        info.data = JSON.parse(response.body) if response.status.to_i != 204
-        info.data ||= {}
+        response = Redbooth::Request::Response.new(headers: raw_response.headers,
+                                                   body: raw_response.body,
+                                                   status: raw_response.status.to_i)
+        info.data = response.data
         validate_response_data
-        info.data
+        response
       end
 
       protected
 
       def verify_response_code
-        fail AuthenticationError if response.status.to_i == 401
-        fail APIError if response.status.to_i >= 500
-        fail NotFound if response.status.to_i >= 404
+        fail AuthenticationError if raw_response.status.to_i == 401
+        fail APIError if raw_response.status.to_i >= 500
+        fail NotFound if raw_response.status.to_i >= 404
       end
 
       def validate_response_data

@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/me
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"720b3417e3174ca3beeb48fc960e4f68"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6da8a983b7b9151522195113aaf79e69
+      X-Runtime:
+      - '0.095611'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"User","created_at":1415006969,"updated_at":1415026701,"id":1,"first_name":"Frank","last_name":"Kramer","email":"example_frank@redbooth.com","needs_profile":false,"deleted":false,"bouncing_email":false,"confirmed_user":true,"username":"frank","avatar_url":"http://www.gravatar.com/avatar/d3986ea7084d3ab95900baa2a3686185?size=48&default=mm","profile_avatar_url":"http://www.gravatar.com/avatar/d3986ea7084d3ab95900baa2a3686185?size=278&default=mm","micro_avatar_url":"http://www.gravatar.com/avatar/d3986ea7084d3ab95900baa2a3686185?size=24&default=mm","first_day_of_week":"sunday","biography":"Vel
+        incidunt provident. Assumenda necessitatibus qui et soluta nisi consequatur
+        et. Consequuntur debitis fugiat voluptatem. Vel nihil aspernatur eos. Consequuntur
+        labore atque sed rerum distinctio sed.","locale":"en","time_zone":"Eastern
+        Time (US & Canada)","default_digest":4,"notify_conversations":true,"notify_tasks":true,"notify_pages":true,"default_watch_new_task":false,"default_watch_new_conversation":false,"default_watch_new_page":false,"digest_delivery_hour":9,"wants_task_reminder":true,"rss_token":null,"calendar_token":null,"project_activity_digest":"no_digest","chat_token":"85abe6fa143dd8c138c7bda2054133dc","total_tasks":0,"total_assigned_tasks":0,"total_due_on_tasks":0,"invited_count":0,"total_chat_messages":0,"job_title":null,"devices":[],"presence_status":null,"chat_muted_until":0,"presence_until":0,"is_pro":true,"is_orphan":false}'
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 14:59:03 GMT
+recorded_with: VCR 2.9.3

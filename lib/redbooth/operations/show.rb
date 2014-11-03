@@ -13,7 +13,7 @@ module Redbooth
                                       {},
                                       options_for_request(attributes)
                                      )
-          new(response)
+          new(response.data)
         end
       end
 
