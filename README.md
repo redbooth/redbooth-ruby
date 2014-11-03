@@ -1,3 +1,5 @@
+[![Build Status](https://magnum.travis-ci.com/teambox/redbooth-ruby.svg?token=DytWKainUGNzXxdrekWH&branch=feature/tasks)](https://magnum.travis-ci.com/teambox/redbooth-ruby)
+
 Redbooth-Ruby
 ======
 
