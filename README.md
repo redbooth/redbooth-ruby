@@ -87,13 +87,13 @@ Users
 List users in your network
 
 ```Ruby
-  users = client.users(:index)
+  users = client.user(:index)
 ```
 
 Fetch a especific user
 
 ```Ruby
-  user = client.users(:show, id: 123)
+  user = client.user(:show, id: 123)
 ```
 
 Tasks
@@ -102,13 +102,13 @@ Tasks
 Lists tasks in your visibility scope
 
 ```Ruby
-  tasks = client.tasks(:index)
+  tasks = client.task(:index)
 ```
 
 You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:tasks,header:tasks-task-list) )
 
 ```Ruby
-  filtered_tasks = client.tasks(:index, order: 'id-DESC',
+  filtered_tasks = client.task(:index, order: 'id-DESC',
                                         per_page: 50,
                                         project_id: 123)
 ```
@@ -116,19 +116,19 @@ You can also filter by multiple params (see docs [here](https://redbooth.com/api
 Fetch a especific task
 
 ```Ruby
-  task = client.tasks(:show, id: 123)
+  task = client.task(:show, id: 123)
 ```
 
 Update a especific task
 
 ```Ruby
-  task = client.tasks(:update, id: 123, name: 'new name')
+  task = client.task(:update, id: 123, name: 'new name')
 ```
 
 Delete a especific task
 
 ```Ruby
-  client.tasks(:delete, id: 123)
+  client.task(:delete, id: 123)
 ```
 
 Copyright (c) 2012-2013 Redbooth. See LICENSE for details.
