@@ -19,7 +19,7 @@ describe Redbooth::User, vcr: 'tasks' do
   end
 
   describe ".show" do
-    it "makes a new GET request using the correct API endpoint to receive a specific user" do
+    it "makes a new GET request using the correct API endpoint to receive a specific task" do
       expect(Redbooth).to receive(:request).with(:get, nil, "tasks/1", {}, { session: session }).and_call_original
       task
     end
@@ -35,5 +35,46 @@ describe Redbooth::User, vcr: 'tasks' do
     it 'returns a task with the correct assigned_id' do
       expect(task.assigned_id).to eql(8)
     end
+  end
+
+  describe ".update" do
+    subject { Redbooth::Task.update(session: session, id: 2, name: 'new test name') }
+
+    it "makes a new PUT request using the correct API endpoint to receive a specific task" do
+      expect(Redbooth).to receive(:request).with(:put, nil, "tasks/2", { name: 'new test name' }, { session: session }).and_call_original
+      subject
+    end
+
+    its(:name) { should eql 'new test name' }
+    its(:id)   { should eql 2 }
+  end
+
+  describe ".create" do
+    let(:create_task_params) do
+      { project_id: 2,
+        name: 'new created task',
+        task_list_id: 3 }
+    end
+    subject { Redbooth::Task.create(create_task_params.merge(session: session)) }
+
+    it "makes a new PUT request using the correct API endpoint to receive a specific task" do
+      expect(Redbooth).to receive(:request).with(:post, nil, "tasks", create_task_params, { session: session }).and_call_original
+      subject
+    end
+
+    its(:name)         { should eql 'new created task' }
+    its(:project_id)   { should eql 2 }
+    its(:task_list_id) { should eql 3 }
+  end
+
+  describe ".index" do
+    subject { Redbooth::Task.index(session: session) }
+
+    it "makes a new PUT request using the correct API endpoint to receive a specific task" do
+      expect(Redbooth).to receive(:request).with(:get, nil, "tasks", {}, { session: session }).and_call_original
+      subject
+    end
+
+    its(:class) { should eql Array }
   end
 end
