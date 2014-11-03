@@ -43,7 +43,7 @@ module Redbooth
         @request_data << @info.http_method if @info
         @request_data << api_url
         unless use_url_params?
-          @request_data << body_json
+          @request_data << { body: body_hash }
         end
       end
 

@@ -19,6 +19,8 @@ describe Redbooth do
       end
       let(:client) { Redbooth::Client.new(session) }
       let(:session) { Redbooth::Session.new(access_token) }
+      let(:redbooth_protocol) { Redbooth.configuration[:use_ssl] ? 'https' : 'http' }
+      let(:redbooth_url) { "#{redbooth_protocol}://#{Redbooth.configuration[:api_base]}/#{Redbooth.configuration[:api_base_path]}/#{Redbooth.configuration[:api_version]}" }
 
       before(:each) do
         Redbooth.config do |configuration|
@@ -36,7 +38,7 @@ describe Redbooth do
                      { session: session }
                     )
         WebMock.should have_requested(:get,
-                                      "https://#{Redbooth.configuration[:api_base]}/#{Redbooth.configuration[:api_base_path]}/#{Redbooth.configuration[:api_version]}/user?param_name=param_value"
+                                      "#{redbooth_url}/user?param_name=param_value"
                                       )
       end
 
@@ -49,18 +51,18 @@ describe Redbooth do
                         )
         WebMock.should have_requested(
           :get,
-          "https://#{Redbooth::API_BASE}/#{Redbooth::API_BASE_PATH}/#{Redbooth::API_VERSION}/user?client=client_id&order=created_at_desc"
+          "#{redbooth_url}/user?client=client_id&order=created_at_desc"
         )
       end
 
       it "doesn't add a question mark if no params" do
         Redbooth.request(:post, nil, "user", {}, { session: session })
-        WebMock.should have_requested(:post, "https://#{Redbooth::API_BASE}/#{Redbooth::API_BASE_PATH}/#{Redbooth::API_VERSION}/user")
+        WebMock.should have_requested(:post, "#{redbooth_url}/user")
       end
 
       it "uses the param id to construct the url" do
         Redbooth.request(:post, nil, "user", {id: 'new_id'}, { session: session })
-        WebMock.should have_requested(:post, "https://#{Redbooth::API_BASE}/#{Redbooth::API_BASE_PATH}/#{Redbooth::API_VERSION}/user/new_id")
+        WebMock.should have_requested(:post, "#{redbooth_url}/user/new_id")
       end
     end
   end

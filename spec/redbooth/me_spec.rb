@@ -55,17 +55,39 @@ describe Redbooth::Me do
                                             )
       me_show
     end
-    it 'returns a file with the correct email' do
+    it 'returns a me object with the correct email' do
       expect(me_show.email).to eql('yo@gmail.com')
     end
-    it 'returns a file with the correct id' do
+    it 'returns a me object with the correct id' do
       expect(me_show.id).to eql('me')
     end
-    it 'returns a file with the correct first_name' do
+    it 'returns a me object with the correct first_name' do
       expect(me_show.first_name).to eql('Frank')
     end
-    it 'returns a file with the correct last_name' do
+    it 'returns a me object with the correct last_name' do
       expect(me_show.last_name).to eql('Krammer')
+    end
+  end
+
+  describe '#update' do
+    let(:update_attributes) { { first_name: 'new_first_name' } }
+    subject { client.me(:update, update_attributes) }
+    before { allow(Redbooth).to receive(:request).and_return(valid_attributes) }
+
+    it 'makes a new PUT request using the correct API endpoint' do
+      expect(Redbooth).to receive(:request).with(:put, nil, 'me', update_attributes, { session: session })
+
+      subject
+    end
+  end
+
+  describe '#delete' do
+    subject { client.me(:delete) }
+
+    it 'makes a new DELETE request using the correct API endpoint' do
+      expect(Redbooth).to receive(:request).with(:delete, nil, 'me', {}, { session: session })
+
+      subject
     end
   end
 end

@@ -1,3 +1,5 @@
+[![Build Status](https://magnum.travis-ci.com/teambox/redbooth-ruby.svg?token=DytWKainUGNzXxdrekWH&branch=feature/tasks)](https://magnum.travis-ci.com/teambox/redbooth-ruby)
+
 Redbooth-Ruby
 ======
 
@@ -77,6 +79,56 @@ If you have multiple applications or you just want to ve explicit use the applic
     consumer_secret: '_your_app_secret'
   )
   client = Redbooth::Client.new(session)
+```
+
+Users
+=====
+
+List users in your network
+
+```Ruby
+  users = client.user(:index)
+```
+
+Fetch a especific user
+
+```Ruby
+  user = client.user(:show, id: 123)
+```
+
+Tasks
+=====
+
+Lists tasks in your visibility scope
+
+```Ruby
+  tasks = client.task(:index)
+```
+
+You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:tasks,header:tasks-task-list) )
+
+```Ruby
+  filtered_tasks = client.task(:index, order: 'id-DESC',
+                                        per_page: 50,
+                                        project_id: 123)
+```
+
+Fetch a especific task
+
+```Ruby
+  task = client.task(:show, id: 123)
+```
+
+Update a especific task
+
+```Ruby
+  task = client.task(:update, id: 123, name: 'new name')
+```
+
+Delete a especific task
+
+```Ruby
+  client.task(:delete, id: 123)
 ```
 
 Copyright (c) 2012-2013 Redbooth. See LICENSE for details.
