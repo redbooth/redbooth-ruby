@@ -81,4 +81,54 @@ If you have multiple applications or you just want to ve explicit use the applic
   client = Redbooth::Client.new(session)
 ```
 
+Users
+=====
+
+List users in your network
+
+```Ruby
+  users = client.users(:index)
+```
+
+Fetch a especific user
+
+```Ruby
+  user = client.users(:show, id: 123)
+```
+
+Tasks
+=====
+
+Lists tasks in your visibility scope
+
+```Ruby
+  tasks = client.tasks(:index)
+```
+
+You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:tasks,header:tasks-task-list) )
+
+```Ruby
+  filtered_tasks = client.tasks(:index, order: 'id-DESC',
+                                        per_page: 50,
+                                        project_id: 123)
+```
+
+Fetch a especific task
+
+```Ruby
+  task = client.tasks(:show, id: 123)
+```
+
+Update a especific task
+
+```Ruby
+  task = client.tasks(:update, id: 123, name: 'new name')
+```
+
+Delete a especific task
+
+```Ruby
+  client.tasks(:delete, id: 123)
+```
+
 Copyright (c) 2012-2013 Redbooth. See LICENSE for details.

@@ -3,6 +3,12 @@ require "spec_helper"
 describe Redbooth::User, vcr: 'tasks' do
   include_context 'authentication'
 
+  let(:create_task_params) do
+    { project_id: 2,
+      name: 'new created task',
+      task_list_id: 3 }
+  end
+  let(:new_task) { Redbooth::Task.create(create_task_params.merge(session: session)) }
   let(:task) do
     Redbooth::Task.show(session: session, id: 1)
   end
@@ -50,14 +56,9 @@ describe Redbooth::User, vcr: 'tasks' do
   end
 
   describe ".create" do
-    let(:create_task_params) do
-      { project_id: 2,
-        name: 'new created task',
-        task_list_id: 3 }
-    end
-    subject { Redbooth::Task.create(create_task_params.merge(session: session)) }
+    subject { new_task }
 
-    it "makes a new PUT request using the correct API endpoint to receive a specific task" do
+    it "makes a new POST request using the correct API endpoint to create a specific task" do
       expect(Redbooth).to receive(:request).with(:post, nil, "tasks", create_task_params, { session: session }).and_call_original
       subject
     end
@@ -65,6 +66,15 @@ describe Redbooth::User, vcr: 'tasks' do
     it { expect(subject.name).to eql 'new created task' }
     it { expect(subject.project_id).to eql 2 }
     it { expect(subject.task_list_id).to eql 3 }
+  end
+
+  describe ".delete" do
+    subject { Redbooth::Task.delete(session: session, id: new_task.id) }
+
+    it "makes a new DELETE request using the correct API endpoint to delete a specific task" do
+      expect(Redbooth).to receive(:request).with(:delete, nil, "tasks/#{new_task.id}", {}, { session: session }).and_call_original
+      subject
+    end
   end
 
   describe ".index" do
