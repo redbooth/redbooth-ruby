@@ -8,32 +8,25 @@ describe Redbooth::User, vcr: 'users' do
   end
 
   describe "#initialize" do
-    it 'initializes all attributes correctly' do
-      expect(user.email).to eql('example_frank@redbooth.com')
-      expect(user.id).to eql(1)
-      expect(user.first_name).to eql('Frank')
-      expect(user.last_name).to eql('Kramer')
-    end
+    subject { user }
+
+    it { expect(subject.email).to eql('example_frank@redbooth.com') }
+    it { expect(subject.id).to eql(1) }
+    it { expect(subject.first_name).to eql('Frank') }
+    it { expect(subject.last_name).to eql('Kramer') }
   end
 
   describe ".show" do
-    let(:user_show) { Redbooth::User.show(session: session, id: 1) }
+    subject { Redbooth::User.show(session: session, id: 1) }
 
-    it "makes a new GET request using the correct API endpoint to receive a specific user" do
+    it 'makes a new GET request using the correct API endpoint to receive a specific user' do
       expect(Redbooth).to receive(:request).with(:get, nil, "users/1", {}, { session: session }).and_call_original
-      user_show
+      subject
     end
-    it 'returns a user with the correct email' do
-      expect(user_show.email).to eql('example_frank@redbooth.com')
-    end
-    it 'returns a user with the correct id' do
-      expect(user_show.id).to eql(1)
-    end
-    it 'returns a user with the correct first_name' do
-      expect(user_show.first_name).to eql('Frank')
-    end
-    it 'returns a user with the correct last_name' do
-      expect(user_show.last_name).to eql('Kramer')
-    end
+
+    it { expect(subject.email).to eql('example_frank@redbooth.com') }
+    it { expect(subject.id).to eql(1) }
+    it { expect(subject.first_name).to eql('Frank') }
+    it { expect(subject.last_name).to eql('Kramer') }
   end
 end

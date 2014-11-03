@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/users/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"8eda4c0f6444acb4416517c99d49a967"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a1a05225d905b072b76d66fd57d3451c
+      X-Runtime:
+      - '0.113838'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"User","created_at":1415006969,"updated_at":1415012528,"id":1,"first_name":"Frank","last_name":"Kramer","email":"example_frank@redbooth.com","needs_profile":false,"deleted":false,"bouncing_email":false,"confirmed_user":true,"username":"frank","avatar_url":"http://www.gravatar.com/avatar/d3986ea7084d3ab95900baa2a3686185?size=48&default=mm","profile_avatar_url":"http://www.gravatar.com/avatar/d3986ea7084d3ab95900baa2a3686185?size=278&default=mm","micro_avatar_url":"http://www.gravatar.com/avatar/d3986ea7084d3ab95900baa2a3686185?size=24&default=mm"}'
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 13:09:05 GMT
+recorded_with: VCR 2.9.3

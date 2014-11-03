@@ -10,12 +10,12 @@ describe Redbooth::User, vcr: 'tasks' do
   describe "#initialize" do
     subject { task }
 
-    its(:id) { should eql 1 }
-    its(:name) { should eql 'Register all EarthworksYoga TLDs' }
-    its(:description) { should eql 'The ships hung in the sky in much the same way that bricks don\'t.' }
-    its(:project_id) { should eql 2 }
-    its(:assigned_id) { should eql 8 }
-    its(:due_on) { should eql '2014-11-04' }
+    it { expect(subject.id).to eql 1 }
+    it { expect(subject.name).to eql 'Register all EarthworksYoga TLDs' }
+    it { expect(subject.description).to eql 'The ships hung in the sky in much the same way that bricks don\'t.' }
+    it { expect(subject.project_id).to eql 2 }
+    it { expect(subject.assigned_id).to eql 8 }
+    it { expect(subject.due_on).to eql '2014-11-04' }
   end
 
   describe ".show" do
@@ -45,8 +45,8 @@ describe Redbooth::User, vcr: 'tasks' do
       subject
     end
 
-    its(:name) { should eql 'new test name' }
-    its(:id)   { should eql 2 }
+    it { expect(subject.name).to eql 'new test name' }
+    it { expect(subject.id).to eql 2 }
   end
 
   describe ".create" do
@@ -62,9 +62,9 @@ describe Redbooth::User, vcr: 'tasks' do
       subject
     end
 
-    its(:name)         { should eql 'new created task' }
-    its(:project_id)   { should eql 2 }
-    its(:task_list_id) { should eql 3 }
+    it { expect(subject.name).to eql 'new created task' }
+    it { expect(subject.project_id).to eql 2 }
+    it { expect(subject.task_list_id).to eql 3 }
   end
 
   describe ".index" do
@@ -75,6 +75,6 @@ describe Redbooth::User, vcr: 'tasks' do
       subject
     end
 
-    its(:class) { should eql Array }
+    it { expect(subject.class).to eql Array }
   end
 end
