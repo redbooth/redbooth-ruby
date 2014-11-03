@@ -19,7 +19,8 @@ describe Redbooth do
       end
       let(:client) { Redbooth::Client.new(session) }
       let(:session) { Redbooth::Session.new(access_token) }
-      let(:redbooth_url) { "https://#{Redbooth.configuration[:api_base]}/#{Redbooth.configuration[:api_base_path]}/#{Redbooth.configuration[:api_version]}" }
+      let(:redbooth_protocol) { Redbooth.configuration[:use_ssl] ? 'https' : 'http' }
+      let(:redbooth_url) { "#{redbooth_protocol}://#{Redbooth.configuration[:api_base]}/#{Redbooth.configuration[:api_base_path]}/#{Redbooth.configuration[:api_version]}" }
 
       before(:each) do
         Redbooth.config do |configuration|

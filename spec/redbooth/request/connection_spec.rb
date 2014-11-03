@@ -20,6 +20,8 @@ describe Redbooth::Request::Connection do
   end
   let(:client) { Redbooth::Client.new(session) }
   let(:session) { Redbooth::Session.new(access_token) }
+  let(:redbooth_protocol) { Redbooth.configuration[:use_ssl] ? 'https' : 'http' }
+  let(:redbooth_url) { "#{redbooth_protocol}://#{Redbooth.configuration[:api_base]}/#{Redbooth.configuration[:api_base_path]}/#{Redbooth.configuration[:api_version]}" }
 
   before :each do
     Redbooth.config do |configuration|
@@ -62,7 +64,7 @@ describe Redbooth::Request::Connection do
       connection.request_data.should eq(
         [
           :post,
-          'https://redbooth.com/api/3/some/path',
+          "#{redbooth_url}/some/path",
           { body: { email: "abc_abc.com",
                     event_types: ["user.created", "user.failed", "team.created", "documents.available"] }
           }
