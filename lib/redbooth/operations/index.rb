@@ -9,7 +9,23 @@ module Redbooth
         def index(attributes = {})
           session = attributes.delete(:session)
           response = Redbooth.request(:get, nil, api_collection_url , attributes, options_for_request(session: session))
-          results_from response
+          collection_from attributes, response, session
+        end
+
+        private
+
+        # Creates a collection object from the request and response params
+        #
+        # @param params [Hash] given request params
+        # @param response [Redbooth::Request::Response] response object
+        # @param session [Redbooth::Session] session Object
+        # @return [Redbooth::Request::Collection]
+        def collection_from(params, response, session)
+          Redbooth::Request::Collection.new(response: response,
+                                            resource: self,
+                                            session: session,
+                                            params: params,
+                                            method: :index)
         end
 
         # Returns the collection object build from the received response
@@ -23,7 +39,6 @@ module Redbooth
           end
           results
         end
-        private :results_from
       end
 
       def self.included(base)

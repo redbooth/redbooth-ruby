@@ -85,6 +85,6 @@ describe Redbooth::Task, vcr: 'tasks' do
       subject
     end
 
-    it { expect(subject.class).to eql Array }
+    it { expect(subject.class).to eql Redbooth::Request::Collection }
   end
 end

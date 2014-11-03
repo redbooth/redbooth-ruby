@@ -41,9 +41,9 @@ describe Redbooth::Request::Connection do
   describe '#request' do
     it 'performs the actual request' do
       connection.set_request_data
-      connection.stub(:set_request_data)
+      allow(connection).to receive(:set_request_data)
 
-      connection.access_token.should_receive(:send).with(*connection.request_data)
+      expect(connection.access_token).to receive(:send).with(*connection.request_data)
 
       connection.request
     end
@@ -61,7 +61,7 @@ describe Redbooth::Request::Connection do
       connection = Redbooth::Request::Connection.new(info)
       connection.set_request_data
 
-      connection.request_data.should eq(
+      expect(connection.request_data).to eq(
         [
           :post,
           "#{redbooth_url}/some/path",
