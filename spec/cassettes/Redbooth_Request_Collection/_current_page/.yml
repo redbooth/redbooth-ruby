@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/tasks?per_page=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Mon, 03 Nov 2014 14:36:53 GMT
+      X-Redbooth-Updated-At:
+      - '1415025413295'
+      X-Redbooth-From-Cache:
+      - 'true'
+      Paginationlinks:
+      - <http://localhost:3000/api/3/tasks?page=2&per_page=2>; rel="next">, <http://localhost:3000/api/3/tasks?page=12&per_page=2>;
+        rel="last">
+      Paginationtotalpages:
+      - '12'
+      Paginationperpage:
+      - '2'
+      Paginationcurrentpage:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Request-Id:
+      - dfdea22812081e0df9f6e2b53b376d0d
+      X-Runtime:
+      - '0.085952'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '[{"type":"Task","created_at":1415025412,"updated_at":1415025412,"id":51,"name":"new
+        created task","task_list_id":3,"comments_count":0,"assigned_id":null,"is_private":false,"project_id":2,"urgent":false,"user_id":1,"position":6,"last_activity_id":null,"record_conversion_type":null,"record_conversion_id":null,"metadata":{},"subtasks_count":0,"resolved_subtasks_count":0,"watcher_ids":[1],"description":null,"description_html":"","description_updated_by_user_id":null,"updated_by_id":null,"deleted":false,"row_order":8257536,"status":"new","due_on":null},{"type":"Task","created_at":1415025412,"updated_at":1415025412,"id":50,"name":"new
+        created task","task_list_id":3,"comments_count":0,"assigned_id":null,"is_private":false,"project_id":2,"urgent":false,"user_id":1,"position":5,"last_activity_id":null,"record_conversion_type":null,"record_conversion_id":null,"metadata":{},"subtasks_count":0,"resolved_subtasks_count":0,"watcher_ids":[1],"description":null,"description_html":"","description_updated_by_user_id":null,"updated_by_id":null,"deleted":false,"row_order":8126464,"status":"new","due_on":null}]'
+    http_version: 
+  recorded_at: Tue, 04 Nov 2014 13:52:33 GMT
+recorded_with: VCR 2.9.3

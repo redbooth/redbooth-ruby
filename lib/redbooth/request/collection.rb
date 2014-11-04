@@ -69,7 +69,7 @@ module Redbooth
       # @return [Redbooth::Request::Collection]
       def prev_page
         return nil unless paginated?
-        return nil unless current_page > 0
+        return nil unless current_page > 1
         request_with(page: current_page - 1)
       end
 

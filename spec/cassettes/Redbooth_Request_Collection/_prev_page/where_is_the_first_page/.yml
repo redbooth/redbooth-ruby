@@ -1,0 +1,159 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/tasks?per_page=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Mon, 03 Nov 2014 14:36:53 GMT
+      X-Redbooth-Updated-At:
+      - '1415025413295'
+      X-Redbooth-From-Cache:
+      - 'true'
+      Paginationlinks:
+      - <http://localhost:3000/api/3/tasks?page=2&per_page=2>; rel="next">, <http://localhost:3000/api/3/tasks?page=12&per_page=2>;
+        rel="last">
+      Paginationtotalpages:
+      - '12'
+      Paginationperpage:
+      - '2'
+      Paginationcurrentpage:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Request-Id:
+      - a9e08815b427423ba60bc132d9852870
+      X-Runtime:
+      - '0.083123'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '[{"type":"Task","created_at":1415025412,"updated_at":1415025412,"id":51,"name":"new
+        created task","task_list_id":3,"comments_count":0,"assigned_id":null,"is_private":false,"project_id":2,"urgent":false,"user_id":1,"position":6,"last_activity_id":null,"record_conversion_type":null,"record_conversion_id":null,"metadata":{},"subtasks_count":0,"resolved_subtasks_count":0,"watcher_ids":[1],"description":null,"description_html":"","description_updated_by_user_id":null,"updated_by_id":null,"deleted":false,"row_order":8257536,"status":"new","due_on":null},{"type":"Task","created_at":1415025412,"updated_at":1415025412,"id":50,"name":"new
+        created task","task_list_id":3,"comments_count":0,"assigned_id":null,"is_private":false,"project_id":2,"urgent":false,"user_id":1,"position":5,"last_activity_id":null,"record_conversion_type":null,"record_conversion_id":null,"metadata":{},"subtasks_count":0,"resolved_subtasks_count":0,"watcher_ids":[1],"description":null,"description_html":"","description_updated_by_user_id":null,"updated_by_id":null,"deleted":false,"row_order":8126464,"status":"new","due_on":null}]'
+    http_version: 
+  recorded_at: Tue, 04 Nov 2014 13:56:50 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/tasks?page=0&per_page=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '6230'
+      X-Request-Id:
+      - e038fc948f523e3d5c4d6a3a35935402
+      X-Runtime:
+      - '0.123510'
+      Connection:
+      - keep-alive
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\"
+        />\n  <title>Action Controller: Exception caught</title>\n  <style>\n    body
+        { background-color: #fff; color: #333; }\n\n    body, p, ol, ul, td {\n      font-family:
+        helvetica, verdana, arial, sans-serif;\n      font-size:   13px;\n      line-height:
+        18px;\n    }\n\n    pre {\n      background-color: #eee;\n      padding: 10px;\n
+        \     font-size: 11px;\n      white-space: pre-wrap;\n    }\n\n    a { color:
+        #000; }\n    a:visited { color: #666; }\n    a:hover { color: #fff; background-color:#000;
+        }\n  </style>\n</head>\n<body>\n\n<h1>\n  ArgumentError\n    in ApiV3::TasksController#index\n</h1>\n<pre>not
+        delegated</pre>\n\n\n<p><code>Rails.root: /Users/andresbravog/Documents/ProyectosTeambox/teambox/SRC/teambox-hosted</code></p>\n\n<div
+        id=\"traces\">\n    <a href=\"#\" onclick=\"document.getElementById(&#x27;Framework-Trace&#x27;).style.display=&#x27;none&#x27;;document.getElementById(&#x27;Full-Trace&#x27;).style.display=&#x27;none&#x27;;document.getElementById(&#x27;Application-Trace&#x27;).style.display=&#x27;block&#x27;;;
+        return false;\">Application Trace</a> |\n    <a href=\"#\" onclick=\"document.getElementById(&#x27;Application-Trace&#x27;).style.display=&#x27;none&#x27;;document.getElementById(&#x27;Full-Trace&#x27;).style.display=&#x27;none&#x27;;document.getElementById(&#x27;Framework-Trace&#x27;).style.display=&#x27;block&#x27;;;
+        return false;\">Framework Trace</a> |\n    <a href=\"#\" onclick=\"document.getElementById(&#x27;Application-Trace&#x27;).style.display=&#x27;none&#x27;;document.getElementById(&#x27;Framework-Trace&#x27;).style.display=&#x27;none&#x27;;document.getElementById(&#x27;Full-Trace&#x27;).style.display=&#x27;block&#x27;;;
+        return false;\">Full Trace</a> \n\n    <div id=\"Application-Trace\" style=\"display:
+        block;\">\n      <pre><code></code></pre>\n    </div>\n    <div id=\"Framework-Trace\"
+        style=\"display: none;\">\n      <pre><code></code></pre>\n    </div>\n    <div
+        id=\"Full-Trace\" style=\"display: none;\">\n      <pre><code>/Users/andresbravog/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/delegate.rb:392:in
+        `__getobj__&#x27;\nwill_paginate (3.0.5) lib/will_paginate/page_number.rb:38:in
+        `kind_of?&#x27;\nbetter_errors (0.7.0) lib/better_errors/stack_frame.rb:112:in
+        `set_pretty_method_name&#x27;\nbetter_errors (0.7.0) lib/better_errors/stack_frame.rb:34:in
+        `initialize&#x27;\nbetter_errors (0.7.0) lib/better_errors/stack_frame.rb:10:in
+        `new&#x27;\nbetter_errors (0.7.0) lib/better_errors/stack_frame.rb:10:in `block
+        in from_exception&#x27;\nbetter_errors (0.7.0) lib/better_errors/stack_frame.rb:6:in
+        `map&#x27;\nbetter_errors (0.7.0) lib/better_errors/stack_frame.rb:6:in `from_exception&#x27;\nbetter_errors
+        (0.7.0) lib/better_errors/error_page.rb:52:in `backtrace_frames&#x27;\nbetter_errors
+        (0.7.0) lib/better_errors/middleware.rb:114:in `log_exception&#x27;\nbetter_errors
+        (0.7.0) lib/better_errors/middleware.rb:87:in `rescue in protected_app_call&#x27;\nbetter_errors
+        (0.7.0) lib/better_errors/middleware.rb:84:in `protected_app_call&#x27;\nbetter_errors
+        (0.7.0) lib/better_errors/middleware.rb:79:in `better_errors_call&#x27;\nbetter_errors
+        (0.7.0) lib/better_errors/middleware.rb:56:in `call&#x27;\nactionpack (3.2.19)
+        lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call&#x27;\nactionpack
+        (3.2.19) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call&#x27;\nrailties
+        (3.2.19) lib/rails/rack/logger.rb:32:in `call_app&#x27;\nrailties (3.2.19)
+        lib/rails/rack/logger.rb:16:in `block in call&#x27;\nactivesupport (3.2.19)
+        lib/active_support/tagged_logging.rb:22:in `tagged&#x27;\nrailties (3.2.19)
+        lib/rails/rack/logger.rb:16:in `call&#x27;\nactionpack (3.2.19) lib/action_dispatch/middleware/request_id.rb:22:in
+        `call&#x27;\nrack (1.4.5) lib/rack/methodoverride.rb:21:in `call&#x27;\nrack
+        (1.4.5) lib/rack/runtime.rb:17:in `call&#x27;\nactivesupport (3.2.19) lib/active_support/cache/strategy/local_cache.rb:72:in
+        `call&#x27;\nrack (1.4.5) lib/rack/lock.rb:15:in `call&#x27;\nactionpack (3.2.19)
+        lib/action_dispatch/middleware/static.rb:63:in `call&#x27;\nutf8-cleaner (0.0.6)
+        lib/utf8-cleaner/middleware.rb:18:in `call&#x27;\nrailties (3.2.19) lib/rails/engine.rb:484:in
+        `call&#x27;\nrailties (3.2.19) lib/rails/application.rb:231:in `call&#x27;\nrack
+        (1.4.5) lib/rack/content_length.rb:14:in `call&#x27;\nrailties (3.2.19) lib/rails/rack/log_tailer.rb:17:in
+        `call&#x27;\nthin (1.6.1) lib/thin/connection.rb:82:in `block in pre_process&#x27;\nthin
+        (1.6.1) lib/thin/connection.rb:80:in `catch&#x27;\nthin (1.6.1) lib/thin/connection.rb:80:in
+        `pre_process&#x27;\nthin (1.6.1) lib/thin/connection.rb:55:in `process&#x27;\nthin
+        (1.6.1) lib/thin/connection.rb:41:in `receive_data&#x27;\neventmachine (1.0.3)
+        lib/eventmachine.rb:187:in `run_machine&#x27;\neventmachine (1.0.3) lib/eventmachine.rb:187:in
+        `run&#x27;\nthin (1.6.1) lib/thin/backends/base.rb:73:in `start&#x27;\nthin
+        (1.6.1) lib/thin/server.rb:162:in `start&#x27;\nrack (1.4.5) lib/rack/handler/thin.rb:13:in
+        `run&#x27;\nrack (1.4.5) lib/rack/server.rb:268:in `start&#x27;\nrailties
+        (3.2.19) lib/rails/commands/server.rb:70:in `start&#x27;\nzeus (0.15.2) lib/zeus/rails.rb:160:in
+        `server&#x27;\nzeus (0.15.2) lib/zeus.rb:148:in `block in command&#x27;\nzeus
+        (0.15.2) lib/zeus.rb:135:in `fork&#x27;\nzeus (0.15.2) lib/zeus.rb:135:in
+        `command&#x27;\nzeus (0.15.2) lib/zeus.rb:50:in `go&#x27;\n-e:1:in `&lt;main&gt;&#x27;</code></pre>\n
+        \   </div>\n</div>\n\n\n\n<h2 style=\"margin-top: 30px\">Request</h2>\n<p><b>Parameters</b>:
+        <pre>{&quot;page&quot;=&gt;&quot;0&quot;,\n &quot;per_page&quot;=&gt;&quot;2&quot;}</pre></p>\n\n<p><a
+        href=\"#\" onclick=\"document.getElementById('session_dump').style.display='block';
+        return false;\">Show session dump</a></p>\n<div id=\"session_dump\" style=\"display:none\"><pre></pre></div>\n\n<p><a
+        href=\"#\" onclick=\"document.getElementById('env_dump').style.display='block';
+        return false;\">Show env dump</a></p>\n<div id=\"env_dump\" style=\"display:none\"><pre>GATEWAY_INTERFACE:
+        &quot;CGI/1.2&quot;\nHTTP_ACCEPT: &quot;*/*&quot;\nHTTP_ACCEPT_ENCODING: &quot;gzip;q=1.0,deflate;q=0.6,identity;q=0.3&quot;\nREMOTE_ADDR:
+        &quot;127.0.0.1&quot;\nSERVER_NAME: &quot;localhost&quot;\nSERVER_PROTOCOL:
+        &quot;HTTP/1.1&quot;</pre></div>\n\n\n<h2 style=\"margin-top: 30px\">Response</h2>\n<p><b>Headers</b>:
+        <pre>None</pre></p>\n\n\n\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Tue, 04 Nov 2014 13:56:50 GMT
+recorded_with: VCR 2.9.3
