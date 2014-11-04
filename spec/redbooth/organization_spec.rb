@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Redbooth::Organziation, vcr: 'organization' do
+describe Redbooth::Organization, vcr: 'organization' do
   include_context 'authentication'
 
   let(:create_organization_params) do
