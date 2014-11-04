@@ -1,6 +1,6 @@
 module Redbooth
   module Request
-    # Wraps the API response prsing the json body and keeping interesting headers
+    # Wraps the API response parsing the json body and keeping interesting headers
     #
     class Response
       attr_accessor :body, :headers, :data, :status
