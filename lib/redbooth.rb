@@ -21,7 +21,6 @@ module Redbooth
     autoload :Index,      'redbooth/operations/index'
     autoload :Create,     'redbooth/operations/create'
     autoload :Delete,     'redbooth/operations/delete'
-    autoload :Find,       'redbooth/operations/find'
     autoload :Show,       'redbooth/operations/show'
     autoload :Update,     'redbooth/operations/update'
     autoload :Meta,       'redbooth/operations/meta'
@@ -33,10 +32,14 @@ module Redbooth
     autoload :Helpers,    'redbooth/request/helpers'
     autoload :Info,       'redbooth/request/info'
     autoload :Validator,  'redbooth/request/validator'
+    autoload :Response,   'redbooth/request/response'
+    autoload :Collection, 'redbooth/request/collection'
   end
 
   class RedboothError < StandardError; end
   class AuthenticationError < RedboothError; end
+  class OauhtTokenExpired < AuthenticationError; end
+  class OauhtTokenRevoked < AuthenticationError; end
   class NotFound            < RedboothError; end
   class APIError            < RedboothError; end
   class ObjectNotFound      < APIError; end

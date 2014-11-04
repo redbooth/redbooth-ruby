@@ -37,7 +37,7 @@ describe Redbooth do
                      { param_name: 'param_value' },
                      { session: session }
                     )
-        WebMock.should have_requested(:get,
+        expect(WebMock).to have_requested(:get,
                                       "#{redbooth_url}/user?param_name=param_value"
                                       )
       end
@@ -49,7 +49,7 @@ describe Redbooth do
                          { client: 'client_id', order: 'created_at_desc' },
                          { session: session }
                         )
-        WebMock.should have_requested(
+        expect(WebMock).to have_requested(
           :get,
           "#{redbooth_url}/user?client=client_id&order=created_at_desc"
         )
@@ -57,12 +57,12 @@ describe Redbooth do
 
       it "doesn't add a question mark if no params" do
         Redbooth.request(:post, nil, "user", {}, { session: session })
-        WebMock.should have_requested(:post, "#{redbooth_url}/user")
+        expect(WebMock).to have_requested(:post, "#{redbooth_url}/user")
       end
 
       it "uses the param id to construct the url" do
         Redbooth.request(:post, nil, "user", {id: 'new_id'}, { session: session })
-        WebMock.should have_requested(:post, "#{redbooth_url}/user/new_id")
+        expect(WebMock).to have_requested(:post, "#{redbooth_url}/user/new_id")
       end
     end
   end

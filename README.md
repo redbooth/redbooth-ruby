@@ -81,13 +81,66 @@ If you have multiple applications or you just want to ve explicit use the applic
   client = Redbooth::Client.new(session)
 ```
 
+Collections
+======
+
+Index methods always return a `Redbooth::Request::Collection` object to handle the pagination and ordering.
+
+ie:
+```Ruby
+tasks_collection = client.task(:index, project_id: 2)
+tasks_collection.class # => Redbooth::Request::Collection
+tasks = tasks_collection.all
+
+tasks_collection.current_page # => 1
+tasks_collection.total_pages # => 7
+tasks_collection.per_page # => 30
+tasks_collection.count # => 208
+
+next_page_collection = tasks_collection.next_page
+next_page_collection.class # => Redbooth::Request::Collection
+
+prev_page_collection = tasks_collection.prev_page
+prev_page_collection.class # => Redbooth::Request::Collection
+```
+
+## Collection Methods
+
+* `all` :  `Array` of elements in the current page
+
+* `count` :  `Integer` number of the total elements
+
+* `current_page`: `Integer` current page number (nil if the resource is not paginated)
+
+* `total_pages`: `Integer` total pages number (nil if the resource is not paginated)
+
+* `next_page`: `Redbooth::Request::Collection` Collection object pointing to the next page (nil if the resource is not paginated or there is no next page)
+
+* `prev_page`: `Redbooth::Request::Collection` Collection object pointing to the prev page (nil if the resource is not paginated or there is no next page)
+
+## Examples
+
+Iterating thought all the pages
+
+```Ruby
+tasks_collection = client.task(:index, project_id: 2)
+tasks = tasks_collection.all
+
+while task_collection = tasks_collection.next_page do
+  tasks << task_collection.all
+end
+
+tasks.flatten!
+```
+
 Users
 =====
 
 List users in your network
 
 ```Ruby
-  users = client.user(:index)
+  users_collection = client.user(:index)
+  users = users_collection.all
 ```
 
 Fetch a especific user
@@ -102,7 +155,8 @@ Tasks
 Lists tasks in your visibility scope
 
 ```Ruby
-  tasks = client.task(:index)
+  tasks_collection = client.task(:index)
+  tasks = tasks_collection.all
 ```
 
 You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:tasks,header:tasks-task-list) )
@@ -130,5 +184,8 @@ Delete a especific task
 ```Ruby
   client.task(:delete, id: 123)
 ```
+
+License
+=====
 
 Copyright (c) 2012-2013 Redbooth. See LICENSE for details.

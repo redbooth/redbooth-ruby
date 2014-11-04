@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Redbooth::User, vcr: 'tasks' do
+describe Redbooth::Task, vcr: 'tasks' do
   include_context 'authentication'
 
   let(:create_task_params) do
@@ -85,6 +85,6 @@ describe Redbooth::User, vcr: 'tasks' do
       subject
     end
 
-    it { expect(subject.class).to eql Array }
+    it { expect(subject.class).to eql Redbooth::Request::Collection }
   end
 end

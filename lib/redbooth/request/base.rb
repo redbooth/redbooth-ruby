@@ -13,7 +13,7 @@ module Redbooth
         connection.set_request_data
         send_request
 
-        validator.validated_data_for(response)
+        validator.validated_response_for(response)
       end
 
       def valid?

@@ -28,7 +28,7 @@ describe Redbooth::Request::Base do
 
       expect(connection).to receive(:set_request_data)
       expect(connection).to receive(:request)
-      expect(validator).to receive(:validated_data_for)
+      expect(validator).to receive(:validated_response_for)
 
       Redbooth::Request::Base.new(nil).perform
     end
