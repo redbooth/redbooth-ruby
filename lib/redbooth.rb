@@ -38,6 +38,8 @@ module Redbooth
 
   class RedboothError < StandardError; end
   class AuthenticationError < RedboothError; end
+  class OauhtTokenExpired < AuthenticationError; end
+  class OauhtTokenRevoked < AuthenticationError; end
   class NotFound            < RedboothError; end
   class APIError            < RedboothError; end
   class ObjectNotFound      < APIError; end

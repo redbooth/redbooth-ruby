@@ -16,9 +16,9 @@ module Redbooth
       def validated_response_for(incoming_response)
         self.raw_response = incoming_response
         verify_response_code
-        response = Redbooth::Request::Response.new(headers: raw_response.headers,
-                                                   body: raw_response.body,
-                                                   status: raw_response.status.to_i)
+        @response = Redbooth::Request::Response.new(headers: raw_response.headers,
+                                                    body: raw_response.body,
+                                                    status: raw_response.status.to_i)
         info.data = response.data
         validate_response_data
         response
@@ -26,19 +26,42 @@ module Redbooth
 
       protected
 
+      # Verifies the response status code in case it fails with the dessired error
+      # and message
+      #
       def verify_response_code
-        fail AuthenticationError if raw_response.status.to_i == 401
-        fail APIError if raw_response.status.to_i >= 500
-        fail NotFound if raw_response.status.to_i >= 404
+        status = raw_response.status.to_i
+        case
+        when status == 401
+          verify_authentication_header
+          fail AuthenticationError
+        when status >= 500
+          fail APIError
+        when status >= 404
+          fail NotFound
+        end
       end
 
+      # Checks the authetication header to ensure wich is the best error to throw
+      #
+      def verify_authentication_header
+        case raw_response.headers['WWW-Authenticate']
+        when /error\=\"invalid_token\".*expired/
+          fail OauhtTokenExpired
+        when /error\=\"invalid_token\".*revoked/
+          fail OauhtTokenRevoked
+        end
+      end
+
+      # Validates the body data returned in the response in case there is
+      # an embed error it will fail with the dessired error and message
+      #
       def validate_response_data
-        body ||= info.data
-        if body.is_a?(Hash)
-          if body['error']
-            handle_api_error(body['error'], body['message'])
-          elsif body['errors']
-            body['errors'].each do |error|
+        if response.data.is_a?(Hash)
+          if response.data['error']
+            handle_api_error(response.data['error']['code'], response.data['error']['message'])
+          elsif response.data['errors']
+            response.data['errors'].each do |error|
               handle_api_error(error['code'], error['message'])
             end
           end
