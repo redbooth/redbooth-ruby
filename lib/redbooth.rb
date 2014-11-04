@@ -21,7 +21,6 @@ module Redbooth
     autoload :Index,      'redbooth/operations/index'
     autoload :Create,     'redbooth/operations/create'
     autoload :Delete,     'redbooth/operations/delete'
-    autoload :Find,       'redbooth/operations/find'
     autoload :Show,       'redbooth/operations/show'
     autoload :Update,     'redbooth/operations/update'
     autoload :Meta,       'redbooth/operations/meta'
