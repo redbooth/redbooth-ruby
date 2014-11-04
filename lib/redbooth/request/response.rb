@@ -14,13 +14,20 @@ module Redbooth
 
       protected
 
-      # Parses the json body and translates it to Ruby objects
+      # initializes the json data with the request body
+      # or empty array if not
       def initialize_data
-        @data = case status
-                when 204 then {}
-                else
-                  JSON.parse(body)
-                end
+        @data = parse_body || {}
+      end
+
+      # Parses the json body if is a json valid string
+      #
+      def parse_body
+        return unless body.is_a?(String)
+        JSON.parse(body)
+      rescue
+        # not a valid json body
+        nil
       end
     end
   end
