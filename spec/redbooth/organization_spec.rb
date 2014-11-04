@@ -6,7 +6,7 @@ describe Redbooth::Organization, vcr: 'organization' do
   let(:create_organization_params) do
     { name: 'new Organization' }
   end
-  let(:new_organization) { client.organization(:create, create_task_params.merge(session: session)) }
+  let(:new_organization) { client.organization(:create, create_organization_params.merge(session: session)) }
   let(:organization) do
     client.organization(:show, id: 1)
   end
@@ -15,9 +15,9 @@ describe Redbooth::Organization, vcr: 'organization' do
     subject { organization }
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.name).to eql 'new Organization' }
-    it { expect(subject.permalink).to eql 'The ships hung in the sky in much the same way that bricks don\'t.' }
-    it { expect(subject.domain).to eql 2 }
+    it { expect(subject.name).to eql 'Design projects' }
+    it { expect(subject.permalink).to eql 'design-projects' }
+    it { expect(subject.domain).to eql nil }
   end
 
   describe ".show" do
@@ -29,9 +29,9 @@ describe Redbooth::Organization, vcr: 'organization' do
     end
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.name).to eql 'new Organization' }
-    it { expect(subject.permalink).to eql 'The ships hung in the sky in much the same way that bricks don\'t.' }
-    it { expect(subject.domain).to eql 2 }
+    it { expect(subject.name).to eql 'Design projects' }
+    it { expect(subject.permalink).to eql 'design-projects' }
+    it { expect(subject.domain).to eql nil }
   end
 
   describe ".update" do

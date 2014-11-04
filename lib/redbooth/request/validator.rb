@@ -15,10 +15,10 @@ module Redbooth
       # return [Redbooth::Request::Response]
       def validated_response_for(incoming_response)
         self.raw_response = incoming_response
-        verify_response_code
         @response = Redbooth::Request::Response.new(headers: raw_response.headers,
                                                     body: raw_response.body,
                                                     status: raw_response.status.to_i)
+        verify_response_code
         info.data = response.data
         validate_response_data
         response
@@ -39,6 +39,8 @@ module Redbooth
           fail APIError
         when status >= 404
           fail NotFound
+        when status == 202
+          throw :processing
         end
       end
 

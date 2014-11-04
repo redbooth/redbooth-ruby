@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/3/organizations
+    body:
+      encoding: UTF-8
+      string: name=new+Organization
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"179facc9be709a2fd8c554454ae2e836"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 961936f5b212e0a715f0e9fc57d8e3b4
+      X-Runtime:
+      - '10.588271'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Organization","created_at":1415114626,"updated_at":1415114626,"id":7,"name":"new
+        Organization","permalink":"new-organization-aegs6","domain":null,"settings":{"allow_comment_deletion":true},"omit_email_processing":false,"product":"50-seats-trial","product_name":"trial","feature_level":"freeu","subscription_id":7,"seats":50,"remaining_users":49,"available_users":50,"used_users":1,"remaining_projects":999998,"available_projects":999999,"used_projects":1,"metadata":{},"square_logo_url":"/images/logos/square/missing.png","top_logo_url":"/images/logos/top/missing.png","has_logo":false,"is_pro":true,"description":null}'
+    http_version: 
+  recorded_at: Tue, 04 Nov 2014 15:23:53 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/organizations/7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - d82f4ee4969576a6b9f7928cf7838f2f
+      X-Runtime:
+      - '0.390483'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":"/api/3/organizations/7action=destroy\u0026controller=api_v3%2Forganizations\u0026id=7","retry_after":null}'
+    http_version: 
+  recorded_at: Tue, 04 Nov 2014 15:23:53 GMT
+recorded_with: VCR 2.9.3

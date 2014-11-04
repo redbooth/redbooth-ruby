@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/organizations/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"3a0361b2bb34847265b8471c3983022a"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b61f822342ecb931ab3b77c793f32a2a
+      X-Runtime:
+      - '0.730664'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Organization","created_at":1415006970,"updated_at":1415006970,"id":1,"name":"Design
+        projects","permalink":"design-projects","domain":null,"settings":{"allow_comment_deletion":true},"omit_email_processing":false,"product":"50-seats-trial","product_name":"trial","feature_level":"freeu","subscription_id":1,"seats":50,"remaining_users":46,"available_users":50,"used_users":4,"remaining_projects":999993,"available_projects":999999,"used_projects":6,"metadata":{},"square_logo_url":"/images/logos/square/missing.png","top_logo_url":"/images/logos/top/missing.png","has_logo":false,"is_pro":true,"description":"<h1>Our
+        design firm</h1>\n                  <p>This is an example site. You can log
+        in as <b>frank</b>, <b>corrina</b>, <b>webdevtom</b>, <b>maya</b> or <b>marco</b>.
+        The password is always <b>papapa22</b>.</p>\n                  <p>Once you
+        configure this site this screen will be deleted.</p>\n                  <h2>Quicklinks
+        for testing:</h2>\n        <form style=\"display:inline\" method=\"post\"
+        action=\"/session?login=frank&amp;password=papapa22\" class=\"button-to\">\n          <input
+        type=\"submit\" value=\"Login as Frank\">\n        </form>\n      \n        <form
+        style=\"display:inline\" method=\"post\" action=\"/session?login=corrina&amp;password=papapa22\"
+        class=\"button-to\">\n          <input type=\"submit\" value=\"Login as Corrina\">\n        </form>\n      \n        <form
+        style=\"display:inline\" method=\"post\" action=\"/session?login=tomas&amp;password=papapa22\"
+        class=\"button-to\">\n          <input type=\"submit\" value=\"Login as Tomas\">\n        </form>\n      \n        <form
+        style=\"display:inline\" method=\"post\" action=\"/session?login=maya&amp;password=papapa22\"
+        class=\"button-to\">\n          <input type=\"submit\" value=\"Login as Maya\">\n        </form>\n      \n        <form
+        style=\"display:inline\" method=\"post\" action=\"/session?login=marco&amp;password=papapa22\"
+        class=\"button-to\">\n          <input type=\"submit\" value=\"Login as Marco\">\n        </form>\n      \n        <form
+        style=\"display:inline\" method=\"post\" action=\"/session?login=redbooth&amp;password=papapa22\"
+        class=\"button-to\">\n          <input type=\"submit\" value=\"Login as Mr.\">\n        </form>\n      \n        <form
+        style=\"display:inline\" method=\"post\" action=\"/session?login=xss&amp;password=papapa22\"
+        class=\"button-to\">\n          <input type=\"submit\" value=\"Login as Mr.\">\n        </form>\n      "}'
+    http_version: 
+  recorded_at: Tue, 04 Nov 2014 14:53:15 GMT
+recorded_with: VCR 2.9.3
