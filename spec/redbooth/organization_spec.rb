@@ -4,7 +4,7 @@ describe Redbooth::Organization, vcr: 'organization' do
   include_context 'authentication'
 
   let(:create_organization_params) do
-    { name: 'new Organziation' }
+    { name: 'new Organization' }
   end
   let(:new_organization) { client.organization(:create, create_task_params.merge(session: session)) }
   let(:organization) do
@@ -15,11 +15,9 @@ describe Redbooth::Organization, vcr: 'organization' do
     subject { organization }
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.name).to eql 'new Organziation' }
-    it { expect(subject.description).to eql 'The ships hung in the sky in much the same way that bricks don\'t.' }
-    it { expect(subject.project_id).to eql 2 }
-    it { expect(subject.assigned_id).to eql 8 }
-    it { expect(subject.due_on).to eql '2014-11-04' }
+    it { expect(subject.name).to eql 'new Organization' }
+    it { expect(subject.permalink).to eql 'The ships hung in the sky in much the same way that bricks don\'t.' }
+    it { expect(subject.domain).to eql 2 }
   end
 
   describe ".show" do
@@ -31,10 +29,9 @@ describe Redbooth::Organization, vcr: 'organization' do
     end
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.name).to eql 'new Organziation' }
-    it { expect(subject.description).to eql 'The ships hung in the sky in much the same way that bricks don\'t.' }
-    it { expect(subject.project_id).to eql 2 }
-    it { expect(subject.assigned_id).to eql 8 }
+    it { expect(subject.name).to eql 'new Organization' }
+    it { expect(subject.permalink).to eql 'The ships hung in the sky in much the same way that bricks don\'t.' }
+    it { expect(subject.domain).to eql 2 }
   end
 
   describe ".update" do
@@ -57,9 +54,7 @@ describe Redbooth::Organization, vcr: 'organization' do
       subject
     end
 
-    it { expect(subject.name).to eql 'new created organization' }
-    it { expect(subject.project_id).to eql 2 }
-    it { expect(subject.task_list_id).to eql 3 }
+    it { expect(subject.name).to eql 'new Organization' }
   end
 
   describe ".delete" do
