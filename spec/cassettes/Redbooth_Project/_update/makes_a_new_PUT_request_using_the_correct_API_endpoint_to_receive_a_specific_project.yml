@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:3000/api/3/projects/2
+    body:
+      encoding: UTF-8
+      string: name=new+test+name
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"700b436deabbbbbf6752bea087cb6bda"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 313206eb7a7a623a5dfe86635f95950f
+      X-Runtime:
+      - '0.643510'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Project","created_at":1415006976,"updated_at":1415203155,"id":2,"permalink":"earthworks","organization_id":1,"archived":false,"name":"new
+        test name","description":null,"start_date":null,"end_date":null,"tracks_time":false,"public":true,"publish_pages":false,"settings":{},"deleted":false}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 15:59:16 GMT
+recorded_with: VCR 2.9.3

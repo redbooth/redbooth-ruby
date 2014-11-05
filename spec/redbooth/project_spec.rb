@@ -4,7 +4,8 @@ describe Redbooth::Project, vcr: 'project' do
   include_context 'authentication'
 
   let(:create_params) do
-    { name: 'new Project' }
+    { name: 'new Project',
+      organization_id: 1 }
   end
   let(:new_project) { client.project(:create, create_params.merge(session: session)) }
   let(:endpoint_name) { 'projects' }
@@ -16,8 +17,8 @@ describe Redbooth::Project, vcr: 'project' do
     subject { project }
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.name).to eql 'Design projects' }
-    it { expect(subject.permalink).to eql 'design-projects' }
+    it { expect(subject.name).to eql 'General' }
+    it { expect(subject.permalink).to eql 'general' }
   end
 
   describe ".show" do
@@ -29,8 +30,8 @@ describe Redbooth::Project, vcr: 'project' do
     end
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.name).to eql 'Design projects' }
-    it { expect(subject.permalink).to eql 'design-projects' }
+    it { expect(subject.name).to eql 'General' }
+    it { expect(subject.permalink).to eql 'general' }
   end
 
   describe ".update" do
@@ -53,7 +54,7 @@ describe Redbooth::Project, vcr: 'project' do
       subject
     end
 
-    it { expect(subject.name).to eql 'new Organization' }
+    it { expect(subject.name).to eql 'new Project' }
   end
 
   describe ".delete" do
@@ -61,7 +62,7 @@ describe Redbooth::Project, vcr: 'project' do
     before { allow_any_instance_of(Redbooth::Client).to receive(:sleep) }
 
     it "makes a new DELETE request using the correct API endpoint to delete a specific project" do
-      expect(Redbooth).to receive(:request).with(:delete, nil, "#{endpoint_name}/#{new_project.id}", {}, { session: session }).twice.and_call_original
+      expect(Redbooth).to receive(:request).with(:delete, nil, "#{endpoint_name}/#{new_project.id}", {}, { session: session }).at_least(:twice).and_call_original
       subject
     end
   end

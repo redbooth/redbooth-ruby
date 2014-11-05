@@ -1,0 +1,2296 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/3/projects
+    body:
+      encoding: UTF-8
+      string: name=new+Project&organization_id=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"0af87535e3a8bccf358bdb9d4d1efccd"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - bb2ad8284ab2c74ff450b9c6037b2bf9
+      X-Runtime:
+      - '0.292678'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Project","created_at":1415206100,"updated_at":1415206100,"id":22,"permalink":"new-project","organization_id":1,"archived":false,"name":"new
+        Project","description":null,"start_date":null,"end_date":null,"tracks_time":false,"public":null,"publish_pages":false,"settings":{},"deleted":false}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 7752c19ee841b68b106c68546ee8c638
+      X-Runtime:
+      - '0.085230'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":"/api/3/projects/22action=destroy\u0026controller=api_v3%2Fprojects\u0026id=22","retry_after":null}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - a41f0cff3e1c4a60fe149fe0293d9916
+      X-Runtime:
+      - '0.075529'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - a2926e96e1fbe4e389b28b6ef26b44d0
+      X-Runtime:
+      - '0.077547'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - f55d451400ff76450412fb5d920a2aab
+      X-Runtime:
+      - '0.072314'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 63ffbfac1eb83a528ba3fb9838492725
+      X-Runtime:
+      - '0.099628'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 2a0c55a2f48718c3d86f23f7db4664da
+      X-Runtime:
+      - '0.082525'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 3af7ce78fb48038b487e73262ca4a552
+      X-Runtime:
+      - '0.112348'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - d879ce8ea39a1af5d7dd17a11421724d
+      X-Runtime:
+      - '0.085453'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 1ff46db736af85331b6a08e9bf2473d8
+      X-Runtime:
+      - '0.072466'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 508620eeaefd50c603e9db7b8943d808
+      X-Runtime:
+      - '0.075064'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - a6b943609bd01959eb2a027399b16f2d
+      X-Runtime:
+      - '0.075349'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 371275e79a3d24819f44d00196573a98
+      X-Runtime:
+      - '0.075456'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 6a4be7cfba2b4ede21eea978225938c6
+      X-Runtime:
+      - '0.073749'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - abe31883b9362d8e524f61dc782c8e91
+      X-Runtime:
+      - '0.105273'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - cd0d95c124a2dcaaf08730cff6e3561d
+      X-Runtime:
+      - '0.109914'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - ed494d256fd65f0b92644880144a713f
+      X-Runtime:
+      - '0.076453'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - a5382af27e65a44645acec8d0866792b
+      X-Runtime:
+      - '0.072713'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 61ba744f6de93b36568ad0ce8d1dadfb
+      X-Runtime:
+      - '0.077582'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - eae06444485ef83566532b99a84c7214
+      X-Runtime:
+      - '0.187750'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 389ee21440e8ce026e7f4d3cfc7b9e75
+      X-Runtime:
+      - '0.078697'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - dcfbc51e0dec54a7f903f1b46be01a40
+      X-Runtime:
+      - '0.071679'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 48187442d738094fdcc200db876bc77d
+      X-Runtime:
+      - '0.070990'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - e9fff7e741cbf7c8060e2cd280af10d2
+      X-Runtime:
+      - '0.341564'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 60ec7381a0c6067bd6efdaf6f2665159
+      X-Runtime:
+      - '0.098742'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - d3de0b0c3fafbbdbb2dea5a91966ad65
+      X-Runtime:
+      - '0.096840'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 0aa5f48c5696160051d5159914767dfc
+      X-Runtime:
+      - '0.087381'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 661240531da6746c000b0f2c3652de07
+      X-Runtime:
+      - '0.084882'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - ad7683ef11dc7746a8e57be4cb19c17d
+      X-Runtime:
+      - '0.081384'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 52c69516494e1bd3378304a7bbc17d63
+      X-Runtime:
+      - '0.081074'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - a66b3bd1375c2d627febfa9bc05fca67
+      X-Runtime:
+      - '0.078362'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 7b0d2f16395a14966f73dc4bc260e7d1
+      X-Runtime:
+      - '0.083784'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - af49c41b0dc5d2b1db09d67a7cd0d9ea
+      X-Runtime:
+      - '0.078655'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 2a962ff032ce661a008645c20323e314
+      X-Runtime:
+      - '0.078042'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - e9e2680c52354dee3ce6542d816df210
+      X-Runtime:
+      - '0.083793'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - a6b74e9b84d93589fca639efa3049a8d
+      X-Runtime:
+      - '0.079870'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - e00cc3f1f2540753be4c793bbe4f0905
+      X-Runtime:
+      - '0.074275'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 4f7f6c437a5a80442543ddf49a3f38bd
+      X-Runtime:
+      - '0.079380'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - e08f179a12a9c8cb022805a61bc4d20a
+      X-Runtime:
+      - '0.076927'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 07016de64fdfe8da258cc29e5054b2ac
+      X-Runtime:
+      - '0.077213'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - e5b9ce0303ee6b4a542332fa763cab87
+      X-Runtime:
+      - '0.078916'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 2a4010b9f424c9a136cc26c66a8497d0
+      X-Runtime:
+      - '0.075285'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - b59a8d400f2041e48ece5e4d5ac51060
+      X-Runtime:
+      - '0.077736'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - fd25fb1f55eb8f4e04a6782c4dedaf71
+      X-Runtime:
+      - '0.073336'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 34682e157fc0a9836a3b1535592270be
+      X-Runtime:
+      - '0.075116'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 42f15ec2840a2b8bfee055e70e347e61
+      X-Runtime:
+      - '0.076671'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 87cdf104dc0d62835b024c23d57ac9c5
+      X-Runtime:
+      - '0.082886'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 2128e2cb1fef44a90aecbf11b17521f3
+      X-Runtime:
+      - '0.111320'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 83b6767fb917d3fc87f9a46b182c4fac
+      X-Runtime:
+      - '0.094674'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 6602ba6ca52c2534f7b8e61b8430895d
+      X-Runtime:
+      - '0.128207'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 8467ce4a76d4a038f827719097d76e65
+      X-Runtime:
+      - '0.090746'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - eb6c788d686b634229d372a06e3a18d1
+      X-Runtime:
+      - '0.084921'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:26 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 27b62668e9ead5a3b65bb3f30c6c5ad9
+      X-Runtime:
+      - '0.096976'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:26 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 38d4022481a6e87d7075a2e46687918f
+      X-Runtime:
+      - '0.097572'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:26 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Retry-After:
+      - '20'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 86cc4170f97bfc43688b7faa680a0e37
+      X-Runtime:
+      - '0.087069'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:26 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/projects/22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 4574426db6cb35004d70d91b95d8888d
+      X-Runtime:
+      - '0.100558'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:48:26 GMT
+recorded_with: VCR 2.9.3

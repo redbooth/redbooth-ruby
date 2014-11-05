@@ -39,7 +39,7 @@ module Redbooth
           fail APIError
         when status >= 404
           fail NotFound
-        when status == 202
+        when [102, 202].include?(status)
           fail Processing, response
         end
       end

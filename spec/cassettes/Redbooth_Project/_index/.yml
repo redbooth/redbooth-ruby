@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/projects
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 05 Nov 2014 15:59:16 GMT
+      X-Redbooth-Updated-At:
+      - '1415203156808'
+      X-Redbooth-From-Cache:
+      - 'true'
+      Paginationlinks:
+      - <http://localhost:3000/api/3/projects?page=1>; rel="last">
+      Paginationtotalpages:
+      - '1'
+      Paginationperpage:
+      - '30'
+      Paginationcurrentpage:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Request-Id:
+      - ca12f6bed0b123f58df04909164b96cf
+      X-Runtime:
+      - '0.086678'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '[{"type":"Project","created_at":1415112891,"updated_at":1415112891,"id":10,"permalink":"general-dltal","organization_id":4,"archived":false,"name":"General","description":null,"start_date":null,"end_date":null,"tracks_time":false,"public":null,"publish_pages":false,"settings":{},"deleted":false},{"type":"Project","created_at":1415110639,"updated_at":1415110639,"id":9,"permalink":"general-q9csl","organization_id":3,"archived":false,"name":"General","description":null,"start_date":null,"end_date":null,"tracks_time":false,"public":null,"publish_pages":false,"settings":{},"deleted":false},{"type":"Project","created_at":1415006995,"updated_at":1415006995,"id":8,"permalink":"time-tracking","organization_id":1,"archived":false,"name":"Time
+        Tracking","description":null,"start_date":null,"end_date":null,"tracks_time":false,"public":true,"publish_pages":false,"settings":{},"deleted":false},{"type":"Project","created_at":1415006992,"updated_at":1415006992,"id":7,"permalink":"xss","organization_id":2,"archived":false,"name":"Project
+        <script>alert(''PRJ'')</script>","description":null,"start_date":null,"end_date":null,"tracks_time":false,"public":true,"publish_pages":false,"settings":{},"deleted":false},{"type":"Project","created_at":1415006991,"updated_at":1415006991,"id":6,"permalink":"general-hxkas","organization_id":2,"archived":false,"name":"General","description":null,"start_date":null,"end_date":null,"tracks_time":false,"public":null,"publish_pages":false,"settings":{},"deleted":false},{"type":"Project","created_at":1415006976,"updated_at":1415006976,"id":5,"permalink":"forum-filatelico","organization_id":1,"archived":false,"name":"Forum
+        filatelico","description":null,"start_date":null,"end_date":null,"tracks_time":false,"public":null,"publish_pages":false,"settings":{},"deleted":false},{"type":"Project","created_at":1415006976,"updated_at":1415006976,"id":4,"permalink":"madoff-financials","organization_id":1,"archived":false,"name":"Madoff
+        financials","description":null,"start_date":null,"end_date":null,"tracks_time":false,"public":null,"publish_pages":false,"settings":{},"deleted":false},{"type":"Project","created_at":1415006976,"updated_at":1415006976,"id":3,"permalink":"rumasa-redesign","organization_id":1,"archived":false,"name":"Rumasa
+        redesign","description":null,"start_date":null,"end_date":null,"tracks_time":false,"public":null,"publish_pages":false,"settings":{},"deleted":false},{"type":"Project","created_at":1415006976,"updated_at":1415203156,"id":2,"permalink":"earthworks","organization_id":1,"archived":false,"name":"new
+        test name","description":null,"start_date":null,"end_date":null,"tracks_time":false,"public":true,"publish_pages":false,"settings":{},"deleted":false},{"type":"Project","created_at":1415006974,"updated_at":1415006974,"id":1,"permalink":"general","organization_id":1,"archived":false,"name":"General","description":null,"start_date":null,"end_date":null,"tracks_time":false,"public":null,"publish_pages":false,"settings":{},"deleted":false}]'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 15:59:17 GMT
+recorded_with: VCR 2.9.3

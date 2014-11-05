@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/3/projects
+    body:
+      encoding: UTF-8
+      string: name=new+Project&organization_id=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"24d6ced7be52063088e85b54a4540f3a"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0896172ada29ec99ee6e14acde5f0686
+      X-Runtime:
+      - '0.549202'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Project","created_at":1415206147,"updated_at":1415206147,"id":24,"permalink":"new-project-qouog","organization_id":1,"archived":false,"name":"new
+        Project","description":null,"start_date":null,"end_date":null,"tracks_time":false,"public":null,"publish_pages":false,"settings":{},"deleted":false}'
+    http_version: 
+  recorded_at: Wed, 05 Nov 2014 16:49:07 GMT
+recorded_with: VCR 2.9.3
