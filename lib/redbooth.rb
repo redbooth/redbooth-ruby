@@ -15,6 +15,7 @@ module Redbooth
   autoload :Me,             'redbooth/me'
   autoload :User,           'redbooth/user'
   autoload :Task,           'redbooth/task'
+  autoload :Organization,   'redbooth/organization'
 
   module Operations
     autoload :Base,       'redbooth/operations/base'
@@ -44,6 +45,18 @@ module Redbooth
   class APIError            < RedboothError; end
   class ObjectNotFound      < APIError; end
   class BadRequest     < APIError; end
+
+  # Signals. Usign errors as control flow
+  #
+  class RedboothSignal < StandardError; end
+  class Processing     < RedboothSignal
+    attr_accessor :response
+
+    def initialize(response, message='')
+      @response = response
+      super(message)
+    end
+  end
 
 
   # Gives configuration abilities

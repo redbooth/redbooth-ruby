@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/3/organizations
+    body:
+      encoding: UTF-8
+      string: name=new+Organization
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"50253d08c35ccf95bd1f1176216dde58"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 17992fb7864e5182332cac9f6c1c8397
+      X-Runtime:
+      - '5.361234'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Organization","created_at":1415112887,"updated_at":1415112887,"id":4,"name":"new
+        Organization","permalink":"new-organization","domain":null,"settings":{"allow_comment_deletion":true},"omit_email_processing":false,"product":"50-seats-trial","product_name":"trial","feature_level":"freeu","subscription_id":4,"seats":50,"remaining_users":49,"available_users":50,"used_users":1,"remaining_projects":999998,"available_projects":999999,"used_projects":1,"metadata":{},"square_logo_url":"/images/logos/square/missing.png","top_logo_url":"/images/logos/top/missing.png","has_logo":false,"is_pro":true,"description":null}'
+    http_version: 
+  recorded_at: Tue, 04 Nov 2014 14:54:52 GMT
+recorded_with: VCR 2.9.3

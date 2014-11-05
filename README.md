@@ -81,6 +81,23 @@ If you have multiple applications or you just want to ve explicit use the applic
   client = Redbooth::Client.new(session)
 ```
 
+Async Endpoints
+======
+
+Redbooth API is ready to transform any endpoint to async performing in order to optimize the API response time. When this happens the response will contain:
+
+* `202` status code
+
+* `Retry-After` header with the time in seconds to wait until retry the same request
+
+To know the real response of this request you just need to perform the same request once the retry-after time passed.
+
+In the client we handle this work for you by waiting and repeating the request if needed, but if you want to perform the retry method in any other way (renqueue the job for instance) you should declare it in the client initialize process:
+
+```Ruby
+client = Redbooth::Client.new(session, retry: -> { |time|  YourFancyJob.enque_in(time, params) })
+```
+
 Collections
 ======
 
@@ -183,6 +200,47 @@ Delete a especific task
 
 ```Ruby
   client.task(:delete, id: 123)
+```
+
+Organizations
+=====
+
+Lists organizations in your visibility scope
+
+```Ruby
+  organization_collection = client.organization(:index)
+  organizations = organization_collection.all
+```
+
+You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:organizations,header:organizations-organization-list) )
+
+```Ruby
+  filtered_organizations = client.organization(:index, order: 'id-DESC',
+                                                       per_page: 50)
+```
+
+Fetch a especific organization
+
+```Ruby
+  organization = client.organization(:show, id: 123)
+```
+
+Create a organization
+
+```Ruby
+  organization = client.organization(:create, name: 'New Organization')
+```
+
+Update a especific organization
+
+```Ruby
+  organization = client.organization(:update, id: 123, name: 'new name')
+```
+
+Delete a especific organization
+
+```Ruby
+  client.organization(:delete, id: 123)
 ```
 
 License
