@@ -17,7 +17,7 @@ module Redbooth
   autoload :Task,           'redbooth/task'
   autoload :Organization,   'redbooth/organization'
   autoload :Person,         'redbooth/person'
-  autoload :Project,        'redbooth/organization'
+  autoload :Project,        'redbooth/project'
 
   module Operations
     autoload :Base,       'redbooth/operations/base'
