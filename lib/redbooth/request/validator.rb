@@ -40,7 +40,7 @@ module Redbooth
         when status >= 404
           fail NotFound
         when status == 202
-          throw :processing
+          fail Processing, response
         end
       end
 

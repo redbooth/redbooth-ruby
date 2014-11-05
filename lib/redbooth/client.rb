@@ -2,15 +2,16 @@ module Redbooth
   class Client
     RESOURCES = [:me, :user, :task, :organization]
 
-    attr_reader :session
+    attr_reader :session, :options
 
     # Creates an client object using the given Redbooth session.
     # existing account.
     #
     # @param [String] client object to use the redbooth api.
-    def initialize(session)
+    def initialize(session, options={})
       raise Redbooth::AuthenticationError unless session.valid?
       @session = session
+      @options = options
       self
     end
 
@@ -35,6 +36,7 @@ module Redbooth
       }
     end
 
+    protected
 
     # Executes block with the access token
     #
@@ -45,8 +47,23 @@ module Redbooth
     def perform!(resource_name, action, options = {})
       fail Redbooth::AuthenticationError unless session
       resource(resource_name).send(action, options_with_session(options))
+    rescue Processing => processing
+      delay = processing.response.data["retry_after"] || 10
+      retry_in(delay, resource_name, action, options)
     end
-    protected :perform!
+
+    # Retryes the request in the given time
+    # either calls the given proc options[:retry]
+    # or executes it in this thread
+    #
+    def retry_in(delay, *args)
+      if options[:retry]
+        options[:retry].call(delay)
+      else
+        sleep(delay)
+        perform!(*args)
+      end
+    end
 
     # Merge the given options with the session for use the api
     #
@@ -55,7 +72,6 @@ module Redbooth
     def options_with_session(options={})
       options.merge(session: @session)
     end
-    protected :options_with_session
 
     # Gest the api resource model class by his name
     #
@@ -64,7 +80,6 @@ module Redbooth
     def resource(name)
       eval('Redbooth::' + name.to_s.capitalize) rescue nil
     end
-    protected :resource
 
   end
 end

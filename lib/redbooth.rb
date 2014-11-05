@@ -46,6 +46,18 @@ module Redbooth
   class ObjectNotFound      < APIError; end
   class BadRequest     < APIError; end
 
+  # Signals. Usign errors as control flow
+  #
+  class RedboothSignal < StandardError; end
+  class Processing     < RedboothSignal
+    attr_accessor :response
+
+    def initialize(response, message='')
+      @response = response
+      super(message)
+    end
+  end
+
 
   # Gives configuration abilities
   # to setup api_key and api_secret

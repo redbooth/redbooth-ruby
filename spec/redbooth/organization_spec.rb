@@ -59,9 +59,10 @@ describe Redbooth::Organization, vcr: 'organization' do
 
   describe ".delete" do
     subject { client.organization(:delete, id: new_organization.id) }
+    before { allow_any_instance_of(Redbooth::Client).to receive(:sleep) }
 
     it "makes a new DELETE request using the correct API endpoint to delete a specific organization" do
-      expect(Redbooth).to receive(:request).with(:delete, nil, "organizations/#{new_organization.id}", {}, { session: session }).and_call_original
+      expect(Redbooth).to receive(:request).with(:delete, nil, "organizations/#{new_organization.id}", {}, { session: session }).twice.and_call_original
       subject
     end
   end
