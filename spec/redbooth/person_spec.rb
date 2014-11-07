@@ -49,16 +49,17 @@ describe Redbooth::Person, vcr: 'person' do
 
   describe ".create" do
     subject { new_person }
+    let(:response) { double(:response, data: {} )}
 
     it "makes a new POST request using the correct API endpoint to create a specific person" do
-      expect(Redbooth).to receive(:request).with(:post, nil, "#{endpoint_name}", create_params, { session: session })
+      expect(Redbooth).to receive(:request).with(:post, nil, "#{endpoint_name}", create_params, { session: session }).and_return(response)
       subject
     end
 
     context 'integration' do
       after { client.person(:delete, id: subject.id) }
 
-      it { expect(subject.user_id).to eql 2 }
+      it { expect(subject.user_id).to eql 3 }
     end
   end
 

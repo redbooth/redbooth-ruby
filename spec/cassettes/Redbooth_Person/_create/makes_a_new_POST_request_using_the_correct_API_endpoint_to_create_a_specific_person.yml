@@ -27,22 +27,22 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - '"7a5e7ae6ea5451d7a6944c282a103e6b"'
+      - '"b63cb7dd92d70783dbbd5c28f2997c4f"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b9bc81988b14c228c8b5c1f7f87297c4
+      - 6cbfca47b7af308dd418400c5c99f215
       X-Runtime:
-      - '0.212867'
+      - '1.441847'
       Connection:
       - close
       Server:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"type":"Person","created_at":1415372956,"updated_at":1415376692,"id":18,"user_id":3,"project_id":1,"source_user_id":null,"watch_new_task":false,"watch_new_conversation":false,"watch_new_page":false,"instant_notifications":false,"digest":4,"role":"participant"}'
+      string: '{"type":"Person","created_at":1415372956,"updated_at":1415372956,"id":18,"user_id":3,"project_id":1,"source_user_id":null,"watch_new_task":false,"watch_new_conversation":false,"watch_new_page":false,"instant_notifications":false,"digest":4,"role":"participant"}'
     http_version: 
-  recorded_at: Fri, 07 Nov 2014 16:11:32 GMT
+  recorded_at: Fri, 07 Nov 2014 15:09:17 GMT
 - request:
     method: delete
     uri: http://localhost:3000/api/3/people/18
@@ -68,9 +68,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 2f695d8af6f242725c3908ee1fdca055
+      - e1a3fcaa169f46c212f2abb9234f3b54
       X-Runtime:
-      - '0.141969'
+      - '0.236298'
       Connection:
       - close
       Server:
@@ -79,5 +79,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 07 Nov 2014 16:11:32 GMT
+  recorded_at: Fri, 07 Nov 2014 15:09:22 GMT
 recorded_with: VCR 2.9.3
