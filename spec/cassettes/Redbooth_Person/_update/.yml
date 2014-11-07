@@ -1,0 +1,163 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:3000/api/3/persons/2
+    body:
+      encoding: UTF-8
+      string: role=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '775'
+      X-Request-Id:
+      - f565000abe30746895befe2de6d6da34
+      X-Runtime:
+      - '0.145155'
+      Connection:
+      - keep-alive
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8" />
+          <title>Action Controller: Exception caught</title>
+          <style>
+            body { background-color: #fff; color: #333; }
+
+            body, p, ol, ul, td {
+              font-family: helvetica, verdana, arial, sans-serif;
+              font-size:   13px;
+              line-height: 18px;
+            }
+
+            pre {
+              background-color: #eee;
+              padding: 10px;
+              font-size: 11px;
+              white-space: pre-wrap;
+            }
+
+            a { color: #000; }
+            a:visited { color: #666; }
+            a:hover { color: #fff; background-color:#000; }
+          </style>
+        </head>
+        <body>
+
+        <h1>Routing Error</h1>
+        <p><pre>No route matches [PUT] &quot;/api/3/persons/2&quot;</pre></p>
+        <p>
+          Try running <code>rake routes</code> for more information on available routes.
+        </p>
+
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Thu, 06 Nov 2014 11:30:56 GMT
+- request:
+    method: put
+    uri: http://localhost:3000/api/3/people/2
+    body:
+      encoding: UTF-8
+      string: role=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: ''
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - dcdcc9c88fc079c821bd0a73d176bc2b
+      X-Runtime:
+      - '0.514250'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"Unprocessable Entity","errors":{"base":["A project
+        needs at least one administrator"]}}}'
+    http_version: 
+  recorded_at: Thu, 06 Nov 2014 11:32:51 GMT
+- request:
+    method: put
+    uri: http://localhost:3000/api/3/people/6
+    body:
+      encoding: UTF-8
+      string: role=admin
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"97ee67550d4a167636ea26af40d4d1cd"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f0082a68505a68aa6372520f6a516863
+      X-Runtime:
+      - '0.279611'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Person","created_at":1415262336,"updated_at":1415274473,"id":6,"user_id":2,"project_id":2,"source_user_id":null,"watch_new_task":false,"watch_new_conversation":false,"watch_new_page":false,"instant_notifications":false,"digest":4,"role":"admin"}'
+    http_version: 
+  recorded_at: Thu, 06 Nov 2014 11:47:53 GMT
+recorded_with: VCR 2.9.3

@@ -5,10 +5,11 @@ describe Redbooth::Person, vcr: 'person' do
 
   let(:create_params) do
     { project_id: 1,
-      user_id: 2 }
+      user_id: 3,
+      role: 'participant' }
   end
   let(:endpoint_name) { 'people' }
-  let(:new_person) { client.person(:create, create_person_params.merge(session: session)) }
+  let(:new_person) { client.person(:create, create_params.merge(session: session)) }
   let(:person) do
     client.person(:show, id: 1)
   end
@@ -17,8 +18,8 @@ describe Redbooth::Person, vcr: 'person' do
     subject { person }
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.user_id).to eql 2 }
-    it { expect(subject.role).to eql 2 }
+    it { expect(subject.user_id).to eql 1 }
+    it { expect(subject.role).to eql 'admin' }
   end
 
   describe ".show" do
@@ -30,31 +31,35 @@ describe Redbooth::Person, vcr: 'person' do
     end
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.user_id).to eql 2 }
-    it { expect(subject.role).to eql 2 }
+    it { expect(subject.user_id).to eql 1 }
+    it { expect(subject.role).to eql 'admin' }
   end
 
   describe ".update" do
-    subject { client.person(:update, id: 2, role: 1) }
+    subject { client.person(:update, id: 6, role: 'admin') }
 
     it "makes a new PUT request using the correct API endpoint to receive a specific person" do
-      expect(Redbooth).to receive(:request).with(:put, nil, "#{endpoint_name}/2", { name: 'new test name' }, { session: session }).and_call_original
+      expect(Redbooth).to receive(:request).with(:put, nil, "#{endpoint_name}/6", { role: 'admin' }, { session: session }).and_call_original
       subject
     end
 
-    it { expect(subject.role).to eql 1 }
-    it { expect(subject.id).to eql 2 }
+    it { expect(subject.role).to eql 'admin' }
+    it { expect(subject.id).to eql 6 }
   end
 
   describe ".create" do
     subject { new_person }
 
     it "makes a new POST request using the correct API endpoint to create a specific person" do
-      expect(Redbooth).to receive(:request).with(:post, nil, "#{endpoint_name}", create_params, { session: session }).and_call_original
+      expect(Redbooth).to receive(:request).with(:post, nil, "#{endpoint_name}", create_params, { session: session })
       subject
     end
 
-    it { expect(subject.user_id).to eql 2 }
+    context 'integration' do
+      after { client.person(:delete, id: subject.id) }
+
+      it { expect(subject.user_id).to eql 2 }
+    end
   end
 
   describe ".delete" do
