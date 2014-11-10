@@ -243,6 +243,47 @@ Delete a especific organization
   client.organization(:delete, id: 123)
 ```
 
+Projects
+=====
+
+Lists projects in your visibility scope
+
+```Ruby
+  project_collection = client.project(:index)
+  projects = project_collection.all
+```
+
+You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:projects,header:projects-project-list) )
+
+```Ruby
+  filtered_projects = client.project(:index, order: 'id-DESC',
+                                                       per_page: 50)
+```
+
+Fetch a especific project
+
+```Ruby
+  project = client.project(:show, id: 123)
+```
+
+Create a project
+
+```Ruby
+  project = client.project(:create, name: 'New Project')
+```
+
+Update a especific project
+
+```Ruby
+  project = client.project(:update, id: 123, name: 'new name')
+```
+
+Delete a especific project
+
+```Ruby
+  client.project(:delete, id: 123)
+```
+
 People
 =====
 
