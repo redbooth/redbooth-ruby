@@ -336,6 +336,57 @@ Delete a especific person
   client.person(:delete, id: 123)
 ```
 
+Memberships
+=====
+
+Memberships is the redbooth relation between organization and users containing the role information
+
+```
+|-------|         |------------|         |--------------|
+| User  |   ==>   | Membership |   ==>   | Organization |
+|-------|         |------------|         |--------------|
+                      \
+                    {role}
+```
+
+Lists Memberships in your visibility scope
+
+```Ruby
+  membership_collection = client.membership(:index)
+  memberships = membership_collection.all
+```
+
+You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:memberships,header:memberships-memberships-list) )
+
+```Ruby
+  filtered_memberships = client.membership(:index, order: 'id-DESC',
+                                                   per_page: 50)
+```
+
+Fetch a especific membership
+
+```Ruby
+  memberships = client.membership(:show, id: 123)
+```
+
+Create a membership
+
+```Ruby
+  membership = client.membership(:create, organization_id: 123, user_id: 123, role: 'participant')
+```
+
+Update a especific membership
+
+```Ruby
+  membership = client.membership(:update, id: 123, role: 'admin')
+```
+
+Delete a especific membership
+
+```Ruby
+  client.membership(:delete, id: 123)
+```
+
 Conversations
 =====
 
