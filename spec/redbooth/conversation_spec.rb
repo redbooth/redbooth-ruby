@@ -10,18 +10,17 @@ describe Redbooth::Conversation, vcr: 'conversations' do
   let(:new_record) { client.conversation(:create, create_params) }
   let(:endpoint) { 'conversations' }
   let(:conversation) do
-    client.show(session: session, id: 1)
+    client.conversation(:show, id: 1)
   end
 
   describe "#initialize" do
     subject { conversation }
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.name).to eql 'Register all EarthworksYoga TLDs' }
-    it { expect(subject.body).to eql 'The ships hung in the sky in much the same way that bricks don\'t.' }
+    it { expect(subject.name).to eql 'Project Welcome' }
     it { expect(subject.project_id).to eql 2 }
     it { expect(subject.user_id).to eql 1 }
-    it { expect(subject.is_private).to eql '2014-11-04' }
+    it { expect(subject.is_private).to eql false }
   end
 
   describe ".show" do
@@ -33,8 +32,7 @@ describe Redbooth::Conversation, vcr: 'conversations' do
     end
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.name).to eql 'Register all EarthworksYoga TLDs' }
-    it { expect(subject.body).to eql 'The ships hung in the sky in much the same way that bricks don\'t.' }
+    it { expect(subject.name).to eql 'Project Welcome' }
     it { expect(subject.project_id).to eql 2 }
   end
 
