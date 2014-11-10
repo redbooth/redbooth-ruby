@@ -8,7 +8,7 @@ describe Redbooth::Membership, vcr: 'membership' do
       user_id: 3,
       role: 'participant' }
   end
-  let(:endpoint_name) { 'people' }
+  let(:endpoint_name) { 'memberships' }
   let(:new_record) { client.membership(:create, create_params.merge(session: session)) }
   let(:membership) do
     client.membership(:show, id: 1)
@@ -67,7 +67,7 @@ describe Redbooth::Membership, vcr: 'membership' do
     subject { client.membership(:delete, id: new_record.id) }
 
     it "makes a new DELETE request using the correct API endpoint to delete a specific membership" do
-      expect(Redbooth).to receive(:request).with(:delete, nil, "#{endpoint_name}/#{new_membership.id}", {}, { session: session }).and_call_original
+      expect(Redbooth).to receive(:request).with(:delete, nil, "#{endpoint_name}/#{new_record.id}", {}, { session: session }).and_call_original
       subject
     end
   end

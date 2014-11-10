@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:3000/api/3/memberships/6
+    body:
+      encoding: UTF-8
+      string: role=admin
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"70f240df27035d463d6279313484441d"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2506ae29e13a868573a1c53f20801fbd
+      X-Runtime:
+      - '0.130428'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Membership","id":6,"user_id":1,"organization_id":2,"role":"admin"}'
+    http_version: 
+  recorded_at: Mon, 10 Nov 2014 12:40:12 GMT
+recorded_with: VCR 2.9.3
