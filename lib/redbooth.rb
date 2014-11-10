@@ -19,6 +19,7 @@ module Redbooth
   autoload :Person,         'redbooth/person'
   autoload :Project,        'redbooth/project'
   autoload :Conversation,        'redbooth/conversation'
+  autoload :Membership,     'redbooth/membership'
 
   module Operations
     autoload :Base,       'redbooth/operations/base'
