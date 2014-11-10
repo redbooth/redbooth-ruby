@@ -243,6 +243,58 @@ Delete a especific organization
   client.organization(:delete, id: 123)
 ```
 
+People
+=====
+
+People is the redbooth relation between projects and users containing the role
+information
+
+```
+|-------|         |--------|         |---------|
+| User  |   ==>   | Person |   ==>   | Project |
+|-------|         |--------|         |---------|
+                      \
+                    {role}
+```
+
+Lists People in your visibility scope
+
+```Ruby
+  people_collection = client.person(:index)
+  people = people_collection.all
+```
+
+You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:people,header:people-people-list) )
+
+```Ruby
+  filtered_people = client.person(:index, order: 'id-DESC',
+                                          per_page: 50)
+```
+
+Fetch a especific person
+
+```Ruby
+  people = client.person(:show, id: 123)
+```
+
+Create a person
+
+```Ruby
+  person = client.person(:create, project_id: 123, user_id: 123, role: 'participant')
+```
+
+Update a especific person
+
+```Ruby
+  person = client.person(:update, id: 123, role: 'admin')
+```
+
+Delete a especific person
+
+```Ruby
+  client.person(:delete, id: 123)
+```
+
 License
 =====
 

@@ -1,0 +1,294 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:3000/api/3/people/2
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"7ec9d1f5268bded26883b288f08fc9d7"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8d239cfc452f4c29cf3c68fe2f754872
+      X-Runtime:
+      - '0.955681'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Person","created_at":1415262336,"updated_at":1415274389,"id":2,"user_id":1,"project_id":2,"source_user_id":null,"watch_new_task":false,"watch_new_conversation":false,"watch_new_page":false,"instant_notifications":false,"digest":4,"role":"admin"}'
+    http_version: 
+  recorded_at: Thu, 06 Nov 2014 11:46:30 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/people/2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"7ec9d1f5268bded26883b288f08fc9d7"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3a874230c789f6d91916afca956a2b6a
+      X-Runtime:
+      - '0.241747'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Person","created_at":1415262336,"updated_at":1415274389,"id":2,"user_id":1,"project_id":2,"source_user_id":null,"watch_new_task":false,"watch_new_conversation":false,"watch_new_page":false,"instant_notifications":false,"digest":4,"role":"admin"}'
+    http_version: 
+  recorded_at: Thu, 06 Nov 2014 11:46:37 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/people/3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"5f163a9dc06b80679fa90d8c4428fceb"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ff335ab3d8dcbce0e4ff82646be345a4
+      X-Runtime:
+      - '0.169609'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Person","created_at":1415262336,"updated_at":1415262336,"id":3,"user_id":1,"project_id":3,"source_user_id":null,"watch_new_task":false,"watch_new_conversation":false,"watch_new_page":false,"instant_notifications":false,"digest":4,"role":"admin"}'
+    http_version: 
+  recorded_at: Thu, 06 Nov 2014 11:46:50 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/people/4
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"087d763b7721bdf95319a42f5331eea4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2125766e24ee48092c2dee48d8a67e7a
+      X-Runtime:
+      - '0.157351'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Person","created_at":1415262336,"updated_at":1415262336,"id":4,"user_id":1,"project_id":4,"source_user_id":null,"watch_new_task":false,"watch_new_conversation":false,"watch_new_page":false,"instant_notifications":false,"digest":4,"role":"admin"}'
+    http_version: 
+  recorded_at: Thu, 06 Nov 2014 11:46:58 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/people/5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"80a040ad536a49d139bb7ce09505028d"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9f317d56edad9210bde868af489bf78a
+      X-Runtime:
+      - '1.169524'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Person","created_at":1415262336,"updated_at":1415262336,"id":5,"user_id":1,"project_id":5,"source_user_id":null,"watch_new_task":false,"watch_new_conversation":false,"watch_new_page":false,"instant_notifications":false,"digest":4,"role":"admin"}'
+    http_version: 
+  recorded_at: Thu, 06 Nov 2014 11:47:21 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/people/6
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"0d0a14097feb927ae78920ea2e68276f"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 94af7fdc62b18d31d75402c1f7a35f22
+      X-Runtime:
+      - '0.172697'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Person","created_at":1415262336,"updated_at":1415262336,"id":6,"user_id":2,"project_id":2,"source_user_id":null,"watch_new_task":false,"watch_new_conversation":false,"watch_new_page":false,"instant_notifications":false,"digest":4,"role":"participant"}'
+    http_version: 
+  recorded_at: Thu, 06 Nov 2014 11:47:25 GMT
+- request:
+    method: put
+    uri: http://localhost:3000/api/3/people/6
+    body:
+      encoding: UTF-8
+      string: role=admin
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"b325de9b7aa5308f04477b2eaff6f99d"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c7fe3fbc89bf64736872574c8a0af433
+      X-Runtime:
+      - '0.197365'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Person","created_at":1415262336,"updated_at":1415274530,"id":6,"user_id":2,"project_id":2,"source_user_id":null,"watch_new_task":false,"watch_new_conversation":false,"watch_new_page":false,"instant_notifications":false,"digest":4,"role":"admin"}'
+    http_version: 
+  recorded_at: Thu, 06 Nov 2014 11:48:50 GMT
+recorded_with: VCR 2.9.3

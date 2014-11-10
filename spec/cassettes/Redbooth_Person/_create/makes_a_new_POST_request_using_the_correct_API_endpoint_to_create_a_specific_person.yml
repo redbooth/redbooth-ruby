@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/3/people
+    body:
+      encoding: UTF-8
+      string: project_id=1&role=participant&user_id=3
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"b63cb7dd92d70783dbbd5c28f2997c4f"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6cbfca47b7af308dd418400c5c99f215
+      X-Runtime:
+      - '1.441847'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Person","created_at":1415372956,"updated_at":1415372956,"id":18,"user_id":3,"project_id":1,"source_user_id":null,"watch_new_task":false,"watch_new_conversation":false,"watch_new_page":false,"instant_notifications":false,"digest":4,"role":"participant"}'
+    http_version: 
+  recorded_at: Fri, 07 Nov 2014 15:09:17 GMT
+- request:
+    method: delete
+    uri: http://localhost:3000/api/3/people/18
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - e1a3fcaa169f46c212f2abb9234f3b54
+      X-Runtime:
+      - '0.236298'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 07 Nov 2014 15:09:22 GMT
+recorded_with: VCR 2.9.3

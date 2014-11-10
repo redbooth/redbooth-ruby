@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/people/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"76a22e009ab3644d3f39b7ec99cf9af7"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e49bd526ecab7bbd076ff11a9fc3628d
+      X-Runtime:
+      - '0.170326'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Person","created_at":1415262332,"updated_at":1415262332,"id":1,"user_id":1,"project_id":1,"source_user_id":null,"watch_new_task":false,"watch_new_conversation":false,"watch_new_page":false,"instant_notifications":false,"digest":4,"role":"admin"}'
+    http_version: 
+  recorded_at: Thu, 06 Nov 2014 11:32:50 GMT
+recorded_with: VCR 2.9.3
