@@ -336,6 +336,42 @@ Delete a especific person
   client.person(:delete, id: 123)
 ```
 
+Conversations
+=====
+
+Lists conversations in your visibility scope
+
+```Ruby
+  conversation_collection = client.conversation(:index)
+  conversation = conversation_collection.all
+```
+
+You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:conversations,header:conversations-conversations-list) )
+
+```Ruby
+  filtered_conversations = client.conversation(:index, order: 'id-DESC',
+                                                       per_page: 50,
+                                                       project_id: 123)
+```
+
+Fetch a especific conversation
+
+```Ruby
+  conversation = client.conversation(:show, id: 123)
+```
+
+Update a especific conversation
+
+```Ruby
+  conversation = client.conversation(:update, id: 123, name: 'new name')
+```
+
+Delete a especific conversation
+
+```Ruby
+  client.conversation(:delete, id: 123)
+```
+
 License
 =====
 
