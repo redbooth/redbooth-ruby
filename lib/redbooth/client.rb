@@ -1,6 +1,6 @@
 module Redbooth
   class Client
-    RESOURCES = [:me, :user, :task, :organization, :person, :project]
+    RESOURCES = [:me, :user, :task, :organization, :person, :project, :conversation]
 
     attr_reader :session, :options
 
