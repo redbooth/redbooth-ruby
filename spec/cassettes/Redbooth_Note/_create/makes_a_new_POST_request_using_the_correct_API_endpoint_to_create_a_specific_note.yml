@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/3/notes
+    body:
+      encoding: UTF-8
+      string: content=bla+bla+bla&name=new+created+note&project_id=2
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"e48d0e9477d90e37b473ab868a35d459"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 83aefc5033b868f57244eeb0c857064b
+      X-Runtime:
+      - '0.707800'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Page","created_at":1415698830,"updated_at":1415698830,"id":4,"name":"new
+        created note","content":"bla bla bla","project_id":2,"position":2,"permalink":"new-created-note","is_private":false,"shared":false,"token":"98412f2883b2ed75","user_id":1,"updated_by_id":1,"metadata":{},"deleted":false}'
+    http_version: 
+  recorded_at: Tue, 11 Nov 2014 09:40:30 GMT
+recorded_with: VCR 2.9.3
