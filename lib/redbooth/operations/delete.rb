@@ -4,7 +4,8 @@ module Redbooth
       module ClassMethods
         # Deletes the given object
         #
-        # @param [Integer] id The id of the object that gets deleted
+        # @param attributes [Hash] hash of given attributes passed to the delete method
+        # @return [Boolean]
         def delete(attributes = {})
           id = attributes.delete(:id)
           response = Redbooth.request(:delete,
