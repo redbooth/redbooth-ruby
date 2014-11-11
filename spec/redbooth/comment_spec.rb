@@ -19,7 +19,7 @@ describe Redbooth::Comment, vcr: 'comments' do
     subject { comment }
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.body).to eql 'Hey guys. I’m looking forward to working with you all again. I’m also pleased to be working with my friend and yoga instructor Marco Fizzulo. This should be straightforward project and I can’t wait to see what we put together.' }
+    it { expect(subject.body).to eql "Hey guys. I\’m looking forward to working with you all again. I\’m also pleased to be working with my friend and yoga instructor Marco Fizzulo. This should be straightforward project and I can\’t wait to see what we put together." }
     it { expect(subject.project_id).to eql 2 }
     it { expect(subject.target_id).to eql 1 }
     it { expect(subject.target_type).to eql 'Conversation' }
@@ -35,7 +35,7 @@ describe Redbooth::Comment, vcr: 'comments' do
     end
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.body).to eql 'Hey guys. I’m looking forward to working with you all again. I’m also pleased to be working with my friend and yoga instructor Marco Fizzulo. This should be straightforward project and I can’t wait to see what we put together.' }
+    it { expect(subject.body).to eql "Hey guys. I\’m looking forward to working with you all again. I\’m also pleased to be working with my friend and yoga instructor Marco Fizzulo. This should be straightforward project and I can\’t wait to see what we put together." }
     it { expect(subject.project_id).to eql 2 }
   end
 
@@ -76,7 +76,7 @@ describe Redbooth::Comment, vcr: 'comments' do
   describe ".index" do
     subject { client.comment(:index, target_type: 'Task', target_id: 1) }
 
-    it "makes a new GET request using the correct API endpoint to receive conversations collection" do
+    it "makes a new GET request using the correct API endpoint to receive comments collection" do
       expect(Redbooth).to receive(:request).with(:get, nil, endpoint, {target_type: 'Task', target_id: 1}, { session: session }).and_call_original
       subject
     end
