@@ -18,9 +18,9 @@ describe Redbooth::Note, vcr: 'notes' do
     subject { note }
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.name).to eql 'Project Welcome' }
+    it { expect(subject.name).to eql 'Site content' }
     it { expect(subject.project_id).to eql 2 }
-    it { expect(subject.content).to eql '' }
+    it { expect(subject.permalink).to eql 'site-content' }
     it { expect(subject.is_private).to eql false }
   end
 
@@ -33,7 +33,7 @@ describe Redbooth::Note, vcr: 'notes' do
     end
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.name).to eql 'Project Welcome' }
+    it { expect(subject.name).to eql 'Site content' }
     it { expect(subject.project_id).to eql 2 }
   end
 

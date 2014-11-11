@@ -21,6 +21,8 @@ module RedboothRuby
   autoload :Conversation,   'redbooth-ruby/conversation'
   autoload :Membership,     'redbooth-ruby/membership'
   autoload :Comment,        'redbooth-ruby/comment'
+  autoload :Note,           'redbooth-ruby/note'
+
 
   module Operations
     autoload :Base,       'redbooth-ruby/operations/base'
