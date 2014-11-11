@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/conversations
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Mon, 10 Nov 2014 15:39:57 GMT
+      X-Redbooth-Updated-At:
+      - '1415633997718'
+      X-Redbooth-From-Cache:
+      - 'true'
+      Paginationlinks:
+      - <http://localhost:3000/api/3/conversations?page=1>; rel="last">
+      Paginationtotalpages:
+      - '1'
+      Paginationperpage:
+      - '30'
+      Paginationcurrentpage:
+      - '1'
+      Paginationtotalobjects:
+      - '9'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Request-Id:
+      - 595ecbf0dafe070d2014d0253825ccca
+      X-Runtime:
+      - '0.628029'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sidHlwZSI6IkNvbnZlcnNhdGlvbiIsImNyZWF0ZWRfYXQiOjE0MTU2MzM5
+        OTUsInVwZGF0ZWRfYXQiOjE0MTU2MzM5OTUsImlkIjo5LCJuYW1lIjoibmV3
+        IGNyZWF0ZWQgY29udmVyc2F0aW9uIiwicHJvamVjdF9pZCI6MiwidXNlcl9p
+        ZCI6MSwiY29tbWVudHNfY291bnQiOjAsImlzX3ByaXZhdGUiOmZhbHNlLCJs
+        YXN0X2FjdGl2aXR5X2lkIjpudWxsfSx7InR5cGUiOiJDb252ZXJzYXRpb24i
+        LCJjcmVhdGVkX2F0IjoxNDE1NjMzOTk1LCJ1cGRhdGVkX2F0IjoxNDE1NjMz
+        OTk1LCJpZCI6OCwibmFtZSI6Im5ldyBjcmVhdGVkIGNvbnZlcnNhdGlvbiIs
+        InByb2plY3RfaWQiOjIsInVzZXJfaWQiOjEsImNvbW1lbnRzX2NvdW50Ijow
+        LCJpc19wcml2YXRlIjpmYWxzZSwibGFzdF9hY3Rpdml0eV9pZCI6bnVsbH0s
+        eyJ0eXBlIjoiQ29udmVyc2F0aW9uIiwiY3JlYXRlZF9hdCI6MTQxNTYyMTIw
+        NCwidXBkYXRlZF9hdCI6MTQxNTYyOTYwNCwiaWQiOjcsIm5hbWUiOiJDb252
+        ZXJzYXRpb24gPHNjcmlwdD5hbGVydCgnQ09OJyk8L3NjcmlwdD4iLCJwcm9q
+        ZWN0X2lkIjo3LCJ1c2VyX2lkIjo3LCJjb21tZW50c19jb3VudCI6MywiaXNf
+        cHJpdmF0ZSI6ZmFsc2UsImxhc3RfYWN0aXZpdHlfaWQiOm51bGx9LHsidHlw
+        ZSI6IkNvbnZlcnNhdGlvbiIsImNyZWF0ZWRfYXQiOjE0MTU2MjgyNzAsInVw
+        ZGF0ZWRfYXQiOjE0MTU2Mjk2MDAsImlkIjo2LCJuYW1lIjoiWW9nYSDimaUi
+        LCJwcm9qZWN0X2lkIjoyLCJ1c2VyX2lkIjoyLCJjb21tZW50c19jb3VudCI6
+        MSwiaXNfcHJpdmF0ZSI6ZmFsc2UsImxhc3RfYWN0aXZpdHlfaWQiOm51bGx9
+        LHsidHlwZSI6IkNvbnZlcnNhdGlvbiIsImNyZWF0ZWRfYXQiOjE0MTU2MjM3
+        MTAsInVwZGF0ZWRfYXQiOjE0MTU2Mjk1OTQsImlkIjo1LCJuYW1lIjoiU2V0
+        aCBHb2RpbidzICdXaGF0IG1hdHRlcnMgbm93JyIsInByb2plY3RfaWQiOjIs
+        InVzZXJfaWQiOjMsImNvbW1lbnRzX2NvdW50Ijo2LCJpc19wcml2YXRlIjpm
+        YWxzZSwibGFzdF9hY3Rpdml0eV9pZCI6bnVsbH0seyJ0eXBlIjoiQ29udmVy
+        c2F0aW9uIiwiY3JlYXRlZF9hdCI6MTQxNTYyMzIzMCwidXBkYXRlZF9hdCI6
+        MTQxNTYyOTU5NCwiaWQiOjQsIm5hbWUiOiJIb3cgYWJvdXQgYSB0ZWFtIGx1
+        bmNoPyIsInByb2plY3RfaWQiOjIsInVzZXJfaWQiOjEsImNvbW1lbnRzX2Nv
+        dW50Ijo0LCJpc19wcml2YXRlIjpmYWxzZSwibGFzdF9hY3Rpdml0eV9pZCI6
+        bnVsbH0seyJ0eXBlIjoiQ29udmVyc2F0aW9uIiwiY3JlYXRlZF9hdCI6MTQx
+        NTYyMjk5MCwidXBkYXRlZF9hdCI6MTQxNTYyOTU5NCwiaWQiOjMsIm5hbWUi
+        OiJMaW5rcyB0byBvdGhlciBuaWNlIHlvZ2Egd2Vic2l0ZXMiLCJwcm9qZWN0
+        X2lkIjoyLCJ1c2VyX2lkIjozLCJjb21tZW50c19jb3VudCI6MiwiaXNfcHJp
+        dmF0ZSI6ZmFsc2UsImxhc3RfYWN0aXZpdHlfaWQiOm51bGx9LHsidHlwZSI6
+        IkNvbnZlcnNhdGlvbiIsImNyZWF0ZWRfYXQiOjE0MTU2MjIzOTAsInVwZGF0
+        ZWRfYXQiOjE0MTU2MzM5OTQsImlkIjoyLCJuYW1lIjoibmV3IHRlc3QgbmFt
+        ZSIsInByb2plY3RfaWQiOjIsInVzZXJfaWQiOjIsImNvbW1lbnRzX2NvdW50
+        Ijo1LCJpc19wcml2YXRlIjpmYWxzZSwibGFzdF9hY3Rpdml0eV9pZCI6bnVs
+        bH0seyJ0eXBlIjoiQ29udmVyc2F0aW9uIiwiY3JlYXRlZF9hdCI6MTQxNTYy
+        MjAzMCwidXBkYXRlZF9hdCI6MTQxNTYyOTU5MywiaWQiOjEsIm5hbWUiOiJQ
+        cm9qZWN0IFdlbGNvbWUiLCJwcm9qZWN0X2lkIjoyLCJ1c2VyX2lkIjoxLCJj
+        b21tZW50c19jb3VudCI6MywiaXNfcHJpdmF0ZSI6ZmFsc2UsImxhc3RfYWN0
+        aXZpdHlfaWQiOm51bGx9XQ==
+    http_version: 
+  recorded_at: Mon, 10 Nov 2014 15:39:58 GMT
+recorded_with: VCR 2.9.3

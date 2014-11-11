@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:3000/api/3/conversations/2
+    body:
+      encoding: UTF-8
+      string: name=new+test+name
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"eb0388b0395ff46f1b8dfae156798eaa"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5bf34a44ebcf7b527c8185e38b7daea5
+      X-Runtime:
+      - '7.976789'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Conversation","created_at":1415622390,"updated_at":1415633994,"id":2,"name":"new
+        test name","project_id":2,"user_id":2,"comments_count":5,"is_private":false,"last_activity_id":null}'
+    http_version: 
+  recorded_at: Mon, 10 Nov 2014 15:39:54 GMT
+recorded_with: VCR 2.9.3
