@@ -1,0 +1,129 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:3000/api/3/comments/2
+    body:
+      encoding: UTF-8
+      string: body=new+test+body
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 2cadd841d44cb3b1c5c76a4b7f0a023c
+      X-Runtime:
+      - '0.227899'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"You are not authorized to access this page."}}'
+    http_version: 
+  recorded_at: Tue, 11 Nov 2014 09:52:47 GMT
+- request:
+    method: put
+    uri: http://localhost:3000/api/3/comments/4
+    body:
+      encoding: UTF-8
+      string: body=new+test+body
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - beb6db59e30b92cd3de5496f5ef47ab2
+      X-Runtime:
+      - '0.398098'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"You are not authorized to access this page."}}'
+    http_version: 
+  recorded_at: Tue, 11 Nov 2014 09:56:00 GMT
+- request:
+    method: put
+    uri: http://localhost:3000/api/3/comments/24
+    body:
+      encoding: UTF-8
+      string: body=new+test+body
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"2aa922bf25a883cdb334ce7d32789f9c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 09f415dfc3603db6dbfaa1ee735721fd
+      X-Runtime:
+      - '0.519820'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Comment","created_at":1415629596,"updated_at":1415699844,"id":24,"body":"new
+        test body","body_html":"<p>new test body</p>","user_id":1,"project_id":2,"target_id":2,"target_type":"Task","minutes":null,"assigned_id":null,"previous_assigned_id":null,"due_on":null,"previous_due_on":null,"is_private":false,"previous_is_private":null,"urgent":false,"previous_urgent":false,"email_id":null,"time_tracking_on":"2014-11-10","status":"new","previous_status":"new"}'
+    http_version: 
+  recorded_at: Tue, 11 Nov 2014 09:57:25 GMT
+recorded_with: VCR 2.9.3

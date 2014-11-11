@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/comments/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"c66264eb8a9549e3b85036a161a72c09"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 25e5075ff110dea2ee3337aaf6ee043b
+      X-Runtime:
+      - '0.247010'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ0eXBlIjoiQ29tbWVudCIsImNyZWF0ZWRfYXQiOjE0MTU2MjIwMzAsInVw
+        ZGF0ZWRfYXQiOjE0MTU2Mjk1OTMsImlkIjoxLCJib2R5IjoiSGV5IGd1eXMu
+        IEnigJltIGxvb2tpbmcgZm9yd2FyZCB0byB3b3JraW5nIHdpdGggeW91IGFs
+        bCBhZ2Fpbi4gSeKAmW0gYWxzbyBwbGVhc2VkIHRvIGJlIHdvcmtpbmcgd2l0
+        aCBteSBmcmllbmQgYW5kIHlvZ2EgaW5zdHJ1Y3RvciBNYXJjbyBGaXp6dWxv
+        LiBUaGlzIHNob3VsZCBiZSBzdHJhaWdodGZvcndhcmQgcHJvamVjdCBhbmQg
+        SSBjYW7igJl0IHdhaXQgdG8gc2VlIHdoYXQgd2UgcHV0IHRvZ2V0aGVyLiIs
+        ImJvZHlfaHRtbCI6IjxwPkhleSBndXlzLiBJ4oCZbSBsb29raW5nIGZvcndh
+        cmQgdG8gd29ya2luZyB3aXRoIHlvdSBhbGwgYWdhaW4uIEnigJltIGFsc28g
+        cGxlYXNlZCB0byBiZSB3b3JraW5nIHdpdGggbXkgZnJpZW5kIGFuZCB5b2dh
+        IGluc3RydWN0b3IgTWFyY28gRml6enVsby4gVGhpcyBzaG91bGQgYmUgc3Ry
+        YWlnaHRmb3J3YXJkIHByb2plY3QgYW5kIEkgY2Fu4oCZdCB3YWl0IHRvIHNl
+        ZSB3aGF0IHdlIHB1dCB0b2dldGhlci48L3A+IiwidXNlcl9pZCI6MSwicHJv
+        amVjdF9pZCI6MiwidGFyZ2V0X2lkIjoxLCJ0YXJnZXRfdHlwZSI6IkNvbnZl
+        cnNhdGlvbiIsIm1pbnV0ZXMiOm51bGwsImFzc2lnbmVkX2lkIjpudWxsLCJw
+        cmV2aW91c19hc3NpZ25lZF9pZCI6bnVsbCwiZHVlX29uIjpudWxsLCJwcmV2
+        aW91c19kdWVfb24iOm51bGwsImlzX3ByaXZhdGUiOmZhbHNlLCJwcmV2aW91
+        c19pc19wcml2YXRlIjpudWxsLCJ1cmdlbnQiOmZhbHNlLCJwcmV2aW91c191
+        cmdlbnQiOmZhbHNlLCJlbWFpbF9pZCI6bnVsbCwidGltZV90cmFja2luZ19v
+        biI6IjIwMTQtMTEtMTAiLCJzdGF0dXMiOiJuZXciLCJwcmV2aW91c19zdGF0
+        dXMiOiJuZXcifQ==
+    http_version: 
+  recorded_at: Tue, 11 Nov 2014 09:52:47 GMT
+recorded_with: VCR 2.9.3
