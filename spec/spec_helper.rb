@@ -14,6 +14,7 @@ Dir[File.join(File.dirname(__FILE__), 'shared/**/*.rb')].each {|f| require f}
 
 # VCR cassette configuration
 VCR.configure do |config|
+  config.ignore_hosts 'codeclimate.com'
   config.cassette_library_dir     = 'spec/cassettes'
   config.hook_into                :webmock
   config.default_cassette_options = { record: :new_episodes }
