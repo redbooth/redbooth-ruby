@@ -1,14 +1,16 @@
 module RedboothRuby
   class Client
     RESOURCES = [:me, :user, :task, :organization, :person, :project,
-                 :conversation, :membership, :comment]
+                 :conversation, :membership, :comment, :note]
 
     attr_reader :session, :options
 
     # Creates an client object using the given Redbooth session.
     # existing account.
     #
-    # @param [String] client object to use the redbooth api.
+    # @param session [Redbooth::Session] redbooth session object with the correct authorization
+    # @param options [Hash] client options
+    # @option options [Proc] retry (the client will handle) Retry block to be executed when client hits an async endpoint
     def initialize(session, options={})
       raise RedboothRuby::AuthenticationError unless session.valid?
       @session = session
