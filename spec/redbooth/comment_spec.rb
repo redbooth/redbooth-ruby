@@ -1,3 +1,4 @@
+# Encoding: utf-8
 require "spec_helper"
 
 describe Redbooth::Comment, vcr: 'comments' do
