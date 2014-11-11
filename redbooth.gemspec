@@ -1,10 +1,11 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path('../lib', __FILE__)
-require 'redbooth/version'
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'redbooth-ruby/version'
 
 Gem::Specification.new do |s|
   s.name        = 'redbooth-ruby'
-  s.version     = Redbooth::VERSION
+  s.version     = RedboothRuby::VERSION
   s.authors     = ['Andres Bravo', 'Carlos Saura']
   s.email       = ['support@redbooth.com']
   s.homepage    = 'https://github.com/teambox/redbooth-ruby'
