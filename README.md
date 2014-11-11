@@ -22,14 +22,14 @@ First, you've to install the gem
 and require it
 
 ```Ruby
-  require 'redbooth'
+  require 'redbooth-ruby'
 ```
 
 and set up your app credentials
 
 
 ```Ruby
-  Redbooth.config do |configuration|
+  RedboothRuby.config do |configuration|
     configuration[:consumer_key] = '_your_consumer_key_'
     configuration[:consumer_secret] = '_your_consumer_secret_'
   end
@@ -58,10 +58,10 @@ Client
 Everything starts with the client, once you have the user credentials you should create a session and a client to start interaction with the API
 
 ```Ruby
-  session = Redbooth::Session.new(
+  session = RedboothRuby::Session.new(
     token: '_your_user_token_'
   )
-  client = Redbooth::Client.new(session)
+  client = RedboothRuby::Client.new(session)
 ```
 
 Now you can perform any user api call inside the clien wrapper
@@ -73,12 +73,12 @@ Now you can perform any user api call inside the clien wrapper
 If you have multiple applications or you just want to ve explicit use the application credentials inside the session creation
 
 ```Ruby
-  session = Redbooth::Session.new(
+  session = RedboothRuby::Session.new(
     token: '_your_user_token_',
     consumer_key: '_your_app_key_',
     consumer_secret: '_your_app_secret'
   )
-  client = Redbooth::Client.new(session)
+  client = RedboothRuby::Client.new(session)
 ```
 
 Async Endpoints
@@ -95,18 +95,18 @@ To know the real response of this request you just need to perform the same requ
 In the client we handle this work for you by waiting and repeating the request if needed, but if you want to perform the retry method in any other way (renqueue the job for instance) you should declare it in the client initialize process:
 
 ```Ruby
-client = Redbooth::Client.new(session, retry: -> { |time|  YourFancyJob.enque_in(time, params) })
+client = RedboothRuby::Client.new(session, retry: -> { |time|  YourFancyJob.enque_in(time, params) })
 ```
 
 Collections
 ======
 
-Index methods always return a `Redbooth::Request::Collection` object to handle the pagination and ordering.
+Index methods always return a `RedboothRuby::Request::Collection` object to handle the pagination and ordering.
 
 ie:
 ```Ruby
 tasks_collection = client.task(:index, project_id: 2)
-tasks_collection.class # => Redbooth::Request::Collection
+tasks_collection.class # => RedboothRuby::Request::Collection
 tasks = tasks_collection.all
 
 tasks_collection.current_page # => 1
@@ -115,10 +115,10 @@ tasks_collection.per_page # => 30
 tasks_collection.count # => 208
 
 next_page_collection = tasks_collection.next_page
-next_page_collection.class # => Redbooth::Request::Collection
+next_page_collection.class # => RedboothRuby::Request::Collection
 
 prev_page_collection = tasks_collection.prev_page
-prev_page_collection.class # => Redbooth::Request::Collection
+prev_page_collection.class # => RedboothRuby::Request::Collection
 ```
 
 ## Collection Methods
@@ -131,9 +131,9 @@ prev_page_collection.class # => Redbooth::Request::Collection
 
 * `total_pages`: `Integer` total pages number (nil if the resource is not paginated)
 
-* `next_page`: `Redbooth::Request::Collection` Collection object pointing to the next page (nil if the resource is not paginated or there is no next page)
+* `next_page`: `RedboothRuby::Request::Collection` Collection object pointing to the next page (nil if the resource is not paginated or there is no next page)
 
-* `prev_page`: `Redbooth::Request::Collection` Collection object pointing to the prev page (nil if the resource is not paginated or there is no next page)
+* `prev_page`: `RedboothRuby::Request::Collection` Collection object pointing to the prev page (nil if the resource is not paginated or there is no next page)
 
 ## Examples
 

@@ -3,7 +3,7 @@ CodeClimate::TestReporter.start
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-require 'redbooth'
+require 'redbooth-ruby'
 require 'rspec'
 require 'webmock/rspec'
 require 'pry'

@@ -8,11 +8,11 @@ shared_context 'authentication' do
       refresh_token: use_development? ? '_frank_refresh_token_' : ENV['REFRESH_TOKEN']
     }
   end
-  let(:client) { Redbooth::Client.new(session) }
-  let(:session) { Redbooth::Session.new(access_token) }
+  let(:client) { RedboothRuby::Client.new(session) }
+  let(:session) { RedboothRuby::Session.new(access_token) }
 
   before :each do
-    Redbooth.config do |configuration|
+    RedboothRuby.config do |configuration|
       if use_development?
         configuration[:api_base] = 'localhost:3000'
         configuration[:use_ssl] = false
