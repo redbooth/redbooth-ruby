@@ -343,7 +343,7 @@ Lists conversations in your visibility scope
 
 ```Ruby
   conversation_collection = client.conversation(:index)
-  conversation = conversation_collection.all
+  conversations = conversation_collection.all
 ```
 
 You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:conversations,header:conversations-conversations-list) )
