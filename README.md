@@ -160,7 +160,7 @@ List users in your network
   users = users_collection.all
 ```
 
-Fetch a especific user
+Fetch a specific user
 
 ```Ruby
   user = client.user(:show, id: 123)
@@ -184,19 +184,19 @@ You can also filter by multiple params (see docs [here](https://redbooth.com/api
                                         project_id: 123)
 ```
 
-Fetch a especific task
+Fetch a specific task
 
 ```Ruby
   task = client.task(:show, id: 123)
 ```
 
-Update a especific task
+Update a specific task
 
 ```Ruby
   task = client.task(:update, id: 123, name: 'new name')
 ```
 
-Delete a especific task
+Delete a specific task
 
 ```Ruby
   client.task(:delete, id: 123)
@@ -219,7 +219,7 @@ You can also filter by multiple params (see docs [here](https://redbooth.com/api
                                                        per_page: 50)
 ```
 
-Fetch a especific organization
+Fetch a specific organization
 
 ```Ruby
   organization = client.organization(:show, id: 123)
@@ -231,13 +231,13 @@ Create a organization
   organization = client.organization(:create, name: 'New Organization')
 ```
 
-Update a especific organization
+Update a specific organization
 
 ```Ruby
   organization = client.organization(:update, id: 123, name: 'new name')
 ```
 
-Delete a especific organization
+Delete a specific organization
 
 ```Ruby
   client.organization(:delete, id: 123)
@@ -260,7 +260,7 @@ You can also filter by multiple params (see docs [here](https://redbooth.com/api
                                                        per_page: 50)
 ```
 
-Fetch a especific project
+Fetch a specific project
 
 ```Ruby
   project = client.project(:show, id: 123)
@@ -272,13 +272,13 @@ Create a project
   project = client.project(:create, name: 'New Project')
 ```
 
-Update a especific project
+Update a specific project
 
 ```Ruby
   project = client.project(:update, id: 123, name: 'new name')
 ```
 
-Delete a especific project
+Delete a specific project
 
 ```Ruby
   client.project(:delete, id: 123)
@@ -312,7 +312,7 @@ You can also filter by multiple params (see docs [here](https://redbooth.com/api
                                           per_page: 50)
 ```
 
-Fetch a especific person
+Fetch a specific person
 
 ```Ruby
   people = client.person(:show, id: 123)
@@ -324,13 +324,13 @@ Create a person
   person = client.person(:create, project_id: 123, user_id: 123, role: 'participant')
 ```
 
-Update a especific person
+Update a specific person
 
 ```Ruby
   person = client.person(:update, id: 123, role: 'admin')
 ```
 
-Delete a especific person
+Delete a specific person
 
 ```Ruby
   client.person(:delete, id: 123)
@@ -363,7 +363,7 @@ You can also filter by multiple params (see docs [here](https://redbooth.com/api
                                                    per_page: 50)
 ```
 
-Fetch a especific membership
+Fetch a specific membership
 
 ```Ruby
   memberships = client.membership(:show, id: 123)
@@ -375,13 +375,13 @@ Create a membership
   membership = client.membership(:create, organization_id: 123, user_id: 123, role: 'participant')
 ```
 
-Update a especific membership
+Update a specific membership
 
 ```Ruby
   membership = client.membership(:update, id: 123, role: 'admin')
 ```
 
-Delete a especific membership
+Delete a specific membership
 
 ```Ruby
   client.membership(:delete, id: 123)
@@ -405,22 +405,65 @@ You can also filter by multiple params (see docs [here](https://redbooth.com/api
                                                        project_id: 123)
 ```
 
-Fetch a especific conversation
+Fetch a specific conversation
 
 ```Ruby
   conversation = client.conversation(:show, id: 123)
 ```
 
-Update a especific conversation
+Update a specific conversation
 
 ```Ruby
   conversation = client.conversation(:update, id: 123, name: 'new name')
 ```
 
-Delete a especific conversation
+Delete a specific conversation
 
 ```Ruby
   client.conversation(:delete, id: 123)
+```
+
+Comments
+=====
+
+Comments are the redbooth resources containing the `Task` and `Conversation` Content.
+It also contains the information about the task status changes, assigned changes and due_data changes.
+
+To consume the comments endpoint you allways need to provide a `target_type` and `target_id`. This is needed for performance reasons.
+
+Lists comments in your visibility scope
+
+```Ruby
+  comment_collection = client.comment(:index, target_type: 'task', target_id: 123)
+  comments = comment_collection.all
+```
+
+You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:comments,header:comments-commnets-list) )
+
+```Ruby
+  filtered_comments = client.comment(:index, order: 'id-DESC',
+                                             per_page: 50,
+                                             project_id: 123,
+                                             target_type: 'task',
+                                             target_id: 123)
+```
+
+Fetch a specific comment
+
+```Ruby
+  comment = client.comment(:show, id: 123)
+```
+
+Update a specific comment
+
+```Ruby
+  comment = client.comment(:update, id: 123, body: 'new body content')
+```
+
+Delete a specific comment
+
+```Ruby
+  client.comment(:delete, id: 123)
 ```
 
 License
