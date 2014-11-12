@@ -6,7 +6,8 @@ describe RedboothRuby::File, vcr: 'files' do
 
   let(:create_params) do
     { project_id: 2,
-      asset: Rack::Test::UploadedFile.new("#{File.dirname(__FILE__)}/../fixtures/hola.txt", 'text/txt') }
+      backend: 'redbooth',
+      asset: File.open("#{File.dirname(__FILE__)}/../fixtures/hola.txt") }
   end
   let(:new_record) { client.file(:create, create_params) }
   let(:endpoint) { 'files' }
@@ -51,9 +52,12 @@ describe RedboothRuby::File, vcr: 'files' do
 
   describe ".create" do
     subject { new_record }
+    let(:asset_params) {
+      { asset_attrs: { name: "hola.txt", local_path: "#{File.dirname(__FILE__)}/../fixtures/hola.txt"} }
+    }
 
     it "makes a new POST request using the correct API endpoint to create a specific file" do
-      expect(RedboothRuby).to receive(:request).with(:post, nil, endpoint, create_params, { session: session }).and_call_original
+      expect(RedboothRuby).to receive(:request).with(:post, nil, endpoint, create_params.merge(asset_params) , { session: session }).and_call_original
       subject
     end
 

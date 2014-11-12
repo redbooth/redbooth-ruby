@@ -18,16 +18,22 @@ module RedboothRuby
           ::File.open(body_file_attrs[:local_path]) do |file|
             req = Net::HTTP::Post::Multipart.new(
                 api_url,
-               'file' => UploadIO.new(file,
-                                      'application/octet-stream',
-                                      body_file_attrs[:name]
-                                     )
+                body_hash.merge(
+                 'asset' => UploadIO.new(file,
+                                         'application/octet-stream',
+                                          body_file_attrs[:name]
+                                        )
+                )
             )
-            access_token.sign! req
+            req['Authorization'] = "Bearer #{access_token.token}"
+            # access_token.sign! req
             if RedboothRuby.configuration[:use_ssl]
-              http = Net::HTTP.new('redbooth.com' , Net::HTTP.https_default_port)
+              http = Net::HTTP.new(RedboothRuby.configuration[:api_base] , Net::HTTP.https_default_port)
               http.verify_mode = OpenSSL::SSL::VERIFY_NONE
               http.use_ssl = RedboothRuby.configuration[:use_ssl]
+            else
+              domain, port = RedboothRuby.configuration[:api_base].split(':')
+              http = Net::HTTP.new(domain, port || Net::HTTP.http_default_port)
             end
             http.start do |inner_http|
               inner_http.request(req)
@@ -66,7 +72,7 @@ module RedboothRuby
       end
 
       def body_file_attrs
-        body_hash[:file_attrs] || {}
+        body_hash[:asset_attrs] || {}
       end
 
       # Body params url encoded
@@ -79,7 +85,7 @@ module RedboothRuby
 
       def use_body_file?
         return false if use_url_params?
-        body_hash.key?(:file)
+        body_hash.key?(:asset)
       end
 
       def use_url_params?

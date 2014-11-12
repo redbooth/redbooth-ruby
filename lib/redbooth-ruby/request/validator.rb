@@ -15,9 +15,7 @@ module RedboothRuby
       # return [RedboothRuby::Request::Response]
       def validated_response_for(incoming_response)
         self.raw_response = incoming_response
-        @response = RedboothRuby::Request::Response.new(headers: raw_response.headers,
-                                                        body: raw_response.body,
-                                                        status: raw_response.status.to_i)
+        @response = response_from_raw
         verify_response_code
         info.data = response.data
         validate_response_data
@@ -30,7 +28,7 @@ module RedboothRuby
       # and message
       #
       def verify_response_code
-        status = raw_response.status.to_i
+        status = response.status
         case
         when status == 401
           verify_authentication_header
@@ -79,6 +77,36 @@ module RedboothRuby
                   APIError.new(message)
                 end
         fail error
+      end
+
+      # Builds response object from raw received response
+      #
+      # @return [RedboothRuby::Request::Response]
+      def response_from_raw
+        case raw_response
+        when Net::HTTPResponse
+          response_from_http
+        else
+          response_from_rest_client
+        end
+      end
+
+      # Builds response object form RestClient::Response object
+      #
+      # @return [RedboothRuby::Request::Response]
+      def response_from_rest_client
+        RedboothRuby::Request::Response.new(headers: raw_response.headers,
+                                            body: raw_response.body,
+                                            status: raw_response.status.to_i)
+      end
+
+      # Builds response object form Http::Response object
+      #
+      # @return [RedboothRuby::Request::Response]
+      def response_from_http
+        RedboothRuby::Request::Response.new(headers: raw_response.to_hash,
+                                            body: raw_response.body,
+                                            status: raw_response.code.to_i)
       end
     end
   end
