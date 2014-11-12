@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:3000/api/3/notes/2
+    body:
+      encoding: UTF-8
+      string: name=new+test+name
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"ab726eb50431394387a8690c0ac94e24"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 76b5575533b3fdbaac6c7e16a4fec202
+      X-Runtime:
+      - '0.632181'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ0eXBlIjoiUGFnZSIsImNyZWF0ZWRfYXQiOjE0MTU2MjY4MzAsInVwZGF0
+        ZWRfYXQiOjE0MTU2OTg4MjksImlkIjoyLCJuYW1lIjoibmV3IHRlc3QgbmFt
+        ZSIsImNvbnRlbnQiOiIgICAgICA8aDE+VG9tJ3MgYmlvPC9oMT5cbiAgICAg
+        IDxwPlRvbWFzIGhhcyBiZWVuIGJ1aWxkaW5nIHdlYnNpdGVzIHNpbmNlIDE5
+        OTEsIHdoZW4gaGUgYW5kIEFsIEdvcmUgaW52ZW50ZWQgdGhlIGludGVybmV0
+        IHRvZ2V0aGVyLiBTaW5jZSB0aGVuLCBoZeKAmXMgYmVlbiBpbnZvbHZlZCB3
+        aXRoIHRoZSBkZXZlbG9wbWVudCBvZiB3ZWJzaXRlcyBhbmQgbWljcm9zaXRl
+        cyBmb3Igc3VjaCBjb25nbG9tZXJhdGVzIGFzIE5pa2UsIHRoZSBOb3J0aCBG
+        YWNlLCBDYWJlbGHigJlzLCBWaXNhLCBhbmQgVG95c+KAmVLigJlVcy4gSW4g
+        aGlzIGZyZWUgdGltZSwgVG9tYXMgZW5qb3lzIHRoZSBtdXNpYyBvZiB0aGUg
+        S2lua3MgYW5kIHRoZSBiZWVycyBvZiBCcm9va2x5biBCcmV3ZXJ5LjwvcD5c
+        biAgICAgIDxoMT5Db3JyaW5hJ3MgYmlvPC9oMT5cbiAgICAgIDxwPkNvcnJp
+        bmEgaXMgYSBzZWxmLXByb2NsYWltZWQgZGVzaWduIGRvcmsuIEFmdGVyIGZp
+        bmlzaGluZyBjdW0gbGF1ZGUgZnJvbSBSSVNEIGluIDIwMDAsIHNoZSB3ZW50
+        IG9uIHRvIGdldCBhIE1GQSBhdCB0aGUgVGlzY2ggU2Nob29sIGluIE5ldyB5
+        b3JrIENpdHkuIEFzaWRlIGZyb20gaGVyIGdyYXBoaWMgZGVzaWduIHdvcmsg
+        LCBDb3JyaW5hIHRlYWNoZXMgdHdvIGNsYXNzZXMgYXQgdGhlIENhbGlmb3Ju
+        aWEgQ29sbGVnZSBvZiBBcnRzIGFuZCBDcmFmdHMgaW4gT2FrbGFuZCwgQ2Fs
+        aWZvcm5pYS4gQ29ycmluYSBsb3ZlcyBPYWtsYW5kIGFuZCBsaXZlcyB3aXRo
+        IGhlciB0d28gY2F0cy4gV2hlbiBzaGXigJlzIG5vdCBhdCBoZXIgZGVzayBp
+        biBQaG90b3Nob3AsIHNoZeKAmXMgcnVubmluZyBhcm91bmQgTGFrZSBNZXJy
+        aXR0IGFuZCBlbmpveWluZyB5b2dhIGNsYXNzZXMgYXQgRWFydGh3b3JrcyBZ
+        b2dhLjwvcD5cbiIsInByb2plY3RfaWQiOjIsInBvc2l0aW9uIjoxLCJwZXJt
+        YWxpbmsiOiJzdGFmZi1iaW9zIiwiaXNfcHJpdmF0ZSI6ZmFsc2UsInNoYXJl
+        ZCI6ZmFsc2UsInRva2VuIjoiYjRiODk5NDFmZDRhNmQ5OSIsInVzZXJfaWQi
+        OjEsInVwZGF0ZWRfYnlfaWQiOjEsIm1ldGFkYXRhIjp7fSwiZGVsZXRlZCI6
+        ZmFsc2V9
+    http_version: 
+  recorded_at: Tue, 11 Nov 2014 09:40:29 GMT
+recorded_with: VCR 2.9.3

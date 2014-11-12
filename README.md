@@ -466,6 +466,42 @@ Delete a specific comment
   client.comment(:delete, id: 123)
 ```
 
+Notes
+=====
+
+Lists notes in your visibility scope
+
+```Ruby
+  notes_collection = client.note(:index)
+  notes = notes_collection.all
+```
+
+You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:notes,header:notes-notes-list) )
+
+```Ruby
+  filtered_notes = client.note(:index, order: 'id-DESC',
+                                       per_page: 50,
+                                       project_id: 123)
+```
+
+Fetch a specific note
+
+```Ruby
+  note = client.note(:show, id: 123)
+```
+
+Update a specific note
+
+```Ruby
+  note = client.note(:update, id: 123, name: 'new name')
+```
+
+Delete a specific note
+
+```Ruby
+  client.note(:delete, id: 123)
+```
+
 License
 =====
 

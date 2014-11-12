@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/3/notes
+    body:
+      encoding: UTF-8
+      string: content=bla+bla+bla&name=new+created+note&project_id=2
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"0794b6fcf72f51e20efea6150662be36"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fb39a80aee4e0df53645c24c73c88d07
+      X-Runtime:
+      - '0.747408'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Page","created_at":1415698831,"updated_at":1415698831,"id":5,"name":"new
+        created note","content":"bla bla bla","project_id":2,"position":3,"permalink":"new-created-note-pjpmd","is_private":false,"shared":false,"token":"8a6e62987080c712","user_id":1,"updated_by_id":1,"metadata":{},"deleted":false}'
+    http_version: 
+  recorded_at: Tue, 11 Nov 2014 09:40:31 GMT
+recorded_with: VCR 2.9.3
