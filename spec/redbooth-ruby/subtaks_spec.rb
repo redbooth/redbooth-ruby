@@ -18,10 +18,9 @@ describe RedboothRuby::Subtask, vcr: 'subtasks' do
     subject { subtask }
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.name).to eql 'Site content' }
-    it { expect(subject.project_id).to eql 2 }
-    it { expect(subject.permalink).to eql 'site-content' }
-    it { expect(subject.is_private).to eql false }
+    it { expect(subject.name).to eql 'Perrea, perrea' }
+    it { expect(subject.task_id).to eql 1 }
+    it { expect(subject.resolved).to eql true }
   end
 
   describe ".show" do
@@ -33,8 +32,8 @@ describe RedboothRuby::Subtask, vcr: 'subtasks' do
     end
 
     it { expect(subject.id).to eql 1 }
-    it { expect(subject.name).to eql 'Site content' }
-    it { expect(subject.project_id).to eql 2 }
+    it { expect(subject.name).to eql 'Perrea, perrea' }
+    it { expect(subject.task_id).to eql 1 }
   end
 
   describe ".update" do
@@ -58,8 +57,8 @@ describe RedboothRuby::Subtask, vcr: 'subtasks' do
     end
 
     it { expect(subject.name).to eql 'new created subtask' }
-    it { expect(subject.project_id).to eql 2 }
-    it { expect(subject.user_id).to eql 1 }
+    it { expect(subject.task_id).to eql 2 }
+    it { expect(subject.resolved).to eql false }
   end
 
   describe ".delete" do
@@ -72,10 +71,10 @@ describe RedboothRuby::Subtask, vcr: 'subtasks' do
   end
 
   describe ".index" do
-    subject { client.subtask(:index) }
+    subject { client.subtask(:index, task_id: 2) }
 
     it "makes a new GET request using the correct API endpoint to receive subtasks collection" do
-      expect(RedboothRuby).to receive(:request).with(:get, nil, endpoint, {}, { session: session }).and_call_original
+      expect(RedboothRuby).to receive(:request).with(:get, nil, endpoint, { task_id: 2 }, { session: session }).and_call_original
       subject
     end
 

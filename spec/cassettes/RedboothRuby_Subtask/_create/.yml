@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/3/subtasks
+    body:
+      encoding: UTF-8
+      string: name=new+created+subtask&resolved=false&task_id=2
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"937caa657ffab3c71a964228558df2f1"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b6a6e49c2819e81a24006c1fb4fc24fc
+      X-Runtime:
+      - '0.505141'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"created_at":1415789070,"updated_at":1415789070,"type":"Subtask","id":51,"name":"new
+        created subtask","resolved":false,"row_order":4194304,"task_id":2}'
+    http_version: 
+  recorded_at: Wed, 12 Nov 2014 10:44:30 GMT
+recorded_with: VCR 2.9.3

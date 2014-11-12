@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/subtasks
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - f2c38da08c2c0420b4c6690b8793f836
+      X-Runtime:
+      - '0.422498'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"Bad Request","errors":{"task_id":["can''t be blank"]}}}'
+    http_version: 
+  recorded_at: Wed, 12 Nov 2014 10:44:32 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/subtasks?task_id=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 12 Nov 2014 10:44:54 GMT
+      Paginationlinks:
+      - <http://localhost:3000/api/3/subtasks?page=1&task_id=2>; rel="last">
+      Paginationtotalpages:
+      - '1'
+      Paginationperpage:
+      - '30'
+      Paginationcurrentpage:
+      - '1'
+      Paginationtotalobjects:
+      - '2'
+      X-Redbooth-Updated-At:
+      - '1415789094084'
+      X-Redbooth-From-Cache:
+      - 'false'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Request-Id:
+      - 8b2c870c7ee5cab83d4ef09dc8b00ead
+      X-Runtime:
+      - '0.236204'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '[{"created_at":1415789070,"updated_at":1415789070,"type":"Subtask","id":51,"name":"new
+        created subtask","resolved":false,"row_order":4194304,"task_id":2},{"created_at":1415789070,"updated_at":1415789070,"type":"Subtask","id":50,"name":"new
+        created subtask","resolved":false,"row_order":0,"task_id":2}]'
+    http_version: 
+  recorded_at: Wed, 12 Nov 2014 10:44:54 GMT
+recorded_with: VCR 2.9.3
