@@ -22,6 +22,7 @@ module RedboothRuby
   autoload :Membership,     'redbooth-ruby/membership'
   autoload :Comment,        'redbooth-ruby/comment'
   autoload :Note,           'redbooth-ruby/note'
+  autoload :Subtask,        'redbooth-ruby/subtask'
 
 
   module Operations
