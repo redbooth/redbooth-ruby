@@ -1,10 +1,10 @@
-module Redbooth
+module RedboothRuby
   class Comment < Base
-    include Redbooth::Operations::Index
-    include Redbooth::Operations::Create
-    include Redbooth::Operations::Update
-    include Redbooth::Operations::Show
-    include Redbooth::Operations::Delete
+    include RedboothRuby::Operations::Index
+    include RedboothRuby::Operations::Create
+    include RedboothRuby::Operations::Update
+    include RedboothRuby::Operations::Show
+    include RedboothRuby::Operations::Delete
 
     attr_accessor :id,
                   :body,

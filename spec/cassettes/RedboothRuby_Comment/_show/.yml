@@ -29,9 +29,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b6ddda16e323bc69af90cd06543ceb41
+      - d4f78a3eca43452f7a1cb38db05900f8
       X-Runtime:
-      - '0.361746'
+      - '0.221869'
       Connection:
       - close
       Server:
@@ -61,5 +61,5 @@ http_interactions:
         biI6IjIwMTQtMTEtMTAiLCJzdGF0dXMiOiJuZXciLCJwcmV2aW91c19zdGF0
         dXMiOiJuZXcifQ==
     http_version: 
-  recorded_at: Tue, 11 Nov 2014 09:52:46 GMT
+  recorded_at: Wed, 12 Nov 2014 10:06:28 GMT
 recorded_with: VCR 2.9.3

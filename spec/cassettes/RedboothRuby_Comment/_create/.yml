@@ -27,21 +27,21 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - '"bd8e45894fe390ad8e426b036c5bd820"'
+      - '"f1dfccb97da68343c6f234783dbf6a3a"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 75dc3138c9b689c0a7351e627f9854e8
+      - b83fbca8ecd7d5d8c423a006e62e7b70
       X-Runtime:
-      - '0.552120'
+      - '0.732332'
       Connection:
       - close
       Server:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"type":"Comment","created_at":1415699568,"updated_at":1415699568,"id":83,"body":"new
-        created comment","body_html":"<p>new created comment</p>","user_id":1,"project_id":2,"target_id":2,"target_type":"Conversation","minutes":null,"assigned_id":null,"previous_assigned_id":null,"due_on":null,"previous_due_on":null,"is_private":false,"previous_is_private":null,"urgent":false,"previous_urgent":false,"email_id":null,"time_tracking_on":"2014-11-11","status":"new","previous_status":"new"}'
+      string: '{"type":"Comment","created_at":1415786791,"updated_at":1415786791,"id":86,"body":"new
+        created comment","body_html":"<p>new created comment</p>","user_id":1,"project_id":2,"target_id":2,"target_type":"Conversation","minutes":null,"assigned_id":null,"previous_assigned_id":null,"due_on":null,"previous_due_on":null,"is_private":false,"previous_is_private":null,"urgent":false,"previous_urgent":false,"email_id":null,"time_tracking_on":"2014-11-12","status":"new","previous_status":"new"}'
     http_version: 
-  recorded_at: Tue, 11 Nov 2014 09:52:48 GMT
+  recorded_at: Wed, 12 Nov 2014 10:06:31 GMT
 recorded_with: VCR 2.9.3

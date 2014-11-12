@@ -27,21 +27,21 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - '"07d60a8edf461a1556f1363f539eb70e"'
+      - '"e6e472aaa91286393142ec131b49e319"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 1c143195b0be9f1db31f527a358183a3
+      - 29b89ced2d9e87aedd0748cfc2105d91
       X-Runtime:
-      - '0.343174'
+      - '0.883452'
       Connection:
       - close
       Server:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"type":"Comment","created_at":1415629596,"updated_at":1415699876,"id":24,"body":"new
+      string: '{"type":"Comment","created_at":1415629596,"updated_at":1415786789,"id":24,"body":"new
         test body","body_html":"<p>new test body</p>","user_id":1,"project_id":2,"target_id":2,"target_type":"Task","minutes":null,"assigned_id":null,"previous_assigned_id":null,"due_on":null,"previous_due_on":null,"is_private":false,"previous_is_private":null,"urgent":false,"previous_urgent":false,"email_id":null,"time_tracking_on":"2014-11-10","status":"new","previous_status":"new"}'
     http_version: 
-  recorded_at: Tue, 11 Nov 2014 09:57:56 GMT
+  recorded_at: Wed, 12 Nov 2014 10:06:29 GMT
 recorded_with: VCR 2.9.3

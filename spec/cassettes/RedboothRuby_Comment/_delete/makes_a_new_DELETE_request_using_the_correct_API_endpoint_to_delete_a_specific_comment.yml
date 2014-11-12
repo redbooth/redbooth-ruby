@@ -27,26 +27,26 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - '"f6f076e6bdfe16c669963d905786e774"'
+      - '"74307e10a17f11fc1839857eeb0b20a5"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - a65b25481d759150e8844a5678cfb463
+      - a8d574d5c3b47ff1a837714b4d815e7d
       X-Runtime:
-      - '0.374487'
+      - '0.738731'
       Connection:
       - close
       Server:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"type":"Comment","created_at":1415699569,"updated_at":1415699569,"id":84,"body":"new
-        created comment","body_html":"<p>new created comment</p>","user_id":1,"project_id":2,"target_id":2,"target_type":"Conversation","minutes":null,"assigned_id":null,"previous_assigned_id":null,"due_on":null,"previous_due_on":null,"is_private":false,"previous_is_private":null,"urgent":false,"previous_urgent":false,"email_id":null,"time_tracking_on":"2014-11-11","status":"new","previous_status":"new"}'
+      string: '{"type":"Comment","created_at":1415786791,"updated_at":1415786791,"id":87,"body":"new
+        created comment","body_html":"<p>new created comment</p>","user_id":1,"project_id":2,"target_id":2,"target_type":"Conversation","minutes":null,"assigned_id":null,"previous_assigned_id":null,"due_on":null,"previous_due_on":null,"is_private":false,"previous_is_private":null,"urgent":false,"previous_urgent":false,"email_id":null,"time_tracking_on":"2014-11-12","status":"new","previous_status":"new"}'
     http_version: 
-  recorded_at: Tue, 11 Nov 2014 09:52:49 GMT
+  recorded_at: Wed, 12 Nov 2014 10:06:31 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/api/3/comments/84
+    uri: http://localhost:3000/api/3/comments/87
     body:
       encoding: US-ASCII
       string: ''
@@ -69,9 +69,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - b8f4be32d65cb4be0d236563a08d36ad
+      - 9b8d0244bac9d5ee56c0fe5e6b6d22fe
       X-Runtime:
-      - '0.241526'
+      - '0.284176'
       Connection:
       - close
       Server:
@@ -80,5 +80,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 11 Nov 2014 09:52:49 GMT
+  recorded_at: Wed, 12 Nov 2014 10:06:32 GMT
 recorded_with: VCR 2.9.3

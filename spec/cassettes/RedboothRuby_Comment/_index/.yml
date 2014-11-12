@@ -21,7 +21,11 @@ http_interactions:
       message: OK
     headers:
       Last-Modified:
-      - Tue, 11 Nov 2014 10:16:56 GMT
+      - Wed, 12 Nov 2014 10:06:32 GMT
+      X-Redbooth-Updated-At:
+      - '1415786792491'
+      X-Redbooth-From-Cache:
+      - 'true'
       Paginationlinks:
       - <http://localhost:3000/api/3/comments?page=1&target_id=1&target_type=Task>;
         rel="last">
@@ -33,10 +37,6 @@ http_interactions:
       - '1'
       Paginationtotalobjects:
       - '2'
-      X-Redbooth-Updated-At:
-      - '1415701016640'
-      X-Redbooth-From-Cache:
-      - 'false'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
@@ -44,9 +44,9 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Request-Id:
-      - 04a70ca1da749ce7d05a0d5b78b798e8
+      - d5b1e8414e2a9ec0020ab4cab88c4c09
       X-Runtime:
-      - '0.538421'
+      - '0.567275'
       Connection:
       - close
       Server:
@@ -90,5 +90,5 @@ http_interactions:
         ZV90cmFja2luZ19vbiI6IjIwMTQtMTEtMTAiLCJzdGF0dXMiOiJvcGVuIiwi
         cHJldmlvdXNfc3RhdHVzIjoibmV3In1d
     http_version: 
-  recorded_at: Tue, 11 Nov 2014 10:16:56 GMT
+  recorded_at: Wed, 12 Nov 2014 10:06:33 GMT
 recorded_with: VCR 2.9.3
