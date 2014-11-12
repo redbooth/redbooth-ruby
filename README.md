@@ -502,6 +502,44 @@ Delete a specific note
   client.note(:delete, id: 123)
 ```
 
+Subtasks
+=====
+
+Subtasks are little sentences under a task that could de resolved or not.
+
+Lists subtasks in your visibility scope. Needs a task_id
+
+```Ruby
+  subtask_collection = client.subtask(:index, task_id: 123)
+  subtasks = subtask_collection.all
+```
+
+You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:subtasks,header:subtasks-subtasks-list) )
+
+```Ruby
+  filtered_subtasks = client.subtask(:index, task_id: 123,
+                                             order: 'id-DESC',
+                                             per_page: 50)
+```
+
+Fetch a specific subtask
+
+```Ruby
+  subtask = client.subtask(:show, id: 123)
+```
+
+Update a specific subtask
+
+```Ruby
+  subtask = client.subtask(:update, id: 123, name: 'new name')
+```
+
+Delete a specific subtask
+
+```Ruby
+  client.subtask(:delete, id: 123)
+```
+
 License
 =====
 
