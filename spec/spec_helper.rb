@@ -8,6 +8,7 @@ require 'rspec'
 require 'webmock/rspec'
 require 'pry'
 require 'vcr'
+require 'rack/test'
 
 # Requires support files
 Dir[File.join(File.dirname(__FILE__), 'shared/**/*.rb')].each {|f| require f}
@@ -22,5 +23,6 @@ VCR.configure do |config|
 end
 
 RSpec.configure do |config|
+  config.include Rack::Test::Methods
   config.extend VCR::RSpec::Macros
 end

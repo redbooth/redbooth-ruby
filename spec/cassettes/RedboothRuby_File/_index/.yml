@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/files?project_id=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 12 Nov 2014 12:16:35 GMT
+      X-Redbooth-Updated-At:
+      - '1415794595910'
+      X-Redbooth-From-Cache:
+      - 'true'
+      Paginationlinks:
+      - <http://localhost:3000/api/3/files?page=1&project_id=1>; rel="last">
+      Paginationtotalpages:
+      - '1'
+      Paginationperpage:
+      - '30'
+      Paginationcurrentpage:
+      - '1'
+      Paginationtotalobjects:
+      - '0'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Request-Id:
+      - f737ca30f9fdb5a39814f059cfcd658a
+      X-Runtime:
+      - '0.097873'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '[]'
+    http_version: 
+  recorded_at: Wed, 12 Nov 2014 12:16:36 GMT
+recorded_with: VCR 2.9.3

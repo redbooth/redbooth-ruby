@@ -1,0 +1,147 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/3/files
+    body:
+      encoding: UTF-8
+      string: asset=%23%3CRack%3A%3ATest%3A%3AUploadedFile%3A0x007f81de8347c8%3E&project_id=2
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Content-Type:
+      - text/plain; charset=utf-8
+      X-Request-Id:
+      - 127fbc14cc7294f37b24185e3973beab
+      X-Runtime:
+      - '0.091099'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: "NoMethodError at /api/3/files\n=============================\n\n> undefined
+        method `asset=' for #<FileItem:0x007fb4056b7e00>\n\napp/services/file_connector.rb,
+        line 235\n----------------------------------------\n\n``` ruby\n  230     #
+        @param [Hash] attrs\n  231     #\n  232     # @return [ActiveRecord::Base]\n
+        \ 233     def set_resource_atttribute_accessors(instance, attrs)\n  234       attrs.each
+        do |attr_name, attr_value|\n> 235         instance.public_send(\"#{attr_name}=\",
+        attr_value)\n  236       end\n  237       instance\n  238     end\n  239   \n
+        \ 240     # New resource form file_item\n```\n\nApp backtrace\n-------------\n\n
+        - app/services/file_connector.rb:235:in `block in set_resource_atttribute_accessors'\n
+        - app/services/file_connector.rb:234:in `set_resource_atttribute_accessors'\n
+        - app/services/file_connector.rb:222:in `new_from_attributes'\n - app/services/file_connector.rb:56:in
+        `initialize'\n - app/controllers/api_v3/files_controller.rb:31:in `create'\n
+        - lib/malformed_request_handler.rb:12:in `call'\n\nFull backtrace\n--------------\n\n
+        - (gem) activemodel-3.2.19/lib/active_model/attribute_methods.rb:407:in `method_missing'\n
+        - (gem) activerecord-3.2.19/lib/active_record/attribute_methods.rb:149:in
+        `method_missing'\n - app/services/file_connector.rb:235:in `block in set_resource_atttribute_accessors'\n
+        - app/services/file_connector.rb:234:in `set_resource_atttribute_accessors'\n
+        - app/services/file_connector.rb:222:in `new_from_attributes'\n - app/services/file_connector.rb:56:in
+        `initialize'\n - app/controllers/api_v3/files_controller.rb:31:in `create'\n
+        - (gem) actionpack-3.2.19/lib/action_controller/metal/implicit_render.rb:4:in
+        `send_action'\n - (gem) actionpack-3.2.19/lib/abstract_controller/base.rb:167:in
+        `process_action'\n - (gem) actionpack-3.2.19/lib/action_controller/metal/rendering.rb:10:in
+        `process_action'\n - (gem) actionpack-3.2.19/lib/abstract_controller/callbacks.rb:18:in
+        `block in process_action'\n - (gem) activesupport-3.2.19/lib/active_support/callbacks.rb:480:in
+        `_run__3704397295481171123__process_action__991765983660948194__callbacks'\n
+        - (gem) activesupport-3.2.19/lib/active_support/callbacks.rb:405:in `__run_callback'\n
+        - (gem) activesupport-3.2.19/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'\n
+        - (gem) activesupport-3.2.19/lib/active_support/callbacks.rb:81:in `run_callbacks'\n
+        - (gem) actionpack-3.2.19/lib/abstract_controller/callbacks.rb:17:in `process_action'\n
+        - (gem) actionpack-3.2.19/lib/action_controller/metal/rescue.rb:29:in `process_action'\n
+        - (gem) actionpack-3.2.19/lib/action_controller/metal/instrumentation.rb:30:in
+        `block in process_action'\n - (gem) activesupport-3.2.19/lib/active_support/notifications.rb:123:in
+        `block in instrument'\n - (gem) activesupport-3.2.19/lib/active_support/notifications/instrumenter.rb:20:in
+        `instrument'\n - (gem) activesupport-3.2.19/lib/active_support/notifications.rb:123:in
+        `instrument'\n - (gem) actionpack-3.2.19/lib/action_controller/metal/instrumentation.rb:29:in
+        `process_action'\n - (gem) actionpack-3.2.19/lib/action_controller/metal/params_wrapper.rb:207:in
+        `process_action'\n - (gem) activerecord-3.2.19/lib/active_record/railties/controller_runtime.rb:18:in
+        `process_action'\n - (gem) actionpack-3.2.19/lib/abstract_controller/base.rb:121:in
+        `process'\n - (gem) actionpack-3.2.19/lib/abstract_controller/rendering.rb:45:in
+        `process'\n - (gem) actionpack-3.2.19/lib/action_controller/metal.rb:203:in
+        `dispatch'\n - (gem) actionpack-3.2.19/lib/action_controller/metal/rack_delegation.rb:14:in
+        `dispatch'\n - (gem) actionpack-3.2.19/lib/action_controller/metal.rb:246:in
+        `block in action'\n - (gem) actionpack-3.2.19/lib/action_dispatch/routing/route_set.rb:73:in
+        `dispatch'\n - (gem) actionpack-3.2.19/lib/action_dispatch/routing/route_set.rb:36:in
+        `call'\n - (gem) journey-1.0.4/lib/journey/router.rb:68:in `block in call'\n
+        - (gem) journey-1.0.4/lib/journey/router.rb:56:in `call'\n - (gem) actionpack-3.2.19/lib/action_dispatch/routing/route_set.rb:608:in
+        `call'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:177:in `call!'\n
+        - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:157:in `call'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:177:in
+        `call!'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:157:in `call'\n
+        - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:177:in `call!'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:157:in
+        `call'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:177:in `call!'\n
+        - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:157:in `call'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:177:in
+        `call!'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:157:in `call'\n
+        - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:177:in `call!'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:157:in
+        `call'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:177:in `call!'\n
+        - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:157:in `call'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:177:in
+        `call!'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:157:in `call'\n
+        - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:177:in `call!'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:157:in
+        `call'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:177:in `call!'\n
+        - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:157:in `call'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:177:in
+        `call!'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:157:in `call'\n
+        - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:177:in `call!'\n - (gem) omniauth-1.1.1/lib/omniauth/strategy.rb:157:in
+        `call'\n - (gem) omniauth-1.1.1/lib/omniauth/builder.rb:48:in `call'\n - (gem)
+        oink-0.10.1/lib/oink/middleware.rb:17:in `call'\n - (gem) http_accept_language-2.0.0/lib/http_accept_language/middleware.rb:13:in
+        `call'\n - (gem) actionpack-3.2.19/lib/action_dispatch/middleware/best_standards_support.rb:17:in
+        `call'\n - (gem) rack-1.4.5/lib/rack/etag.rb:23:in `call'\n - (gem) rack-1.4.5/lib/rack/conditionalget.rb:35:in
+        `call'\n - (gem) actionpack-3.2.19/lib/action_dispatch/middleware/head.rb:14:in
+        `call'\n - (gem) actionpack-3.2.19/lib/action_dispatch/middleware/params_parser.rb:21:in
+        `call'\n - lib/malformed_request_handler.rb:12:in `call'\n - (gem) actionpack-3.2.19/lib/action_dispatch/middleware/flash.rb:242:in
+        `call'\n - (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'\n
+        - (gem) rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'\n - (gem)
+        actionpack-3.2.19/lib/action_dispatch/middleware/cookies.rb:341:in `call'\n
+        - (gem) activerecord-3.2.19/lib/active_record/query_cache.rb:64:in `call'\n
+        - (gem) activerecord-3.2.19/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in
+        `call'\n - (gem) actionpack-3.2.19/lib/action_dispatch/middleware/callbacks.rb:28:in
+        `block in call'\n - (gem) activesupport-3.2.19/lib/active_support/callbacks.rb:405:in
+        `_run__2224809984398857698__call__3511889065348750767__callbacks'\n - (gem)
+        activesupport-3.2.19/lib/active_support/callbacks.rb:405:in `__run_callback'\n
+        - (gem) activesupport-3.2.19/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'\n
+        - (gem) activesupport-3.2.19/lib/active_support/callbacks.rb:81:in `run_callbacks'\n
+        - (gem) actionpack-3.2.19/lib/action_dispatch/middleware/callbacks.rb:27:in
+        `call'\n - (gem) actionpack-3.2.19/lib/action_dispatch/middleware/reloader.rb:65:in
+        `call'\n - (gem) actionpack-3.2.19/lib/action_dispatch/middleware/remote_ip.rb:31:in
+        `call'\n - (gem) better_errors-0.7.0/lib/better_errors/middleware.rb:84:in
+        `protected_app_call'\n - (gem) better_errors-0.7.0/lib/better_errors/middleware.rb:79:in
+        `better_errors_call'\n - (gem) better_errors-0.7.0/lib/better_errors/middleware.rb:56:in
+        `call'\n - (gem) actionpack-3.2.19/lib/action_dispatch/middleware/debug_exceptions.rb:16:in
+        `call'\n - (gem) actionpack-3.2.19/lib/action_dispatch/middleware/show_exceptions.rb:56:in
+        `call'\n - (gem) railties-3.2.19/lib/rails/rack/logger.rb:32:in `call_app'\n
+        - (gem) railties-3.2.19/lib/rails/rack/logger.rb:16:in `block in call'\n -
+        (gem) activesupport-3.2.19/lib/active_support/tagged_logging.rb:22:in `tagged'\n
+        - (gem) railties-3.2.19/lib/rails/rack/logger.rb:16:in `call'\n - (gem) actionpack-3.2.19/lib/action_dispatch/middleware/request_id.rb:22:in
+        `call'\n - (gem) rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'\n - (gem)
+        rack-1.4.5/lib/rack/runtime.rb:17:in `call'\n - (gem) activesupport-3.2.19/lib/active_support/cache/strategy/local_cache.rb:72:in
+        `call'\n - (gem) rack-1.4.5/lib/rack/lock.rb:15:in `call'\n - (gem) actionpack-3.2.19/lib/action_dispatch/middleware/static.rb:63:in
+        `call'\n - (gem) utf8-cleaner-0.0.6/lib/utf8-cleaner/middleware.rb:18:in `call'\n
+        - (gem) railties-3.2.19/lib/rails/engine.rb:484:in `call'\n - (gem) railties-3.2.19/lib/rails/application.rb:231:in
+        `call'\n - (gem) rack-1.4.5/lib/rack/content_length.rb:14:in `call'\n - (gem)
+        railties-3.2.19/lib/rails/rack/log_tailer.rb:17:in `call'\n - (gem) thin-1.6.1/lib/thin/connection.rb:82:in
+        `block in pre_process'\n - (gem) thin-1.6.1/lib/thin/connection.rb:80:in `pre_process'\n
+        - (gem) thin-1.6.1/lib/thin/connection.rb:55:in `process'\n - (gem) thin-1.6.1/lib/thin/connection.rb:41:in
+        `receive_data'\n - (gem) eventmachine-1.0.3/lib/eventmachine.rb:187:in `run'\n
+        - (gem) thin-1.6.1/lib/thin/backends/base.rb:73:in `start'\n - (gem) thin-1.6.1/lib/thin/server.rb:162:in
+        `start'\n - (gem) rack-1.4.5/lib/rack/handler/thin.rb:13:in `run'\n - (gem)
+        rack-1.4.5/lib/rack/server.rb:268:in `start'\n - (gem) railties-3.2.19/lib/rails/commands/server.rb:70:in
+        `start'\n - (gem) zeus-0.15.2/lib/zeus/rails.rb:160:in `server'\n - (gem)
+        zeus-0.15.2/lib/zeus.rb:148:in `block in command'\n - (gem) zeus-0.15.2/lib/zeus.rb:135:in
+        `command'\n - (gem) zeus-0.15.2/lib/zeus.rb:50:in `go'\n - -e:1:in `<main>'\n\n"
+    http_version: 
+  recorded_at: Wed, 12 Nov 2014 12:28:32 GMT
+recorded_with: VCR 2.9.3

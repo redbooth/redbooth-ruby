@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:3000/api/3/files/2
+    body:
+      encoding: UTF-8
+      string: name=new_name.txt
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"e46eb17f7253c6422decb1f7994e7dc2"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5ba41c6d317a2da227b591a7d3d280e6
+      X-Runtime:
+      - '0.420103'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"created_at":1415620830,"updated_at":1415795424,"id":2,"name":"new_name.txt","backend":"redbooth","project_id":2,"parent_id":1,"backend_id":"2","is_dir":true,"is_downloadable":false,"is_previewable":false,"is_private":false,"mime_type":"text/directory","public_token":null,"pinned":false,"size":0,"user_id":1,"can_be_moved":true,"can_be_deleted":true,"type":"file"}'
+    http_version: 
+  recorded_at: Wed, 12 Nov 2014 12:30:24 GMT
+recorded_with: VCR 2.9.3
