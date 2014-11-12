@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/3/comments
+    body:
+      encoding: UTF-8
+      string: body=new+created+comment&project_id=2&target_id=2&target_type=Conversation
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"a59835a16d6246320f3c6e75ab306275"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 74c3b77c2ad05ff7fe2a98e057fa0ba4
+      X-Runtime:
+      - '0.436276'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Comment","created_at":1415786790,"updated_at":1415786790,"id":85,"body":"new
+        created comment","body_html":"<p>new created comment</p>","user_id":1,"project_id":2,"target_id":2,"target_type":"Conversation","minutes":null,"assigned_id":null,"previous_assigned_id":null,"due_on":null,"previous_due_on":null,"is_private":false,"previous_is_private":null,"urgent":false,"previous_urgent":false,"email_id":null,"time_tracking_on":"2014-11-12","status":"new","previous_status":"new"}'
+    http_version: 
+  recorded_at: Wed, 12 Nov 2014 10:06:30 GMT
+recorded_with: VCR 2.9.3

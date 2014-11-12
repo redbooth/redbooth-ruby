@@ -1,0 +1,94 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/comments?target_id=1&target_type=Task
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Last-Modified:
+      - Wed, 12 Nov 2014 10:06:32 GMT
+      X-Redbooth-Updated-At:
+      - '1415786792491'
+      X-Redbooth-From-Cache:
+      - 'true'
+      Paginationlinks:
+      - <http://localhost:3000/api/3/comments?page=1&target_id=1&target_type=Task>;
+        rel="last">
+      Paginationtotalpages:
+      - '1'
+      Paginationperpage:
+      - '30'
+      Paginationcurrentpage:
+      - '1'
+      Paginationtotalobjects:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Request-Id:
+      - d5b1e8414e2a9ec0020ab4cab88c4c09
+      X-Runtime:
+      - '0.567275'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sidHlwZSI6IkNvbW1lbnQiLCJjcmVhdGVkX2F0IjoxNDE1NjI0NzkwLCJ1
+        cGRhdGVkX2F0IjoxNDE1NjI5NTk1LCJpZCI6MjIsImJvZHkiOiJJIHJlZ2lz
+        dGVyZWQgRWFydGh3b3Jrc1lvZ2EuY29tLCBFYXJ0aHdvcmtzWW9nYS5uZXQs
+        IEVhcnRod29ya3NZb2dhLmluZm8gYW5kIEVhcnRod29ya3NZb2dhLnVzLiBZ
+        b3UgY2FuIHJlLW9wZW4gdGhlIHRhc2sgaWYgeW914oCZZCBsaWtlIG1lIHRv
+        IHJlZ2lzdGVyIHRoZSAub3JnLiIsImJvZHlfaHRtbCI6IjxwPkkgcmVnaXN0
+        ZXJlZCBFYXJ0aHdvcmtzWW9nYS5jb20sIEVhcnRod29ya3NZb2dhLm5ldCwg
+        RWFydGh3b3Jrc1lvZ2EuaW5mbyBhbmQgRWFydGh3b3Jrc1lvZ2EudXMuIFlv
+        dSBjYW4gcmUtb3BlbiB0aGUgdGFzayBpZiB5b3XigJlkIGxpa2UgbWUgdG8g
+        cmVnaXN0ZXIgdGhlIC5vcmcuPC9wPiIsInVzZXJfaWQiOjQsInByb2plY3Rf
+        aWQiOjIsInRhcmdldF9pZCI6MSwidGFyZ2V0X3R5cGUiOiJUYXNrIiwibWlu
+        dXRlcyI6bnVsbCwiYXNzaWduZWRfaWQiOjgsInByZXZpb3VzX2Fzc2lnbmVk
+        X2lkIjo4LCJkdWVfb24iOm51bGwsInByZXZpb3VzX2R1ZV9vbiI6bnVsbCwi
+        aXNfcHJpdmF0ZSI6ZmFsc2UsInByZXZpb3VzX2lzX3ByaXZhdGUiOm51bGws
+        InVyZ2VudCI6ZmFsc2UsInByZXZpb3VzX3VyZ2VudCI6ZmFsc2UsImVtYWls
+        X2lkIjpudWxsLCJ0aW1lX3RyYWNraW5nX29uIjoiMjAxNC0xMS0xMCIsInN0
+        YXR1cyI6InJlc29sdmVkIiwicHJldmlvdXNfc3RhdHVzIjoib3BlbiJ9LHsi
+        dHlwZSI6IkNvbW1lbnQiLCJjcmVhdGVkX2F0IjoxNDE1NjI0NjcwLCJ1cGRh
+        dGVkX2F0IjoxNDE1NjI5NTk1LCJpZCI6MjEsImJvZHkiOiJAbWF5YSBQbGVh
+        c2UgcmVnaXN0ZXIgYWxsIHRvcCBsZXZlbCBkb21haW5zIHN1cnJvdW5kaW5n
+        IEVhcnRod29ya3NZb2dhLiAoLmNvbSwgLm5ldCwgLmluZm8sIC51cykgYW5k
+        IGNyZWF0ZSByZWRpcmVjdCBsaW5rcyB0byB0aGUgLmNvbSBVUkwuIiwiYm9k
+        eV9odG1sIjoiPHA+PGEgaHJlZj1cImh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC91
+        c2Vycy9tYXlhXCIgY2xhc3M9XCJtZW50aW9uXCI+QG1heWE8L2E+IFBsZWFz
+        ZSByZWdpc3RlciBhbGwgdG9wIGxldmVsIGRvbWFpbnMgc3Vycm91bmRpbmcg
+        RWFydGh3b3Jrc1lvZ2EuICguY29tLCAubmV0LCAuaW5mbywgLnVzKSBhbmQg
+        Y3JlYXRlIHJlZGlyZWN0IGxpbmtzIHRvIHRoZSAuY29tIFVSTC48L3A+Iiwi
+        dXNlcl9pZCI6MywicHJvamVjdF9pZCI6MiwidGFyZ2V0X2lkIjoxLCJ0YXJn
+        ZXRfdHlwZSI6IlRhc2siLCJtaW51dGVzIjpudWxsLCJhc3NpZ25lZF9pZCI6
+        OCwicHJldmlvdXNfYXNzaWduZWRfaWQiOm51bGwsImR1ZV9vbiI6IjIwMTQt
+        MTEtMTEiLCJwcmV2aW91c19kdWVfb24iOm51bGwsImlzX3ByaXZhdGUiOmZh
+        bHNlLCJwcmV2aW91c19pc19wcml2YXRlIjpudWxsLCJ1cmdlbnQiOmZhbHNl
+        LCJwcmV2aW91c191cmdlbnQiOmZhbHNlLCJlbWFpbF9pZCI6bnVsbCwidGlt
+        ZV90cmFja2luZ19vbiI6IjIwMTQtMTEtMTAiLCJzdGF0dXMiOiJvcGVuIiwi
+        cHJldmlvdXNfc3RhdHVzIjoibmV3In1d
+    http_version: 
+  recorded_at: Wed, 12 Nov 2014 10:06:33 GMT
+recorded_with: VCR 2.9.3

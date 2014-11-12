@@ -20,6 +20,7 @@ module RedboothRuby
   autoload :Project,        'redbooth-ruby/project'
   autoload :Conversation,   'redbooth-ruby/conversation'
   autoload :Membership,     'redbooth-ruby/membership'
+  autoload :Comment,        'redbooth-ruby/comment'
 
   module Operations
     autoload :Base,       'redbooth-ruby/operations/base'
