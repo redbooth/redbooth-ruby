@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Redbooth::Note, vcr: 'notes' do
+describe RedboothRuby::Note, vcr: 'notes' do
   include_context 'authentication'
 
   let(:create_params) do
@@ -28,7 +28,7 @@ describe Redbooth::Note, vcr: 'notes' do
     subject { note }
 
     it "makes a new GET request using the correct API endpoint to receive a specific note" do
-      expect(Redbooth).to receive(:request).with(:get, nil, "#{endpoint}/1", {}, { session: session }).and_call_original
+      expect(RedboothRuby).to receive(:request).with(:get, nil, "#{endpoint}/1", {}, { session: session }).and_call_original
       subject
     end
 
@@ -41,7 +41,7 @@ describe Redbooth::Note, vcr: 'notes' do
     subject { client.note(:update, id: 2, name: 'new test name') }
 
     it "makes a new PUT request using the correct API endpoint to receive a specific note" do
-      expect(Redbooth).to receive(:request).with(:put, nil, "#{endpoint}/2", { name: 'new test name' }, { session: session }).and_call_original
+      expect(RedboothRuby).to receive(:request).with(:put, nil, "#{endpoint}/2", { name: 'new test name' }, { session: session }).and_call_original
       subject
     end
 
@@ -53,7 +53,7 @@ describe Redbooth::Note, vcr: 'notes' do
     subject { new_record }
 
     it "makes a new POST request using the correct API endpoint to create a specific note" do
-      expect(Redbooth).to receive(:request).with(:post, nil, endpoint, create_params, { session: session }).and_call_original
+      expect(RedboothRuby).to receive(:request).with(:post, nil, endpoint, create_params, { session: session }).and_call_original
       subject
     end
 
@@ -66,7 +66,7 @@ describe Redbooth::Note, vcr: 'notes' do
     subject { client.note(:delete, id: new_record.id) }
 
     it "makes a new DELETE request using the correct API endpoint to delete a specific note" do
-      expect(Redbooth).to receive(:request).with(:delete, nil, "#{endpoint}/#{new_record.id}", {}, { session: session }).and_call_original
+      expect(RedboothRuby).to receive(:request).with(:delete, nil, "#{endpoint}/#{new_record.id}", {}, { session: session }).and_call_original
       subject
     end
   end
@@ -75,10 +75,10 @@ describe Redbooth::Note, vcr: 'notes' do
     subject { client.note(:index) }
 
     it "makes a new GET request using the correct API endpoint to receive notes collection" do
-      expect(Redbooth).to receive(:request).with(:get, nil, endpoint, {}, { session: session }).and_call_original
+      expect(RedboothRuby).to receive(:request).with(:get, nil, endpoint, {}, { session: session }).and_call_original
       subject
     end
 
-    it { expect(subject.class).to eql Redbooth::Request::Collection }
+    it { expect(subject.class).to eql RedboothRuby::Request::Collection }
   end
 end
