@@ -27,18 +27,6 @@ module RedboothRuby
                                             params: params,
                                             method: :index)
         end
-
-        # Returns the collection object build from the received response
-        #
-        # @param response [Array || Hash] parsed json response
-        # @return [RedboothRuby::Collection]
-        def results_from(response)
-          results = []
-          response.data.each do |obj|
-            results << self.new(obj)
-          end
-          results
-        end
       end
 
       def self.included(base)

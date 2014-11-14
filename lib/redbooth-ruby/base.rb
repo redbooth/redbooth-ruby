@@ -2,7 +2,7 @@ module RedboothRuby
   class Base
     include RedboothRuby::Operations::Base
 
-    attr_accessor :created_time
+    attr_accessor :created_time, :session
 
     # Initializes the object using the given attributes
     #

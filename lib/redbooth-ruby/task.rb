@@ -5,6 +5,7 @@ module RedboothRuby
     include RedboothRuby::Operations::Update
     include RedboothRuby::Operations::Show
     include RedboothRuby::Operations::Delete
+    include RedboothRuby::Operations::Meta
 
     attr_accessor :id,
                   :name,
@@ -19,7 +20,6 @@ module RedboothRuby
                   :last_activity_id,
                   :record_conversion_type,
                   :record_conversion_id,
-                  :metadata,
                   :subtasks_count,
                   :resolved_subtasks_count,
                   :watcher_ids,

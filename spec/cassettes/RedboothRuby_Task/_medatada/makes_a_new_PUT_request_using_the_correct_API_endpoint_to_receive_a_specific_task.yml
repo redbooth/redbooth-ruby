@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/tasks/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"995d617c5d5d4edaa253f4ee352507ee"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8cd9ac18e189016f4d412e8a20816730
+      X-Runtime:
+      - '1.946992'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Task","created_at":1415624550,"updated_at":1415629595,"id":1,"name":"Register
+        all EarthworksYoga TLDs","task_list_id":2,"comments_count":2,"assigned_id":8,"is_private":false,"project_id":2,"urgent":false,"user_id":3,"position":0,"last_activity_id":null,"record_conversion_type":null,"record_conversion_id":null,"metadata":{},"subtasks_count":7,"resolved_subtasks_count":2,"watcher_ids":[3,4],"description":"The
+        ships hung in the sky in much the same way that bricks don''t.","description_html":"<p>The
+        ships hung in the sky in much the same way that bricks don''t.</p>","description_updated_by_user_id":3,"updated_by_id":4,"deleted":false,"row_order":0,"status":"resolved","due_on":"2014-11-11"}'
+    http_version: 
+  recorded_at: Fri, 14 Nov 2014 16:39:21 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/metadata?target_id=1&target_type=Task
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"99914b932bd37a50b983c5e7c90ae93b"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8b367c5ca6d6140c683f64b1de41922c
+      X-Runtime:
+      - '0.570085'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{}'
+    http_version: 
+  recorded_at: Fri, 14 Nov 2014 16:39:22 GMT
+recorded_with: VCR 2.9.3
