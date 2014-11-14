@@ -528,6 +528,12 @@ Fetch a specific subtask
   subtask = client.subtask(:show, id: 123)
 ```
 
+Create a new subtask
+
+```Ruby
+  subtask = client.subtask(:create, task_id: 123, name: 'new name')
+```
+
 Update a specific subtask
 
 ```Ruby
@@ -538,6 +544,50 @@ Delete a specific subtask
 
 ```Ruby
   client.subtask(:delete, id: 123)
+```
+
+Files
+=====
+
+Files in redbooth could be uploaded or choosen form other service providers (Copy, Dropbox, Gdrive, Box, Signnow, ...). This client allows you to browse or create files in redbooth api.
+
+Lists files in your visibility scope.
+
+```Ruby
+  files_colilection = client.file(:index)
+  files = files_collection.all
+```
+
+You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:subtasks,header:subtasks-subtasks-list) )
+
+```Ruby
+  filtered_files_collection = client.file(:index, backend: 'redbooth',
+                                                  project_id: 123,
+                                                  order: 'id-DESC',
+                                                  per_page: 25)
+```
+
+Update a specific file
+
+```Ruby
+  file = client.file(:update, id: 123, name: 'new_name.doc')
+```
+
+Create a new file
+
+```Ruby
+  file = File.open('path/to/the/file')
+  new_file = client.file(:create, project_id: 123, 
+                                  parent_id: nil,
+                                  backend: 'redbooth',
+                                  is_dir: false,
+                                  asset: file )
+```
+
+Delete a specific subtask
+
+```Ruby
+  client.file(:delete, id: 123)
 ```
 
 License

@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/3/files
+    body:
+      encoding: UTF-8
+      string: "-------------RubyMultipartPost\r\nContent-Disposition: form-data; name=\"project_id\"\r\n\r\n2\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"backend\"\r\n\r\nredbooth\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"asset\"\r\n\r\n#<File:0x007fb08525b150>\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"asset_attrs\"\r\n\r\n{:name=>\"hola.txt\", :local_path=>\"/Users/andresbravog/Documents/ProyectosTeambox/teambox/SRC/redbooth-ruby/spec/redbooth-ruby/../fixtures/hola.txt\"}\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"asset\"; filename=\"hola.txt\"\r\nContent-Length: 905\r\nContent-Type:
+        application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n\r\nloremp
+        ipsum dolor loremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum
+        dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp
+        ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum
+        dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp
+        ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum
+        dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp
+        ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum
+        dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp
+        ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum
+        dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp
+        ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum
+        dolor...\n\r\n-------------RubyMultipartPost--\r\n\r\n"
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost
+      Content-Length:
+      - '1662'
+      Authorization:
+      - Bearer _frank_access_token_
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - text/plain; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"5b09ebcab86a30fb42b43a33cfa82fd6"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6cfc9cc3f1df4c2fc3c371dd8181a461
+      X-Runtime:
+      - '0.780737'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"created_at":1415799245,"updated_at":1415799245,"id":12,"name":"hola.txt","backend":"redbooth","project_id":2,"parent_id":null,"backend_id":"9","is_dir":false,"is_downloadable":true,"is_previewable":false,"is_private":false,"mime_type":"application/octet-stream","public_token":null,"pinned":false,"size":905,"user_id":1,"can_be_moved":true,"can_be_deleted":true,"type":"file"}'
+    http_version: 
+  recorded_at: Wed, 12 Nov 2014 13:34:05 GMT
+recorded_with: VCR 2.9.3

@@ -23,6 +23,7 @@ module RedboothRuby
   autoload :Comment,        'redbooth-ruby/comment'
   autoload :Note,           'redbooth-ruby/note'
   autoload :Subtask,        'redbooth-ruby/subtask'
+  autoload :File,           'redbooth-ruby/file'
 
 
   module Operations
