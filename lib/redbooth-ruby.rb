@@ -34,6 +34,7 @@ module RedboothRuby
     autoload :Show,       'redbooth-ruby/operations/show'
     autoload :Update,     'redbooth-ruby/operations/update'
     autoload :Meta,       'redbooth-ruby/operations/meta'
+    autoload :Search,     'redbooth-ruby/operations/search'
   end
 
   module Request

@@ -1,5 +1,7 @@
 module RedboothRuby
   class Client
+    include RedboothRuby::Operations::Search
+
     RESOURCES = [ :me, :user, :task, :organization, :person, :project,
                   :conversation, :membership, :comment, :note, :subtask,
                   :file ]
