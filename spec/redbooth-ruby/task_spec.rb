@@ -118,7 +118,7 @@ describe RedboothRuby::Task, vcr: 'tasks' do
     subject { task.metadata_merge( 'other' => 'updated_value') }
 
     it "makes a new PUT request using the correct API endpoint to receive a specific task" do
-      expect(RedboothRuby).to receive(:request).with(:put, nil, "metadata", { target_type: 'Task', target_id: task.id, metadata: { 'other' => 'value' } }, { session: session }).and_call_original
+      expect(RedboothRuby).to receive(:request).with(:put, nil, "metadata", { target_type: 'Task', target_id: task.id, metadata: { 'other' => 'updated_value' } }, { session: session }).and_call_original
       subject
     end
 
