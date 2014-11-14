@@ -577,7 +577,7 @@ Create a new file
 
 ```Ruby
   file = File.open('path/to/the/file')
-  new_file = client.file(:create, project_id: 123, 
+  new_file = client.file(:create, project_id: 123,
                                   parent_id: nil,
                                   backend: 'redbooth',
                                   is_dir: false,
@@ -588,6 +588,24 @@ Delete a specific subtask
 
 ```Ruby
   client.file(:delete, id: 123)
+```
+
+Search
+=====
+
+You can search throught any redbooth entity by using the search method. There is some filter params available:
+
+* `query`: Regex like query to search
+
+* `project_id`: Reduce the scope to search for
+
+* `target_type`: List of entity types to be returned
+
+
+Search for redbooth objects in your visibility scope
+
+```Ruby
+  entities = client.search(query: 'task+nothing*')
 ```
 
 License
