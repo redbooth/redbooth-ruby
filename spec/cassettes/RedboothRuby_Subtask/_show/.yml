@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/subtasks/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"67649f33a3233da826d352dc53d02b2b"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - eddd8544b999df056f652afefa33ba54
+      X-Runtime:
+      - '0.102996'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"created_at":1415629595,"updated_at":1415629595,"type":"Subtask","id":1,"name":"Perrea,
+        perrea","resolved":true,"row_order":0,"task_id":1}'
+    http_version: 
+  recorded_at: Wed, 12 Nov 2014 11:15:34 GMT
+recorded_with: VCR 2.9.3

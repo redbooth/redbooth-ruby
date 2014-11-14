@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://localhost:3000/api/3/subtasks/2
+    body:
+      encoding: UTF-8
+      string: name=new+test+name
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"996f8e08922cb885c785f9baf736207e"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a85d7b01346f0a29f870b5e939f8de8a
+      X-Runtime:
+      - '0.866921'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"created_at":1415629595,"updated_at":1415789069,"type":"Subtask","id":2,"name":"new
+        test name","resolved":true,"row_order":4194304,"task_id":1}'
+    http_version: 
+  recorded_at: Wed, 12 Nov 2014 10:44:29 GMT
+recorded_with: VCR 2.9.3
