@@ -34,7 +34,6 @@ module RedboothRuby
     autoload :Show,       'redbooth-ruby/operations/show'
     autoload :Update,     'redbooth-ruby/operations/update'
     autoload :Meta,       'redbooth-ruby/operations/meta'
-    autoload :Search,     'redbooth-ruby/operations/search'
   end
 
   module Request
@@ -45,6 +44,10 @@ module RedboothRuby
     autoload :Validator,  'redbooth-ruby/request/validator'
     autoload :Response,   'redbooth-ruby/request/response'
     autoload :Collection, 'redbooth-ruby/request/collection'
+  end
+
+  module ClientOperations
+    autoload :Search,     'redbooth-ruby/client_operations/search'
   end
 
   class RedboothError < StandardError; end

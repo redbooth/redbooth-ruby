@@ -1,5 +1,5 @@
 module RedboothRuby
-  module Operations
+  module ClientOperations
     module Search
 
       # Retrieves all available objects from the Copy API
