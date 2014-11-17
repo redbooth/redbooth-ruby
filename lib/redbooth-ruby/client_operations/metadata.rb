@@ -1,14 +1,14 @@
 module RedboothRuby
   module ClientOperations
-    module Search
+    module Metadata
 
-      # Retrieves all available objects from the Redbooth API by searching for the
-      # given parameters and query
+      # Retrieves all available objects from the Redbooth API by searching by given
+      # key and value into the metadata API
       #
       # @param [Hash] options Options to pass to the API
       # @return [Array] The available objects
-      def search(attributes = {})
-        response = RedboothRuby.request(:get, nil, 'search' , attributes, { session: session })
+      def metadata(attributes = {})
+        response = RedboothRuby.request(:get, nil, 'metadata/search' , attributes, { session: session })
         collection_from attributes, response, session
       end
 
@@ -25,7 +25,7 @@ module RedboothRuby
                                               resource: self,
                                               session:  session,
                                               params:   params,
-                                              method:   :search)
+                                              method:   :metadata)
       end
     end
   end
