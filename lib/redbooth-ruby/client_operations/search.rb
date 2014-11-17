@@ -1,8 +1,9 @@
 module RedboothRuby
-  module Operations
+  module ClientOperations
     module Search
 
-      # Retrieves all available objects from the Copy API
+      # Retrieves all available objects from the Redbooth API by searching for the
+      # given parameters and query
       #
       # @param [Hash] options Options to pass to the API
       # @return [Array] The available objects

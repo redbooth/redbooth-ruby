@@ -87,4 +87,45 @@ describe RedboothRuby::Task, vcr: 'tasks' do
 
     it { expect(subject.class).to eql RedboothRuby::Request::Collection }
   end
+
+  describe '.medatada' do
+    subject { task.metadata }
+
+    it "makes a new PUT request using the correct API endpoint to receive a specific task" do
+      expect(RedboothRuby).to receive(:request).with(:get, nil, "metadata", { target_type: 'Task', target_id: task.id }, { session: session }).and_call_original
+      subject
+    end
+
+    it { expect(subject).to be_a Hash }
+    it { expect(subject).to be_empty }
+  end
+
+  describe '.medatada=' do
+    subject { task.metadata = { 'new' => 'metadata' } }
+
+    it "makes a new PUT request using the correct API endpoint to receive a specific task" do
+      expect(RedboothRuby).to receive(:request).with(:post, nil, "metadata", { target_type: 'Task', target_id: task.id, metadata: { 'new' => 'metadata' } }, { session: session }).and_call_original
+      subject
+    end
+
+    it { expect(subject).to be_a Hash }
+    it { expect(subject).to include 'new' }
+    it { expect(subject['new']).to eql 'metadata' }
+  end
+
+  describe '.metadata_merge' do
+    before { task.metadata = { 'new' => 'metadata', 'other' => 'value' } }
+    subject { task.metadata_merge( 'other' => 'updated_value') }
+
+    it "makes a new PUT request using the correct API endpoint to receive a specific task" do
+      expect(RedboothRuby).to receive(:request).with(:put, nil, "metadata", { target_type: 'Task', target_id: task.id, metadata: { 'other' => 'updated_value' } }, { session: session }).and_call_original
+      subject
+    end
+
+    it { expect(subject).to be_a Hash }
+    it { expect(subject).to include 'new' }
+    it { expect(subject).to include 'other' }
+    it { expect(subject['new']).to eql 'metadata' }
+    it { expect(subject['other']).to eql 'updated_value' }
+  end
 end

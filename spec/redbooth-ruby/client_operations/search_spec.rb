@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe RedboothRuby::Operations::Search, vcr: 'search' do
+describe RedboothRuby::ClientOperations::Search, vcr: 'search' do
   include_context 'authentication'
 
   let(:search_params) do

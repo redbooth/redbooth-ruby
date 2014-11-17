@@ -13,7 +13,7 @@ module RedboothRuby
                                           attributes,
                                           options_for_request(session: session)
                                          )
-          new(response.data)
+          new(response.data.merge(session: session))
         end
       end
 

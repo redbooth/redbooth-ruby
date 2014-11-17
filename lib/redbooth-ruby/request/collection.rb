@@ -79,10 +79,10 @@ module RedboothRuby
         response.data.collect do |obj|
           case resource
           when RedboothRuby::Client
-            next unless resource_form_hash(obj)
-            resource_form_hash(obj)
+            next unless resource_form_hash(obj.merge(session: session))
+            resource_form_hash(obj.merge(session: session))
           else
-            resource.new(obj)
+            resource.new(obj.merge(session: session))
           end
         end.compact
       end
