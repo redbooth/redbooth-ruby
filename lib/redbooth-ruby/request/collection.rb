@@ -15,11 +15,7 @@ module RedboothRuby
       #
       # @return [Array(resource)]
       def all
-        results = []
-        response.data.each do |obj|
-          results << resource.new(obj)
-        end
-        results
+        results_from(response)
       end
 
       # Returns total pages
@@ -74,6 +70,42 @@ module RedboothRuby
       end
 
       protected
+
+      # Returns the collection object build from the received response
+      #
+      # @param response [Array || Hash] parsed json response
+      # @return [RedboothRuby::Collection]
+      def results_from(response)
+        response.data.collect do |obj|
+          case resource
+          when RedboothRuby::Client
+            next unless resource_form_hash(obj)
+            resource_form_hash(obj)
+          else
+            resource.new(obj)
+          end
+        end.compact
+      end
+
+      # Builds a resource ruby object based on the given hash
+      # it need to contain a 'type' key defining the object type
+      #
+      # @return [Redbooth::Base]
+      def resource_form_hash(hash)
+        return unless hash['type']
+        klass_name = hash['type']
+        klass = resource_klass(klass_name)
+        return unless klass
+        klass.new(hash)
+      end
+
+      # Gest the api resource model class by his name
+      #
+      # @param [String||Symbol] name name of the resource
+      # @return [Copy::Base] resource to use the api
+      def resource_klass(name)
+        eval('RedboothRuby::' + name.to_s.capitalize) rescue nil
+      end
 
       # Whenever the response is paginated or not
       def paginated?
