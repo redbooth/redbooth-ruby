@@ -48,6 +48,7 @@ module RedboothRuby
 
   module ClientOperations
     autoload :Search,     'redbooth-ruby/client_operations/search'
+    autoload :Metadata,   'redbooth-ruby/client_operations/metadata'
   end
 
   class RedboothError < StandardError; end

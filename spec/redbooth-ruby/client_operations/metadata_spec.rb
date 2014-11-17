@@ -4,9 +4,9 @@ describe RedboothRuby::ClientOperations::Metadata, vcr: 'metadata' do
   include_context 'authentication'
 
   let(:search_params) do
-    { project_id: 2,
+    { target_type: 'Task',
       key: 'new',
-      vaue: 'metadata' }
+      value: 'metadata' }
   end
   let(:endpoint) { 'metadata/search' }
 
