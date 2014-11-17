@@ -608,6 +608,38 @@ Search for redbooth objects in your visibility scope
   entities = client.search(query: 'task+nothing*')
 ```
 
+Metadata
+=====
+
+ADVISE: Redbooth metadata API is in `Beta` status so use this under your own risk.
+
+Metadata API allows you to add custo key value attributes to objects inside redbooth and search by those key value attributes.
+This is really helpful when doing API syncs or tiny implementations in top of the Redbooth API.
+
+Fetch object metadata
+
+```Ruby
+  task.metadata
+```
+
+Update object metadata by adding new keys or overwriding the exisiting ones but not touching the others if there is any one.
+
+```Ruby
+  task.metadata_merge("new_key" => "new value")
+```
+
+Restore user metadata by overwiritng the existing ones.
+
+```Ruby
+  task.metadata = {"key" => "value"}
+```
+
+Search for a certain metadata key value
+
+```Ruby
+  metadata_collection = client.metadata(key: 'key', value: 'value', target_type: 'Task')
+```
+
 License
 =====
 
