@@ -1,0 +1,317 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/3/files
+    body:
+      encoding: UTF-8
+      string: "-------------RubyMultipartPost\r\nContent-Disposition: form-data; name=\"project_id\"\r\n\r\n2\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"backend\"\r\n\r\nredbooth\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"asset\"\r\n\r\n#<File:0x007fcab99c71e8>\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"asset_attrs\"\r\n\r\n{:name=>\"hola.txt\", :local_path=>\"/Users/andresbravog/Documents/ProyectosTeambox/teambox/SRC/redbooth-ruby/spec/redbooth-ruby/../fixtures/hola.txt\"}\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"asset\"; filename=\"hola.txt\"\r\nContent-Length: 905\r\nContent-Type:
+        application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n\r\nloremp
+        ipsum dolor loremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum
+        dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp
+        ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum
+        dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp
+        ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum
+        dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp
+        ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum
+        dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp
+        ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum
+        dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp
+        ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum
+        dolor...\n\r\n-------------RubyMultipartPost--\r\n\r\n"
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - multipart/form-data; boundary=-----------RubyMultipartPost
+      Content-Length:
+      - '1662'
+      Authorization:
+      - Bearer _frank_access_token_
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - text/plain; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"20eb73199895c0b6f5e40450be2af20c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 54efa9e031d6266478a3a2fd195beffe
+      X-Runtime:
+      - '20.086156'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"created_at":1416911282,"updated_at":1416911300,"id":16,"name":"hola.txt","backend":"box","project_id":2,"parent_id":null,"backend_id":"23286166070","is_dir":false,"is_downloadable":true,"is_previewable":true,"is_private":false,"mime_type":"application/octet-stream","public_token":null,"pinned":false,"size":905,"user_id":1,"can_be_moved":false,"can_be_deleted":false,"type":"file"}'
+    http_version: 
+  recorded_at: Tue, 25 Nov 2014 10:28:20 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/files/16/download
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '783'
+      X-Request-Id:
+      - 17250f5166417e443b384121680bb405
+      X-Runtime:
+      - '0.217100'
+      Connection:
+      - keep-alive
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8" />
+          <title>Action Controller: Exception caught</title>
+          <style>
+            body { background-color: #fff; color: #333; }
+
+            body, p, ol, ul, td {
+              font-family: helvetica, verdana, arial, sans-serif;
+              font-size:   13px;
+              line-height: 18px;
+            }
+
+            pre {
+              background-color: #eee;
+              padding: 10px;
+              font-size: 11px;
+              white-space: pre-wrap;
+            }
+
+            a { color: #000; }
+            a:visited { color: #666; }
+            a:hover { color: #fff; background-color:#000; }
+          </style>
+        </head>
+        <body>
+
+        <h1>Routing Error</h1>
+        <p><pre>No route matches [GET] &quot;/api/3/files/16/download&quot;</pre></p>
+        <p>
+          Try running <code>rake routes</code> for more information on available routes.
+        </p>
+
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Tue, 25 Nov 2014 10:41:57 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/files/16/download/original/hola.txt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 302
+      message: Moved Temporarily
+    headers:
+      Location:
+      - https://redbooth.box.com/shared/static/hdpm34gh418i4m7p7l38.txt
+      Content-Type:
+      - text/html; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 3b51720fba9580b5413904a2b40fa75c
+      X-Runtime:
+      - '5.182095'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: <html><body>You are being <a href="https://redbooth.box.com/shared/static/hdpm34gh418i4m7p7l38.txt">redirected</a>.</body></html>
+    http_version: 
+  recorded_at: Tue, 25 Nov 2014 10:44:49 GMT
+- request:
+    method: get
+    uri: https://redbooth.box.com/shared/static/hdpm34gh418i4m7p7l38.txt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 25 Nov 2014 10:44:49 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Location:
+      - https://redbooth.app.box.com/shared/static/hdpm34gh418i4m7p7l38.txt
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 25 Nov 2014 10:44:50 GMT
+- request:
+    method: get
+    uri: https://redbooth.app.box.com/shared/static/hdpm34gh418i4m7p7l38.txt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 25 Nov 2014 10:44:51 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '3'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      X-Robots-Tag:
+      - noindex, nofollow
+      Set-Cookie:
+      - box_visitor_id=54745da2ed8ae1.54343070; expires=Wed, 25-Nov-2015 10:44:50
+        GMT; path=/; domain=.box.com
+      - bv=OPS-38213; expires=Tue, 02-Dec-2014 10:44:50 GMT; path=/; domain=.box.com
+      - cn=98; expires=Tue, 02-Dec-2014 10:44:50 GMT; path=/; domain=.box.com
+      - presentation=desktop; path=/; domain=.box.com
+      - z=bjhisfqtatgu340cp1q3qd9u25; path=/; domain=.box.com; secure; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Location:
+      - https://dl.boxcloud.com/bc/4/d6d3c577c09d0b0cb9935b4dbf3846e1/OFQg04bVEb41G6h_zPNUgFhVsHj5D61c4YNVqpi2Zoac1El7vGprLuW4P1FvK0cMYEJ0jgbvVZ8fNsvwfdLc3NySlFYPmvgOHyn_Mv_3qLqCCuE1jYti1kVrn77sXOXSbCV4IE3SUgXnU_RwCNMfhFOlRxdF38C3DSHkC9uhaPY6_XnUFUjt0RqQPY_Rx86dWFJXxZ96Qry4wVaHt531I3vCxPENgdpNbK9u4J_ZFNb5hWpKpcI0A0medR91pekCgJXAxFhGZUu3vLBUpSmlYNc9m2oxflB1Ctnsyy6KTUgN4EN3sVNicH30uZ0pZkuTs0VSG8gwWfjPzM-4x8JTVvt_8GYUyG4TzzXX9dDDU55uKWvFTpEKjsI8ZUxte8b-BapYTN1yFm7kCltqrdwYvEKUN6_LiANq8PO58mB_5dp6n0EueJVWlROhIDGAWzXCDVvS4Y8t-DiBZpW35jgDCCVFbLxynF6mhonnUEHXqjPHoi4NCw_bLzMKqKTgRs_HWohkmtB0ZIwEfreFJpzm-nQBPKcSq4WRMIRPQqTe3zVNnxzSLgl8B56EqLks9Xk4iAqqVpfo8dt-YZaMtvTzCckDhPOCLQ6OgrWhRgNnsxnmdu1S5dgJEFglgUgWeVFRHzEfJscvej0qtqpDPLEamtR_PGL1xHDEA_8I3f-QnAaxNdu8Bkm7Phl8cobIBVnDncUrFB4Ee5vCxmVeSBbRRqN6ibZcepGOJVpQMJu2PdgIbd6J9x_LMBfDkWBidTVWq7Q2e6whiMOu2l8NoWGsoU2y-_EoYRqFTT71BORtlym45z7UfVGWfPBfe6d0sqkMjDhv9tvO1duQg_HHkR_Eyb4WFDtS-Q7uoSEM0LrdneA7bpJ0rQ7rcnfH0jeXwzdhiLRFRzGfVw217cVm7xBa1yPFZ58SbGYNEaaBA6qaIqVz2ZcDOY_2Utap-RvcM4iiOXl6JvZxrAL4qdcPVXLKbauDmKP3kIEA3mvhl5gEAeO71HFZzWzmjvRbzibFE081XjODx9DzT_Aw4lAN4Nn9sI3BhJC1hDRkruNJceGNzYFzpErRLMygDiT7qwyS1sMdyduTpiIy3tI30aDg8ORrY_xz6uJ2Gs9vdcVnLQqlBck3LC-VpKGACpndobyopA3laX_XXToY3-LTp6upegXlSq0g28Yf/
+    body:
+      encoding: UTF-8
+      string: '905'
+    http_version: 
+  recorded_at: Tue, 25 Nov 2014 10:44:52 GMT
+- request:
+    method: get
+    uri: https://dl.boxcloud.com/bc/4/d6d3c577c09d0b0cb9935b4dbf3846e1/OFQg04bVEb41G6h_zPNUgFhVsHj5D61c4YNVqpi2Zoac1El7vGprLuW4P1FvK0cMYEJ0jgbvVZ8fNsvwfdLc3NySlFYPmvgOHyn_Mv_3qLqCCuE1jYti1kVrn77sXOXSbCV4IE3SUgXnU_RwCNMfhFOlRxdF38C3DSHkC9uhaPY6_XnUFUjt0RqQPY_Rx86dWFJXxZ96Qry4wVaHt531I3vCxPENgdpNbK9u4J_ZFNb5hWpKpcI0A0medR91pekCgJXAxFhGZUu3vLBUpSmlYNc9m2oxflB1Ctnsyy6KTUgN4EN3sVNicH30uZ0pZkuTs0VSG8gwWfjPzM-4x8JTVvt_8GYUyG4TzzXX9dDDU55uKWvFTpEKjsI8ZUxte8b-BapYTN1yFm7kCltqrdwYvEKUN6_LiANq8PO58mB_5dp6n0EueJVWlROhIDGAWzXCDVvS4Y8t-DiBZpW35jgDCCVFbLxynF6mhonnUEHXqjPHoi4NCw_bLzMKqKTgRs_HWohkmtB0ZIwEfreFJpzm-nQBPKcSq4WRMIRPQqTe3zVNnxzSLgl8B56EqLks9Xk4iAqqVpfo8dt-YZaMtvTzCckDhPOCLQ6OgrWhRgNnsxnmdu1S5dgJEFglgUgWeVFRHzEfJscvej0qtqpDPLEamtR_PGL1xHDEA_8I3f-QnAaxNdu8Bkm7Phl8cobIBVnDncUrFB4Ee5vCxmVeSBbRRqN6ibZcepGOJVpQMJu2PdgIbd6J9x_LMBfDkWBidTVWq7Q2e6whiMOu2l8NoWGsoU2y-_EoYRqFTT71BORtlym45z7UfVGWfPBfe6d0sqkMjDhv9tvO1duQg_HHkR_Eyb4WFDtS-Q7uoSEM0LrdneA7bpJ0rQ7rcnfH0jeXwzdhiLRFRzGfVw217cVm7xBa1yPFZ58SbGYNEaaBA6qaIqVz2ZcDOY_2Utap-RvcM4iiOXl6JvZxrAL4qdcPVXLKbauDmKP3kIEA3mvhl5gEAeO71HFZzWzmjvRbzibFE081XjODx9DzT_Aw4lAN4Nn9sI3BhJC1hDRkruNJceGNzYFzpErRLMygDiT7qwyS1sMdyduTpiIy3tI30aDg8ORrY_xz6uJ2Gs9vdcVnLQqlBck3LC-VpKGACpndobyopA3laX_XXToY3-LTp6upegXlSq0g28Yf/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ATS
+      Date:
+      - Tue, 25 Nov 2014 10:44:52 GMT
+      Content-Type:
+      - text/plain; charset=UTF-8
+      Content-Length:
+      - '905'
+      Cache-Control:
+      - private
+      Accept-Ranges:
+      - bytes
+      - bytes
+      Content-Disposition:
+      - attachment;filename="hola.txt";filename*=UTF-8''hola.txt
+      X-Content-Type-Options:
+      - nosniff
+      X-Robots-Tag:
+      - noindex, nofollow
+      Age:
+      - '0'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        loremp ipsum dolor loremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolorloremp ipsum dolor...
+    http_version: 
+  recorded_at: Tue, 25 Nov 2014 10:44:53 GMT
+recorded_with: VCR 2.9.3

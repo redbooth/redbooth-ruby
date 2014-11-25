@@ -86,4 +86,12 @@ describe RedboothRuby::File, vcr: 'files' do
 
     it { expect(subject.class).to eql RedboothRuby::Request::Collection }
   end
+
+  describe '.download' do
+    subject { new_record.download }
+
+    it 'downloads a file' do
+      open("#{File.dirname(__FILE__)}/../../temp/spec/files/test_download.txt", 'w') { |f| f.puts subject }
+    end
+  end
 end

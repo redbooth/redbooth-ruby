@@ -590,6 +590,14 @@ Delete a specific subtask
   client.file(:delete, id: 123)
 ```
 
+Download a file
+
+```Ruby
+  file # RedBoothRuby::File
+
+  open('/path/to/your_new_file.txt', 'w') { |f| f.puts file.download }
+```
+
 Search
 =====
 

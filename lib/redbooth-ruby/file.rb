@@ -24,6 +24,14 @@ module RedboothRuby
                   :created_at,
                   :updated_at
 
+  # Returns a blop with the file data
+  #
+  # @return [String] the object metadata
+  def download(style='original')
+    request = RedboothRuby.request(:download, nil, "files/#{id}/download/#{style}/#{name}", {}, { session: session })
+    request.body
+  end
+
   class << self
       # Create operation overwrite to parse file first
       def create(attrs)

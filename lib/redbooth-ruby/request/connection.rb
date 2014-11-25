@@ -14,31 +14,11 @@ module RedboothRuby
 
       def request
         return unless access_token
-        if use_body_file?
-          ::File.open(body_file_attrs[:local_path]) do |file|
-            req = Net::HTTP::Post::Multipart.new(
-                api_url,
-                body_hash.merge(
-                 'asset' => UploadIO.new(file,
-                                         'application/octet-stream',
-                                          body_file_attrs[:name]
-                                        )
-                )
-            )
-            req['Authorization'] = "Bearer #{access_token.token}"
-            # access_token.sign! req
-            if RedboothRuby.configuration[:use_ssl]
-              http = Net::HTTP.new(RedboothRuby.configuration[:api_base] , Net::HTTP.https_default_port)
-              http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-              http.use_ssl = RedboothRuby.configuration[:use_ssl]
-            else
-              domain, port = RedboothRuby.configuration[:api_base].split(':')
-              http = Net::HTTP.new(domain, port || Net::HTTP.http_default_port)
-            end
-            http.start do |inner_http|
-              inner_http.request(req)
-            end
-          end
+        case
+        when use_body_file?
+          multipart_request
+        when download_file?
+          access_token.send(:get, api_url)
         else
           access_token.send(*request_data)
         end
@@ -54,6 +34,36 @@ module RedboothRuby
       end
 
       protected
+
+      # Performs a multipart request by containing given files and post data
+      #
+      # @return [Http::Request]
+      def multipart_request
+        ::File.open(body_file_attrs[:local_path]) do |file|
+          req = Net::HTTP::Post::Multipart.new(
+              api_url,
+              body_hash.merge(
+               'asset' => UploadIO.new(file,
+                                       'application/octet-stream',
+                                        body_file_attrs[:name]
+                                      )
+              )
+          )
+          req['Authorization'] = "Bearer #{access_token.token}"
+          # access_token.sign! req
+          if RedboothRuby.configuration[:use_ssl]
+            http = Net::HTTP.new(RedboothRuby.configuration[:api_base] , Net::HTTP.https_default_port)
+            http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+            http.use_ssl = RedboothRuby.configuration[:use_ssl]
+          else
+            domain, port = RedboothRuby.configuration[:api_base].split(':')
+            http = Net::HTTP.new(domain, port || Net::HTTP.http_default_port)
+          end
+          http.start do |inner_http|
+            inner_http.request(req)
+          end
+        end
+      end
 
       # Body params hash
       #
@@ -86,6 +96,11 @@ module RedboothRuby
       def use_body_file?
         return false if use_url_params?
         body_hash.key?(:asset)
+      end
+
+      def download_file?
+        return false unless @info
+        @info.http_method == :download
       end
 
       def use_url_params?
