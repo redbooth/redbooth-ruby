@@ -166,6 +166,42 @@ Fetch a specific user
   user = client.user(:show, id: 123)
 ```
 
+TaskLists
+=====
+
+Lists task lists in your visibility scope
+
+```Ruby
+  tasklists_collection = client.task_list(:index)
+  tasklists = tasklists_collection.all
+```
+
+You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:tasklists,header:tasklists-tasklist-list) )
+
+```Ruby
+  filtered_tasklists = client.task_list(:index, order: 'id-DESC',
+                                                per_page: 50,
+                                                project_id: 123)
+```
+
+Fetch a specific tasklist
+
+```Ruby
+  tasklist = client.task_list(:show, id: 123)
+```
+
+Update a specific tasklist
+
+```Ruby
+  tasklist = client.task_list(:update, id: 123, name: 'new name')
+```
+
+Delete a specific tasklist
+
+```Ruby
+  client.task_list(:delete, id: 123)
+```
+
 Tasks
 =====
 

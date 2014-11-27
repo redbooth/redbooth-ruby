@@ -1,0 +1,133 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/tasks/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"995d617c5d5d4edaa253f4ee352507ee"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b8d6fd1b7a21c381f158d96052591fab
+      X-Runtime:
+      - '0.122754'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Task","created_at":1415624550,"updated_at":1415629595,"id":1,"name":"Register
+        all EarthworksYoga TLDs","task_list_id":2,"comments_count":2,"assigned_id":8,"is_private":false,"project_id":2,"urgent":false,"user_id":3,"position":0,"last_activity_id":null,"record_conversion_type":null,"record_conversion_id":null,"metadata":{},"subtasks_count":7,"resolved_subtasks_count":2,"watcher_ids":[3,4],"description":"The
+        ships hung in the sky in much the same way that bricks don''t.","description_html":"<p>The
+        ships hung in the sky in much the same way that bricks don''t.</p>","description_updated_by_user_id":3,"updated_by_id":4,"deleted":false,"row_order":0,"status":"resolved","due_on":"2014-11-11"}'
+    http_version: 
+  recorded_at: Fri, 14 Nov 2014 16:50:32 GMT
+- request:
+    method: post
+    uri: http://localhost:3000/api/3/metadata
+    body:
+      encoding: UTF-8
+      string: metadata%5Bnew%5D=metadata&metadata%5Bother%5D=value&target_id=1&target_type=Task
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"eb591be1adacc68e1b6631375add1186"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d6ad2b5aca6bf50bdef01e542d2a2ed7
+      X-Runtime:
+      - '0.110821'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"new":"metadata","other":"value"}'
+    http_version: 
+  recorded_at: Fri, 14 Nov 2014 16:50:32 GMT
+- request:
+    method: put
+    uri: http://localhost:3000/api/3/metadata
+    body:
+      encoding: UTF-8
+      string: metadata%5Bother%5D=updated_value&target_id=1&target_type=Task
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"c494d65897a7ed4d58f1da02d0b2c447"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0619c99a489f9c1546ad09de3f40ea54
+      X-Runtime:
+      - '0.129723'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"new":"metadata","other":"updated_value"}'
+    http_version: 
+  recorded_at: Fri, 14 Nov 2014 16:50:32 GMT
+recorded_with: VCR 2.9.3
