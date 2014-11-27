@@ -9,3 +9,4 @@ pkg/*
 .ruby-gemset
 /spec/integration/*
 /coverage
+/temp
