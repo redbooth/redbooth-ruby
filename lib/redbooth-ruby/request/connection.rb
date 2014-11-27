@@ -18,7 +18,7 @@ module RedboothRuby
         when use_body_file?
           multipart_request
         when download_file?
-          get_file_with_redirect
+          download_file_with_redirect
         else
           access_token.send(*request_data)
         end
@@ -28,11 +28,13 @@ module RedboothRuby
       # amazon s3 without authentication headers
       #
       def download_file_with_redirect
-          response = access_token.send(:get, api_url, { redirect_count: access_token.options[:max_redirects] + 1 })
+          max_redirects = access_token.options.fetch(:max_redirects, 20)
+          response = access_token.send(:get, api_url, { redirect_count: max_redirects + 1 })
           if [302, 301].include? response.status
             url = response.headers['Location']
-            req = Net::HTTP::Get.new
-            http = Net::HTTP.new(url , Net::HTTP.https_default_port)
+            uri = URI.parse(url)
+            req = Net::HTTP::Get.new(uri)
+            http = Net::HTTP.new(uri.host , Net::HTTP.https_default_port)
             http.verify_mode = OpenSSL::SSL::VERIFY_NONE
             http.use_ssl = RedboothRuby.configuration[:use_ssl]
             http.start do |inner_http|
