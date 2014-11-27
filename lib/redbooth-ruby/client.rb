@@ -5,7 +5,7 @@ module RedboothRuby
 
     RESOURCES = [ :me, :user, :task, :organization, :person, :project,
                   :conversation, :membership, :comment, :note, :subtask,
-                  :file ]
+                  :file, :task_list ]
 
     attr_reader :session, :options
 

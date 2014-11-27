@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/api/3/tasks
+    body:
+      encoding: UTF-8
+      string: name=new+created+task&project_id=2&task_list_id=3
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Bearer _frank_access_token_
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"8763a91d2b3c1d756c8b723774c1e992"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7336cde24651f37ee708f2aaefce84d3
+      X-Runtime:
+      - '0.310788'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '{"type":"Task","created_at":1415025412,"updated_at":1415025412,"id":50,"name":"new
+        created task","task_list_id":3,"comments_count":0,"assigned_id":null,"is_private":false,"project_id":2,"urgent":false,"user_id":1,"position":5,"last_activity_id":null,"record_conversion_type":null,"record_conversion_id":null,"metadata":{},"subtasks_count":0,"resolved_subtasks_count":0,"watcher_ids":[1],"description":null,"description_html":"","description_updated_by_user_id":null,"updated_by_id":null,"deleted":false,"row_order":8126464,"status":"new","due_on":null}'
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 14:36:52 GMT
+recorded_with: VCR 2.9.3
