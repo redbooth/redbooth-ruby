@@ -2,6 +2,7 @@ module RedboothRuby
   class Client
     include RedboothRuby::ClientOperations::Search
     include RedboothRuby::ClientOperations::Metadata
+    include Helpers
 
     RESOURCES = [ :me, :user, :task, :organization, :person, :project,
                   :conversation, :membership, :comment, :note, :subtask,
@@ -80,12 +81,12 @@ module RedboothRuby
       options.merge(session: @session)
     end
 
-    # Gest the api resource model class by his name
+    # Get the api resource model class by his name
     #
     # @param [String||Symbol] name name of the resource
     # @return [Copy::Base] resource to use the api
     def resource(name)
-      eval('RedboothRuby::' + name.to_s.capitalize) rescue nil
+      eval('RedboothRuby::' + camelize(name)) rescue nil
     end
 
   end

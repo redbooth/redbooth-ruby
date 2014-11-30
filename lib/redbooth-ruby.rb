@@ -15,7 +15,7 @@ module RedboothRuby
   autoload :Me,             'redbooth-ruby/me'
   autoload :User,           'redbooth-ruby/user'
   autoload :Task,           'redbooth-ruby/task'
-  autoload :Task_list,      'redbooth-ruby/task_list'
+  autoload :TaskList,       'redbooth-ruby/task_list'
   autoload :Organization,   'redbooth-ruby/organization'
   autoload :Person,         'redbooth-ruby/person'
   autoload :Project,        'redbooth-ruby/project'
@@ -25,6 +25,7 @@ module RedboothRuby
   autoload :Note,           'redbooth-ruby/note'
   autoload :Subtask,        'redbooth-ruby/subtask'
   autoload :File,           'redbooth-ruby/file'
+  autoload :Helpers,        'redbooth-ruby/helpers'
 
 
   module Operations

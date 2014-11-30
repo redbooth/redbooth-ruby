@@ -1,15 +1,15 @@
 require "spec_helper"
 
-describe RedboothRuby::Task_list, vcr: 'task_lists' do
+describe RedboothRuby::TaskList, vcr: 'task_lists' do
   include_context 'authentication'
 
   let(:create_task_list_params) do
     { project_id: 1,
       name: 'new created task_list' }
   end
-  let(:new_task_list) { RedboothRuby::Task_list.create(create_task_list_params.merge(session: session)) }
+  let(:new_task_list) { RedboothRuby::TaskList.create(create_task_list_params.merge(session: session)) }
   let(:task_list) do
-    RedboothRuby::Task_list.show(session: session, id: 2)
+    RedboothRuby::TaskList.show(session: session, id: 2)
   end
 
   describe "#initialize" do
@@ -40,7 +40,7 @@ describe RedboothRuby::Task_list, vcr: 'task_lists' do
   end
 
   describe ".update" do
-    subject { RedboothRuby::Task_list.update(session: session, id: 2, name: 'new test name') }
+    subject { RedboothRuby::TaskList.update(session: session, id: 2, name: 'new test name') }
 
     it "makes a new PUT request using the correct API endpoint to receive a specific task_list" do
       expect(RedboothRuby).to receive(:request).with(:put, nil, "task_lists/2", { name: 'new test name' }, { session: session }).and_call_original
@@ -65,7 +65,7 @@ describe RedboothRuby::Task_list, vcr: 'task_lists' do
   end
 
   describe ".delete" do
-    subject { RedboothRuby::Task_list.delete(session: session, id: new_task_list.id) }
+    subject { RedboothRuby::TaskList.delete(session: session, id: new_task_list.id) }
 
     it "makes a new DELETE request using the correct API endpoint to delete a specific task_list" do
       expect(RedboothRuby).to receive(:request).with(:delete, nil, "task_lists/#{new_task_list.id}", {}, { session: session }).and_call_original
@@ -74,7 +74,7 @@ describe RedboothRuby::Task_list, vcr: 'task_lists' do
   end
 
   describe ".index" do
-    subject { RedboothRuby::Task_list.index(session: session) }
+    subject { RedboothRuby::TaskList.index(session: session) }
 
     it "makes a new PUT request using the correct API endpoint to receive a specific task_list" do
       expect(RedboothRuby).to receive(:request).with(:get, nil, "task_lists", {}, { session: session }).and_call_original
@@ -88,7 +88,7 @@ describe RedboothRuby::Task_list, vcr: 'task_lists' do
     subject { task_list.metadata }
 
     it "makes a new PUT request using the correct API endpoint to receive a specific task_list" do
-      expect(RedboothRuby).to receive(:request).with(:get, nil, "metadata", { target_type: 'Task_list', target_id: task_list.id }, { session: session }).and_call_original
+      expect(RedboothRuby).to receive(:request).with(:get, nil, "metadata", { target_type: 'TaskList', target_id: task_list.id }, { session: session }).and_call_original
       subject
     end
 
@@ -100,7 +100,7 @@ describe RedboothRuby::Task_list, vcr: 'task_lists' do
     subject { task_list.metadata = { 'new' => 'metadata' } }
 
     it "makes a new PUT request using the correct API endpoint to receive a specific task_list" do
-      expect(RedboothRuby).to receive(:request).with(:post, nil, "metadata", { target_type: 'Task_list', target_id: task_list.id, metadata: { 'new' => 'metadata' } }, { session: session }).and_call_original
+      expect(RedboothRuby).to receive(:request).with(:post, nil, "metadata", { target_type: 'TaskList', target_id: task_list.id, metadata: { 'new' => 'metadata' } }, { session: session }).and_call_original
       subject
     end
 
@@ -114,7 +114,7 @@ describe RedboothRuby::Task_list, vcr: 'task_lists' do
     subject { task_list.metadata_merge( 'other' => 'updated_value') }
 
     it "makes a new PUT request using the correct API endpoint to receive a specific task_list" do
-      expect(RedboothRuby).to receive(:request).with(:put, nil, "metadata", { target_type: 'Task_list', target_id: task_list.id, metadata: { 'other' => 'updated_value' } }, { session: session }).and_call_original
+      expect(RedboothRuby).to receive(:request).with(:put, nil, "metadata", { target_type: 'TaskList', target_id: task_list.id, metadata: { 'other' => 'updated_value' } }, { session: session }).and_call_original
       subject
     end
 

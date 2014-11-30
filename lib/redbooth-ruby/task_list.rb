@@ -1,5 +1,5 @@
 module RedboothRuby
-  class Task_list < Base
+  class TaskList < Base
     include RedboothRuby::Operations::Index
     include RedboothRuby::Operations::Create
     include RedboothRuby::Operations::Update
