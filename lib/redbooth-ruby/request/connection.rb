@@ -29,7 +29,7 @@ module RedboothRuby
       #
       def download_file_with_redirect
           max_redirects = access_token.options.fetch(:max_redirects, 20)
-          response = access_token.send(:get, api_url, { redirect_count: max_redirects + 1 })
+          response = access_token.send(:get, URI.encode(api_url), { redirect_count: max_redirects + 1 })
           if [302, 301].include? response.status
             url = response.headers['Location']
             uri = URI.parse(url)
