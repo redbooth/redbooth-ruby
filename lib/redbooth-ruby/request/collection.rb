@@ -1,6 +1,7 @@
 module RedboothRuby
   module Request
     class Collection
+      include RedboothRuby::Helpers
       attr_reader :response, :params, :method, :session, :resource
 
       def initialize(attributes={})
@@ -99,12 +100,12 @@ module RedboothRuby
         klass.new(hash)
       end
 
-      # Gest the api resource model class by his name
+      # Get the api resource model class by his name
       #
       # @param [String||Symbol] name name of the resource
       # @return [Copy::Base] resource to use the api
       def resource_klass(name)
-        eval('RedboothRuby::' + name.to_s.capitalize) rescue nil
+        eval('RedboothRuby::' + camelize(name)) rescue nil
       end
 
       # Whenever the response is paginated or not

@@ -2,6 +2,7 @@ module RedboothRuby
   module Operations
     module Base
       module ClassMethods
+        include RedboothRuby::Helpers
         # Options for request
         # overwrite this in the model to set security
         #
@@ -35,7 +36,7 @@ module RedboothRuby
         # overwrite this in the model if the api is not well named
         #
         def api_resource_name(method = nil)
-          "#{name.split('::').last.downcase}s"
+          "#{underscore(name.split('::').last)}s"
         end
       end
 

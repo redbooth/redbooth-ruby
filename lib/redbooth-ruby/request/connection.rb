@@ -134,7 +134,7 @@ module RedboothRuby
         end
       end
 
-      # Returns the api url foir this request or default
+      # Returns the api url for this request or default
       def api_url
         url =  "#{api_url_method}#{api_url_domain}"
         url += "#{RedboothRuby.configuration[:api_base]}"
