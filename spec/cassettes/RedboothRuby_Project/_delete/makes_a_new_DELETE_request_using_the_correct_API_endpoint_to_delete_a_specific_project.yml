@@ -42,7 +42,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"type":"Project","created_at":1415206100,"updated_at":1415206100,"id":22,"permalink":"new-project","organization_id":1,"archived":false,"name":"new
         Project","description":null,"start_date":null,"end_date":null,"tracks_time":false,"public":null,"publish_pages":false,"settings":{},"deleted":false}'
-    http_version: 
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
 - request:
     method: delete
@@ -80,8 +80,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":"/api/3/projects/22action=destroy\u0026controller=api_v3%2Fprojects\u0026id=22","retry_after":null}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":"/api/3/projects/22action=destroy\u0026controller=api_v3%2Fprojects\u0026id=22","retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
 - request:
     method: delete
@@ -121,8 +121,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
 - request:
     method: delete
@@ -162,8 +162,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
 - request:
     method: delete
@@ -203,8 +203,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
 - request:
     method: delete
@@ -244,8 +244,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
 - request:
     method: delete
@@ -285,8 +285,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
 - request:
     method: delete
@@ -326,8 +326,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
 - request:
     method: delete
@@ -367,8 +367,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
 - request:
     method: delete
@@ -408,8 +408,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:21 GMT
 - request:
     method: delete
@@ -449,8 +449,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
 - request:
     method: delete
@@ -490,8 +490,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
 - request:
     method: delete
@@ -531,8 +531,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
 - request:
     method: delete
@@ -572,8 +572,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
 - request:
     method: delete
@@ -613,8 +613,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
 - request:
     method: delete
@@ -654,8 +654,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
 - request:
     method: delete
@@ -695,8 +695,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
 - request:
     method: delete
@@ -736,8 +736,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
 - request:
     method: delete
@@ -777,8 +777,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
 - request:
     method: delete
@@ -818,8 +818,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:22 GMT
 - request:
     method: delete
@@ -859,8 +859,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
 - request:
     method: delete
@@ -900,8 +900,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
 - request:
     method: delete
@@ -941,8 +941,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
 - request:
     method: delete
@@ -982,8 +982,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
 - request:
     method: delete
@@ -1023,8 +1023,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
 - request:
     method: delete
@@ -1064,8 +1064,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
 - request:
     method: delete
@@ -1105,8 +1105,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
 - request:
     method: delete
@@ -1146,8 +1146,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:23 GMT
 - request:
     method: delete
@@ -1187,8 +1187,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
 - request:
     method: delete
@@ -1228,8 +1228,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
 - request:
     method: delete
@@ -1269,8 +1269,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
 - request:
     method: delete
@@ -1310,8 +1310,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
 - request:
     method: delete
@@ -1351,8 +1351,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
 - request:
     method: delete
@@ -1392,8 +1392,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
 - request:
     method: delete
@@ -1433,8 +1433,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
 - request:
     method: delete
@@ -1474,8 +1474,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
 - request:
     method: delete
@@ -1515,8 +1515,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
 - request:
     method: delete
@@ -1556,8 +1556,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
 - request:
     method: delete
@@ -1597,8 +1597,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
 - request:
     method: delete
@@ -1638,8 +1638,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:24 GMT
 - request:
     method: delete
@@ -1679,8 +1679,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
 - request:
     method: delete
@@ -1720,8 +1720,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
 - request:
     method: delete
@@ -1761,8 +1761,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
 - request:
     method: delete
@@ -1802,8 +1802,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
 - request:
     method: delete
@@ -1843,8 +1843,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
 - request:
     method: delete
@@ -1884,8 +1884,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
 - request:
     method: delete
@@ -1925,8 +1925,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
 - request:
     method: delete
@@ -1966,8 +1966,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
 - request:
     method: delete
@@ -2007,8 +2007,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
 - request:
     method: delete
@@ -2048,8 +2048,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
 - request:
     method: delete
@@ -2089,8 +2089,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:25 GMT
 - request:
     method: delete
@@ -2130,8 +2130,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:26 GMT
 - request:
     method: delete
@@ -2171,8 +2171,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:26 GMT
 - request:
     method: delete
@@ -2212,8 +2212,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:26 GMT
 - request:
     method: delete
@@ -2253,8 +2253,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":null,"retry_after":20}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":null,"retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:26 GMT
 - request:
     method: delete
@@ -2291,6 +2291,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Wed, 05 Nov 2014 16:48:26 GMT
 recorded_with: VCR 2.9.3

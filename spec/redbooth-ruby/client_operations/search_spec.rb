@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe RedboothRuby::ClientOperations::Search, vcr: 'search' do
   include_context 'authentication'
@@ -10,10 +10,10 @@ describe RedboothRuby::ClientOperations::Search, vcr: 'search' do
   end
   let(:endpoint) { 'search' }
 
-  describe ".index" do
+  describe '.index' do
     subject { client.search(query: 'task') }
 
-    it "makes a new GET request using the correct API endpoint to receive notes collection" do
+    it 'makes a new GET request using the correct API endpoint to receive notes collection' do
       expect(RedboothRuby).to receive(:request).with(:get, nil, endpoint, { query: 'task' }, { session: session }).and_call_original
       subject
     end

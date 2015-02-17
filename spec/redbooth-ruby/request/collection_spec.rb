@@ -1,10 +1,10 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe RedboothRuby::Request::Collection, vcr: 'collection' do
   include_context 'authentication'
   let(:collection) { client.task(:index, per_page: 2) }
 
-  describe "#initialize" do
+  describe '#initialize' do
     subject { collection }
 
     it { should be_a RedboothRuby::Request::Collection }

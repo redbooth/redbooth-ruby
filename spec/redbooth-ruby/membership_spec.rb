@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe RedboothRuby::Membership, vcr: 'membership' do
   include_context 'authentication'
@@ -14,7 +14,7 @@ describe RedboothRuby::Membership, vcr: 'membership' do
     client.membership(:show, id: 1)
   end
 
-  describe "#initialize" do
+  describe '#initialize' do
     subject { membership }
 
     it { expect(subject.id).to eql 1 }
@@ -22,11 +22,11 @@ describe RedboothRuby::Membership, vcr: 'membership' do
     it { expect(subject.role).to eql 'admin' }
   end
 
-  describe ".show" do
+  describe '.show' do
     subject { membership }
 
-    it "makes a new GET request using the correct API endpoint to receive a specific membership" do
-      expect(RedboothRuby).to receive(:request).with(:get, nil, "#{endpoint_name}/1", {}, { session: session }).and_call_original
+    it 'makes a new GET request using the correct API endpoint to receive a specific membership' do
+      expect(RedboothRuby).to receive(:request).with(:get, nil, "#{ endpoint_name }/1", {}, { session: session }).and_call_original
       subject
     end
 
@@ -35,11 +35,11 @@ describe RedboothRuby::Membership, vcr: 'membership' do
     it { expect(subject.role).to eql 'admin' }
   end
 
-  describe ".update" do
+  describe '.update' do
     subject { client.membership(:update, id: 6, role: 'admin') }
 
-    it "makes a new PUT request using the correct API endpoint to receive a specific membership" do
-      expect(RedboothRuby).to receive(:request).with(:put, nil, "#{endpoint_name}/6", { role: 'admin' }, { session: session }).and_call_original
+    it 'makes a new PUT request using the correct API endpoint to receive a specific membership' do
+      expect(RedboothRuby).to receive(:request).with(:put, nil, "#{ endpoint_name }/6", { role: 'admin' }, { session: session }).and_call_original
       subject
     end
 
@@ -47,12 +47,12 @@ describe RedboothRuby::Membership, vcr: 'membership' do
     it { expect(subject.id).to eql 6 }
   end
 
-  describe ".create" do
+  describe '.create' do
     subject { new_record }
     let(:response) { double(:response, data: {} )}
 
-    it "makes a new POST request using the correct API endpoint to create a specific membership" do
-      expect(RedboothRuby).to receive(:request).with(:post, nil, "#{endpoint_name}", create_params, { session: session }).and_return(response)
+    it 'makes a new POST request using the correct API endpoint to create a specific membership' do
+      expect(RedboothRuby).to receive(:request).with(:post, nil, endpoint_name, create_params, { session: session }).and_return(response)
       subject
     end
 
@@ -63,20 +63,20 @@ describe RedboothRuby::Membership, vcr: 'membership' do
     end
   end
 
-  describe ".delete" do
+  describe '.delete' do
     subject { client.membership(:delete, id: new_record.id) }
 
-    it "makes a new DELETE request using the correct API endpoint to delete a specific membership" do
-      expect(RedboothRuby).to receive(:request).with(:delete, nil, "#{endpoint_name}/#{new_record.id}", {}, { session: session }).and_call_original
+    it 'makes a new DELETE request using the correct API endpoint to delete a specific membership' do
+      expect(RedboothRuby).to receive(:request).with(:delete, nil, "#{ endpoint_name }/#{ new_record.id }", {}, { session: session }).and_call_original
       subject
     end
   end
 
-  describe ".index" do
+  describe '.index' do
     subject { client.membership(:index) }
 
-    it "makes a new PUT request using the correct API endpoint to receive a specific membership" do
-      expect(RedboothRuby).to receive(:request).with(:get, nil, "#{endpoint_name}", {}, { session: session }).and_call_original
+    it 'makes a new PUT request using the correct API endpoint to receive a specific membership' do
+      expect(RedboothRuby).to receive(:request).with(:get, nil, endpoint_name, {}, { session: session }).and_call_original
       subject
     end
 

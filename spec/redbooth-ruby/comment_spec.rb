@@ -1,5 +1,4 @@
-# Encoding: utf-8
-require "spec_helper"
+require 'spec_helper'
 
 describe RedboothRuby::Comment, vcr: 'comments' do
   include_context 'authentication'
@@ -16,7 +15,7 @@ describe RedboothRuby::Comment, vcr: 'comments' do
     client.comment(:show, id: 1)
   end
 
-  describe "#initialize" do
+  describe '#initialize' do
     subject { comment }
 
     it { expect(subject.id).to eql 1 }
@@ -27,11 +26,11 @@ describe RedboothRuby::Comment, vcr: 'comments' do
     it { expect(subject.is_private).to eql false }
   end
 
-  describe ".show" do
+  describe '.show' do
     subject { comment }
 
-    it "makes a new GET request using the correct API endpoint to receive a specific comment" do
-      expect(RedboothRuby).to receive(:request).with(:get, nil, "#{endpoint}/1", {}, { session: session }).and_call_original
+    it 'makes a new GET request using the correct API endpoint to receive a specific comment' do
+      expect(RedboothRuby).to receive(:request).with(:get, nil, "#{ endpoint }/1", {}, { session: session }).and_call_original
       subject
     end
 
@@ -40,11 +39,11 @@ describe RedboothRuby::Comment, vcr: 'comments' do
     it { expect(subject.project_id).to eql 2 }
   end
 
-  describe ".update" do
+  describe '.update' do
     subject { client.comment(:update, id: 24, body: 'new test body') }
 
-    it "makes a new PUT request using the correct API endpoint to receive a specific comment" do
-      expect(RedboothRuby).to receive(:request).with(:put, nil, "#{endpoint}/24", { body: 'new test body' }, { session: session }).and_call_original
+    it 'makes a new PUT request using the correct API endpoint to receive a specific comment' do
+      expect(RedboothRuby).to receive(:request).with(:put, nil, "#{ endpoint }/24", { body: 'new test body' }, { session: session }).and_call_original
       subject
     end
 
@@ -52,10 +51,10 @@ describe RedboothRuby::Comment, vcr: 'comments' do
     it { expect(subject.id).to eql 24 }
   end
 
-  describe ".create" do
+  describe '.create' do
     subject { new_record }
 
-    it "makes a new POST request using the correct API endpoint to create a specific comment" do
+    it 'makes a new POST request using the correct API endpoint to create a specific comment' do
       expect(RedboothRuby).to receive(:request).with(:post, nil, endpoint, create_params, { session: session }).and_call_original
       subject
     end
@@ -65,20 +64,20 @@ describe RedboothRuby::Comment, vcr: 'comments' do
     it { expect(subject.user_id).to eql 1 }
   end
 
-  describe ".delete" do
+  describe '.delete' do
     subject { client.comment(:delete, id: new_record.id) }
 
-    it "makes a new DELETE request using the correct API endpoint to delete a specific comment" do
-      expect(RedboothRuby).to receive(:request).with(:delete, nil, "#{endpoint}/#{new_record.id}", {}, { session: session }).and_call_original
+    it 'makes a new DELETE request using the correct API endpoint to delete a specific comment' do
+      expect(RedboothRuby).to receive(:request).with(:delete, nil, "#{ endpoint }/#{ new_record.id }", {}, { session: session }).and_call_original
       subject
     end
   end
 
-  describe ".index" do
+  describe '.index' do
     subject { client.comment(:index, target_type: 'Task', target_id: 1) }
 
-    it "makes a new GET request using the correct API endpoint to receive comments collection" do
-      expect(RedboothRuby).to receive(:request).with(:get, nil, endpoint, {target_type: 'Task', target_id: 1}, { session: session }).and_call_original
+    it 'makes a new GET request using the correct API endpoint to receive comments collection' do
+      expect(RedboothRuby).to receive(:request).with(:get, nil, endpoint, { target_type: 'Task', target_id: 1 }, { session: session }).and_call_original
       subject
     end
 

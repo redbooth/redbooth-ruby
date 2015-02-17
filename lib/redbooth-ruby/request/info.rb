@@ -25,7 +25,7 @@ module RedboothRuby
       def path_with_params(path, params)
         unless params.empty?
           encoded_params = URI.encode_www_form(params)
-          [path, encoded_params].join("?")
+          [path, encoded_params].join('?')
         else
           path
         end

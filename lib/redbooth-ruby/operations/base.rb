@@ -21,7 +21,7 @@ module RedboothRuby
         #
         def api_member_url(id = nil, method = nil)
           url = api_resource_name(method)
-          url += "/#{id}" if id
+          url += "/#{ id }" if id
           url
         end
 
@@ -36,7 +36,7 @@ module RedboothRuby
         # overwrite this in the model if the api is not well named
         #
         def api_resource_name(method = nil)
-          "#{underscore(name.split('::').last)}s"
+          "#{ underscore(name.split('::').last) }s"
         end
       end
 

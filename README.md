@@ -16,23 +16,23 @@ Usage
 First, you've to install the gem
 
 ```Ruby
-  gem install redbooth-ruby
+gem install redbooth-ruby
 ```
 
 and require it
 
 ```Ruby
-  require 'redbooth-ruby'
+require 'redbooth-ruby'
 ```
 
 and set up your app credentials
 
 
 ```Ruby
-  RedboothRuby.config do |configuration|
-    configuration[:consumer_key] = '_your_consumer_key_'
-    configuration[:consumer_secret] = '_your_consumer_secret_'
-  end
+RedboothRuby.config do |configuration|
+  configuration[:consumer_key] = '_your_consumer_key_'
+  configuration[:consumer_secret] = '_your_consumer_secret_'
+end
 ```
 
 in fact this last step is optional (yes! we support multiple applications) but if as most fo the humans you use only one redbooth app, this is the easyest way to go.
@@ -41,7 +41,7 @@ in fact this last step is optional (yes! we support multiple applications) but i
 Oauth
 =====
 
-*[Redbooth oauth2 API documentation](https://www.redbooth.com/developer/documentation#authentication)*
+*[Redbooth oauth2 API documentation](https://redbooth.com/api/authentication/)*
 
 using omniauth? :+1: good choice, just try this gem
 
@@ -58,28 +58,58 @@ Client
 Everything starts with the client, once you have the user credentials you should create a session and a client to start interaction with the API
 
 ```Ruby
-  session = RedboothRuby::Session.new(
-    token: '_your_user_token_'
-  )
-  client = RedboothRuby::Client.new(session)
+session = RedboothRuby::Session.new(
+  token: '_your_user_token_'
+)
+client = RedboothRuby::Client.new(session)
 ```
 
 Now you can perform any user api call inside the clien wrapper
 
 ```Ruby
-  client.me(:show)
+client.me(:show)
 ```
 
 If you have multiple applications or you just want to ve explicit use the application credentials inside the session creation
 
 ```Ruby
-  session = RedboothRuby::Session.new(
-    token: '_your_user_token_',
-    consumer_key: '_your_app_key_',
-    consumer_secret: '_your_app_secret'
-  )
-  client = RedboothRuby::Client.new(session)
+session = RedboothRuby::Session.new(
+  token: '_your_user_token_',
+  consumer_key: '_your_app_key_',
+  consumer_secret: '_your_app_secret'
+)
+client = RedboothRuby::Client.new(session)
 ```
+
+Refresh Token
+------
+
+By default, your access token will expires in 7200 seconds (2 hours). If you want to automatically get a new one, just need to provide the ```refresh_token``` param
+
+```Ruby
+session = RedboothRuby::Session.new(
+  token: '_your_user_token_',
+  refresh_token: '_your_user_refresh_token_',
+  auto_refresh_token: true
+)
+```
+
+You can also provide a callback to get the new access token:
+
+```Ruby
+session = RedboothRuby::Session.new(
+  token: '_your_user_token_',
+  refresh_token: '_your_user_refresh_token_',
+  auto_refresh_token: true,
+  on_token_refresh: Proc.new do |old_access_token, new_access_token|
+    auth = Authentication.where(access_token: old_access_token.token).first
+    auth.access_token = new_access_token.token
+    auth.refresh_token = new_access_token.refresh_token
+    auth.save
+  end
+)
+```
+
 
 Async Endpoints
 ======
@@ -156,14 +186,14 @@ Users
 List users in your network
 
 ```Ruby
-  users_collection = client.user(:index)
-  users = users_collection.all
+users_collection = client.user(:index)
+users = users_collection.all
 ```
 
 Fetch a specific user
 
 ```Ruby
-  user = client.user(:show, id: 123)
+user = client.user(:show, id: 123)
 ```
 
 TaskLists
@@ -172,34 +202,34 @@ TaskLists
 Lists task lists in your visibility scope
 
 ```Ruby
-  tasklists_collection = client.task_list(:index)
-  tasklists = tasklists_collection.all
+tasklists_collection = client.task_list(:index)
+tasklists = tasklists_collection.all
 ```
 
 You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:tasklists,header:tasklists-tasklist-list) )
 
 ```Ruby
-  filtered_tasklists = client.task_list(:index, order: 'id-DESC',
-                                                per_page: 50,
-                                                project_id: 123)
+filtered_tasklists = client.task_list(:index, order: 'id-DESC',
+                                              per_page: 50,
+                                              project_id: 123)
 ```
 
 Fetch a specific tasklist
 
 ```Ruby
-  tasklist = client.task_list(:show, id: 123)
+tasklist = client.task_list(:show, id: 123)
 ```
 
 Update a specific tasklist
 
 ```Ruby
-  tasklist = client.task_list(:update, id: 123, name: 'new name')
+tasklist = client.task_list(:update, id: 123, name: 'new name')
 ```
 
 Delete a specific tasklist
 
 ```Ruby
-  client.task_list(:delete, id: 123)
+client.task_list(:delete, id: 123)
 ```
 
 Tasks
@@ -208,34 +238,34 @@ Tasks
 Lists tasks in your visibility scope
 
 ```Ruby
-  tasks_collection = client.task(:index)
-  tasks = tasks_collection.all
+tasks_collection = client.task(:index)
+tasks = tasks_collection.all
 ```
 
 You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:tasks,header:tasks-task-list) )
 
 ```Ruby
-  filtered_tasks = client.task(:index, order: 'id-DESC',
-                                        per_page: 50,
-                                        project_id: 123)
+filtered_tasks = client.task(:index, order: 'id-DESC',
+                                      per_page: 50,
+                                      project_id: 123)
 ```
 
 Fetch a specific task
 
 ```Ruby
-  task = client.task(:show, id: 123)
+task = client.task(:show, id: 123)
 ```
 
 Update a specific task
 
 ```Ruby
-  task = client.task(:update, id: 123, name: 'new name')
+task = client.task(:update, id: 123, name: 'new name')
 ```
 
 Delete a specific task
 
 ```Ruby
-  client.task(:delete, id: 123)
+client.task(:delete, id: 123)
 ```
 
 Organizations
@@ -244,39 +274,39 @@ Organizations
 Lists organizations in your visibility scope
 
 ```Ruby
-  organization_collection = client.organization(:index)
-  organizations = organization_collection.all
+organization_collection = client.organization(:index)
+organizations = organization_collection.all
 ```
 
 You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:organizations,header:organizations-organization-list) )
 
 ```Ruby
-  filtered_organizations = client.organization(:index, order: 'id-DESC',
-                                                       per_page: 50)
+filtered_organizations = client.organization(:index, order: 'id-DESC',
+                                                     per_page: 50)
 ```
 
 Fetch a specific organization
 
 ```Ruby
-  organization = client.organization(:show, id: 123)
+organization = client.organization(:show, id: 123)
 ```
 
 Create a organization
 
 ```Ruby
-  organization = client.organization(:create, name: 'New Organization')
+organization = client.organization(:create, name: 'New Organization')
 ```
 
 Update a specific organization
 
 ```Ruby
-  organization = client.organization(:update, id: 123, name: 'new name')
+organization = client.organization(:update, id: 123, name: 'new name')
 ```
 
 Delete a specific organization
 
 ```Ruby
-  client.organization(:delete, id: 123)
+client.organization(:delete, id: 123)
 ```
 
 Projects
@@ -285,39 +315,38 @@ Projects
 Lists projects in your visibility scope
 
 ```Ruby
-  project_collection = client.project(:index)
-  projects = project_collection.all
+project_collection = client.project(:index)
+projects = project_collection.all
 ```
 
 You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:projects,header:projects-project-list) )
 
 ```Ruby
-  filtered_projects = client.project(:index, order: 'id-DESC',
-                                                       per_page: 50)
+filtered_projects = client.project(:index, order: 'id-DESC', per_page: 50)
 ```
 
 Fetch a specific project
 
 ```Ruby
-  project = client.project(:show, id: 123)
+project = client.project(:show, id: 123)
 ```
 
 Create a project
 
 ```Ruby
-  project = client.project(:create, name: 'New Project')
+project = client.project(:create, name: 'New Project')
 ```
 
 Update a specific project
 
 ```Ruby
-  project = client.project(:update, id: 123, name: 'new name')
+project = client.project(:update, id: 123, name: 'new name')
 ```
 
 Delete a specific project
 
 ```Ruby
-  client.project(:delete, id: 123)
+client.project(:delete, id: 123)
 ```
 
 People
@@ -337,39 +366,38 @@ information
 Lists People in your visibility scope
 
 ```Ruby
-  people_collection = client.person(:index)
-  people = people_collection.all
+people_collection = client.person(:index)
+people = people_collection.all
 ```
 
 You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:people,header:people-people-list) )
 
 ```Ruby
-  filtered_people = client.person(:index, order: 'id-DESC',
-                                          per_page: 50)
+filtered_people = client.person(:index, order: 'id-DESC', per_page: 50)
 ```
 
 Fetch a specific person
 
 ```Ruby
-  people = client.person(:show, id: 123)
+people = client.person(:show, id: 123)
 ```
 
 Create a person
 
 ```Ruby
-  person = client.person(:create, project_id: 123, user_id: 123, role: 'participant')
+person = client.person(:create, project_id: 123, user_id: 123, role: 'participant')
 ```
 
 Update a specific person
 
 ```Ruby
-  person = client.person(:update, id: 123, role: 'admin')
+person = client.person(:update, id: 123, role: 'admin')
 ```
 
 Delete a specific person
 
 ```Ruby
-  client.person(:delete, id: 123)
+client.person(:delete, id: 123)
 ```
 
 Memberships
@@ -388,39 +416,39 @@ Memberships is the redbooth relation between organization and users containing t
 Lists Memberships in your visibility scope
 
 ```Ruby
-  membership_collection = client.membership(:index)
-  memberships = membership_collection.all
+membership_collection = client.membership(:index)
+memberships = membership_collection.all
 ```
 
 You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:memberships,header:memberships-memberships-list) )
 
 ```Ruby
-  filtered_memberships = client.membership(:index, order: 'id-DESC',
-                                                   per_page: 50)
+filtered_memberships = client.membership(:index, order: 'id-DESC', per_page: 50)
 ```
 
 Fetch a specific membership
 
 ```Ruby
-  memberships = client.membership(:show, id: 123)
+memberships = client.membership(:show, id: 123)
 ```
 
 Create a membership
 
 ```Ruby
-  membership = client.membership(:create, organization_id: 123, user_id: 123, role: 'participant')
+membership = client.membership(:create, organization_id: 123, user_id: 123,
+  role: 'participant')
 ```
 
 Update a specific membership
 
 ```Ruby
-  membership = client.membership(:update, id: 123, role: 'admin')
+membership = client.membership(:update, id: 123, role: 'admin')
 ```
 
 Delete a specific membership
 
 ```Ruby
-  client.membership(:delete, id: 123)
+client.membership(:delete, id: 123)
 ```
 
 Conversations
@@ -429,34 +457,34 @@ Conversations
 Lists conversations in your visibility scope
 
 ```Ruby
-  conversation_collection = client.conversation(:index)
-  conversations = conversation_collection.all
+conversation_collection = client.conversation(:index)
+conversations = conversation_collection.all
 ```
 
 You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:conversations,header:conversations-conversations-list) )
 
 ```Ruby
-  filtered_conversations = client.conversation(:index, order: 'id-DESC',
-                                                       per_page: 50,
-                                                       project_id: 123)
+filtered_conversations = client.conversation(:index, order: 'id-DESC',
+                                                     per_page: 50,
+                                                     project_id: 123)
 ```
 
 Fetch a specific conversation
 
 ```Ruby
-  conversation = client.conversation(:show, id: 123)
+conversation = client.conversation(:show, id: 123)
 ```
 
 Update a specific conversation
 
 ```Ruby
-  conversation = client.conversation(:update, id: 123, name: 'new name')
+conversation = client.conversation(:update, id: 123, name: 'new name')
 ```
 
 Delete a specific conversation
 
 ```Ruby
-  client.conversation(:delete, id: 123)
+client.conversation(:delete, id: 123)
 ```
 
 Comments
@@ -470,36 +498,36 @@ To consume the comments endpoint you allways need to provide a `target_type` and
 Lists comments in your visibility scope
 
 ```Ruby
-  comment_collection = client.comment(:index, target_type: 'task', target_id: 123)
-  comments = comment_collection.all
+comment_collection = client.comment(:index, target_type: 'task', target_id: 123)
+comments = comment_collection.all
 ```
 
 You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:comments,header:comments-commnets-list) )
 
 ```Ruby
-  filtered_comments = client.comment(:index, order: 'id-DESC',
-                                             per_page: 50,
-                                             project_id: 123,
-                                             target_type: 'task',
-                                             target_id: 123)
+filtered_comments = client.comment(:index, order: 'id-DESC',
+                                           per_page: 50,
+                                           project_id: 123,
+                                           target_type: 'task',
+                                           target_id: 123)
 ```
 
 Fetch a specific comment
 
 ```Ruby
-  comment = client.comment(:show, id: 123)
+comment = client.comment(:show, id: 123)
 ```
 
 Update a specific comment
 
 ```Ruby
-  comment = client.comment(:update, id: 123, body: 'new body content')
+comment = client.comment(:update, id: 123, body: 'new body content')
 ```
 
 Delete a specific comment
 
 ```Ruby
-  client.comment(:delete, id: 123)
+client.comment(:delete, id: 123)
 ```
 
 Notes
@@ -508,34 +536,34 @@ Notes
 Lists notes in your visibility scope
 
 ```Ruby
-  notes_collection = client.note(:index)
-  notes = notes_collection.all
+notes_collection = client.note(:index)
+notes = notes_collection.all
 ```
 
 You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:notes,header:notes-notes-list) )
 
 ```Ruby
-  filtered_notes = client.note(:index, order: 'id-DESC',
-                                       per_page: 50,
-                                       project_id: 123)
+filtered_notes = client.note(:index, order: 'id-DESC',
+                                     per_page: 50,
+                                     project_id: 123)
 ```
 
 Fetch a specific note
 
 ```Ruby
-  note = client.note(:show, id: 123)
+note = client.note(:show, id: 123)
 ```
 
 Update a specific note
 
 ```Ruby
-  note = client.note(:update, id: 123, name: 'new name')
+note = client.note(:update, id: 123, name: 'new name')
 ```
 
 Delete a specific note
 
 ```Ruby
-  client.note(:delete, id: 123)
+client.note(:delete, id: 123)
 ```
 
 Subtasks
@@ -546,40 +574,40 @@ Subtasks are little sentences under a task that could de resolved or not.
 Lists subtasks in your visibility scope. Needs a task_id
 
 ```Ruby
-  subtask_collection = client.subtask(:index, task_id: 123)
-  subtasks = subtask_collection.all
+subtask_collection = client.subtask(:index, task_id: 123)
+subtasks = subtask_collection.all
 ```
 
 You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:subtasks,header:subtasks-subtasks-list) )
 
 ```Ruby
-  filtered_subtasks = client.subtask(:index, task_id: 123,
-                                             order: 'id-DESC',
-                                             per_page: 50)
+filtered_subtasks = client.subtask(:index, task_id: 123,
+                                           order: 'id-DESC',
+                                           per_page: 50)
 ```
 
 Fetch a specific subtask
 
 ```Ruby
-  subtask = client.subtask(:show, id: 123)
+subtask = client.subtask(:show, id: 123)
 ```
 
 Create a new subtask
 
 ```Ruby
-  subtask = client.subtask(:create, task_id: 123, name: 'new name')
+subtask = client.subtask(:create, task_id: 123, name: 'new name')
 ```
 
 Update a specific subtask
 
 ```Ruby
-  subtask = client.subtask(:update, id: 123, name: 'new name')
+subtask = client.subtask(:update, id: 123, name: 'new name')
 ```
 
 Delete a specific subtask
 
 ```Ruby
-  client.subtask(:delete, id: 123)
+client.subtask(:delete, id: 123)
 ```
 
 Files
@@ -590,48 +618,48 @@ Files in redbooth could be uploaded or choosen form other service providers (Cop
 Lists files in your visibility scope.
 
 ```Ruby
-  files_colilection = client.file(:index)
-  files = files_collection.all
+files_colilection = client.file(:index)
+files = files_collection.all
 ```
 
 You can also filter by multiple params (see docs [here](https://redbooth.com/api/api-docs/#page:subtasks,header:subtasks-subtasks-list) )
 
 ```Ruby
-  filtered_files_collection = client.file(:index, backend: 'redbooth',
-                                                  project_id: 123,
-                                                  order: 'id-DESC',
-                                                  per_page: 25)
+filtered_files_collection = client.file(:index, backend: 'redbooth',
+                                                project_id: 123,
+                                                order: 'id-DESC',
+                                                per_page: 25)
 ```
 
 Update a specific file
 
 ```Ruby
-  file = client.file(:update, id: 123, name: 'new_name.doc')
+file = client.file(:update, id: 123, name: 'new_name.doc')
 ```
 
 Create a new file
 
 ```Ruby
-  file = File.open('path/to/the/file')
-  new_file = client.file(:create, project_id: 123,
-                                  parent_id: nil,
-                                  backend: 'redbooth',
-                                  is_dir: false,
-                                  asset: file )
+file = File.open('path/to/the/file')
+new_file = client.file(:create, project_id: 123,
+                                parent_id: nil,
+                                backend: 'redbooth',
+                                is_dir: false,
+                                asset: file )
 ```
 
 Delete a specific subtask
 
 ```Ruby
-  client.file(:delete, id: 123)
+client.file(:delete, id: 123)
 ```
 
 Download a file
 
 ```Ruby
-  file # RedBoothRuby::File
+file # RedBoothRuby::File
 
-  open('/path/to/your_new_file.txt', 'w') { |f| f.puts file.download }
+open('/path/to/your_new_file.txt', 'w') { |f| f.puts file.download }
 ```
 
 Search
@@ -649,7 +677,7 @@ You can search throught any redbooth entity by using the search method. There is
 Search for redbooth objects in your visibility scope
 
 ```Ruby
-  entities = client.search(query: 'task+nothing*')
+entities = client.search(query: 'task+nothing*')
 ```
 
 Metadata
@@ -663,25 +691,25 @@ This is really helpful when doing API syncs or tiny implementations in top of th
 Fetch object metadata
 
 ```Ruby
-  task.metadata
+task.metadata
 ```
 
 Update object metadata by adding new keys or overwriding the exisiting ones but not touching the others if there is any one.
 
 ```Ruby
-  task.metadata_merge("new_key" => "new value")
+task.metadata_merge("new_key" => "new value")
 ```
 
 Restore user metadata by overwiritng the existing ones.
 
 ```Ruby
-  task.metadata = {"key" => "value"}
+task.metadata = {"key" => "value"}
 ```
 
 Search for a certain metadata key value
 
 ```Ruby
-  metadata_collection = client.metadata(key: 'key', value: 'value', target_type: 'Task')
+metadata_collection = client.metadata(key: 'key', value: 'value', target_type: 'Task')
 ```
 
 License

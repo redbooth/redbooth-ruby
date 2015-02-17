@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe RedboothRuby::Task, vcr: 'tasks' do
   include_context 'authentication'
@@ -13,7 +13,7 @@ describe RedboothRuby::Task, vcr: 'tasks' do
     RedboothRuby::Task.show(session: session, id: 1)
   end
 
-  describe "#initialize" do
+  describe '#initialize' do
     subject { task }
 
     it { expect(subject.id).to eql 1 }
@@ -24,9 +24,9 @@ describe RedboothRuby::Task, vcr: 'tasks' do
     it { expect(subject.due_on).to eql '2014-11-04' }
   end
 
-  describe ".show" do
-    it "makes a new GET request using the correct API endpoint to receive a specific task" do
-      expect(RedboothRuby).to receive(:request).with(:get, nil, "tasks/1", {}, { session: session }).and_call_original
+  describe '.show' do
+    it 'makes a new GET request using the correct API endpoint to receive a specific task' do
+      expect(RedboothRuby).to receive(:request).with(:get, nil, 'tasks/1', {}, { session: session }).and_call_original
       task
     end
     it 'returns a task with the correct name' do
@@ -43,11 +43,11 @@ describe RedboothRuby::Task, vcr: 'tasks' do
     end
   end
 
-  describe ".update" do
+  describe '.update' do
     subject { RedboothRuby::Task.update(session: session, id: 2, name: 'new test name') }
 
-    it "makes a new PUT request using the correct API endpoint to receive a specific task" do
-      expect(RedboothRuby).to receive(:request).with(:put, nil, "tasks/2", { name: 'new test name' }, { session: session }).and_call_original
+    it 'makes a new PUT request using the correct API endpoint to receive a specific task' do
+      expect(RedboothRuby).to receive(:request).with(:put, nil, 'tasks/2', { name: 'new test name' }, { session: session }).and_call_original
       subject
     end
 
@@ -55,11 +55,11 @@ describe RedboothRuby::Task, vcr: 'tasks' do
     it { expect(subject.id).to eql 2 }
   end
 
-  describe ".create" do
+  describe '.create' do
     subject { new_task }
 
-    it "makes a new POST request using the correct API endpoint to create a specific task" do
-      expect(RedboothRuby).to receive(:request).with(:post, nil, "tasks", create_task_params, { session: session }).and_call_original
+    it 'makes a new POST request using the correct API endpoint to create a specific task' do
+      expect(RedboothRuby).to receive(:request).with(:post, nil, 'tasks', create_task_params, { session: session }).and_call_original
       subject
     end
 
@@ -68,20 +68,20 @@ describe RedboothRuby::Task, vcr: 'tasks' do
     it { expect(subject.task_list_id).to eql 3 }
   end
 
-  describe ".delete" do
+  describe '.delete' do
     subject { RedboothRuby::Task.delete(session: session, id: new_task.id) }
 
-    it "makes a new DELETE request using the correct API endpoint to delete a specific task" do
+    it 'makes a new DELETE request using the correct API endpoint to delete a specific task' do
       expect(RedboothRuby).to receive(:request).with(:delete, nil, "tasks/#{new_task.id}", {}, { session: session }).and_call_original
       subject
     end
   end
 
-  describe ".index" do
+  describe '.index' do
     subject { RedboothRuby::Task.index(session: session) }
 
-    it "makes a new PUT request using the correct API endpoint to receive a specific task" do
-      expect(RedboothRuby).to receive(:request).with(:get, nil, "tasks", {}, { session: session }).and_call_original
+    it 'makes a new PUT request using the correct API endpoint to receive a specific task' do
+      expect(RedboothRuby).to receive(:request).with(:get, nil, 'tasks', {}, { session: session }).and_call_original
       subject
     end
 
@@ -91,8 +91,8 @@ describe RedboothRuby::Task, vcr: 'tasks' do
   describe '.medatada' do
     subject { task.metadata }
 
-    it "makes a new PUT request using the correct API endpoint to receive a specific task" do
-      expect(RedboothRuby).to receive(:request).with(:get, nil, "metadata", { target_type: 'Task', target_id: task.id }, { session: session }).and_call_original
+    it 'makes a new PUT request using the correct API endpoint to receive a specific task' do
+      expect(RedboothRuby).to receive(:request).with(:get, nil, 'metadata', { target_type: 'Task', target_id: task.id }, { session: session }).and_call_original
       subject
     end
 
@@ -103,8 +103,8 @@ describe RedboothRuby::Task, vcr: 'tasks' do
   describe '.medatada=' do
     subject { task.metadata = { 'new' => 'metadata' } }
 
-    it "makes a new PUT request using the correct API endpoint to receive a specific task" do
-      expect(RedboothRuby).to receive(:request).with(:post, nil, "metadata", { target_type: 'Task', target_id: task.id, metadata: { 'new' => 'metadata' } }, { session: session }).and_call_original
+    it 'makes a new PUT request using the correct API endpoint to receive a specific task' do
+      expect(RedboothRuby).to receive(:request).with(:post, nil, 'metadata', { target_type: 'Task', target_id: task.id, metadata: { 'new' => 'metadata' } }, { session: session }).and_call_original
       subject
     end
 
@@ -117,7 +117,7 @@ describe RedboothRuby::Task, vcr: 'tasks' do
     before { task.metadata = { 'new' => 'metadata', 'other' => 'value' } }
     subject { task.metadata_merge( 'other' => 'updated_value') }
 
-    it "makes a new PUT request using the correct API endpoint to receive a specific task" do
+    it 'makes a new PUT request using the correct API endpoint to receive a specific task' do
       expect(RedboothRuby).to receive(:request).with(:put, nil, "metadata", { target_type: 'Task', target_id: task.id, metadata: { 'other' => 'updated_value' } }, { session: session }).and_call_original
       subject
     end

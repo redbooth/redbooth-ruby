@@ -42,7 +42,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"type":"Organization","created_at":1415197273,"updated_at":1415197273,"id":12,"name":"new
         Organization","permalink":"new-organization-fx0qk","domain":null,"settings":{"allow_comment_deletion":true},"omit_email_processing":false,"product":"50-seats-trial","product_name":"trial","feature_level":"freeu","subscription_id":12,"seats":50,"remaining_users":49,"available_users":50,"used_users":1,"remaining_projects":999998,"available_projects":999999,"used_projects":1,"metadata":{},"square_logo_url":"/images/logos/square/missing.png","top_logo_url":"/images/logos/top/missing.png","has_logo":false,"is_pro":true,"description":null}'
-    http_version: 
+    http_version:
   recorded_at: Wed, 05 Nov 2014 14:21:19 GMT
 - request:
     method: delete
@@ -80,8 +80,8 @@ http_interactions:
       - thin 1.6.1 codename Death Proof
     body:
       encoding: UTF-8
-      string: '{"status":"Enqueued","process_token":"/api/3/organizations/12action=destroy\u0026controller=api_v3%2Forganizations\u0026id=12","retry_after":null}'
-    http_version: 
+      string: '{"status":"Enqueued","process_token":"/api/3/organizations/12action=destroy\u0026controller=api_v3%2Forganizations\u0026id=12","retry_after":0}'
+    http_version:
   recorded_at: Wed, 05 Nov 2014 14:21:49 GMT
 - request:
     method: delete
@@ -118,6 +118,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Wed, 05 Nov 2014 14:36:02 GMT
 recorded_with: VCR 2.9.3
