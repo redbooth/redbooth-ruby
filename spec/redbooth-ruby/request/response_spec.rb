@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe RedboothRuby::Request::Response do
   let(:headers) { {} }
@@ -8,11 +8,11 @@ describe RedboothRuby::Request::Response do
                                                    status: status,
                                                    headers: headers) }
 
-  describe "#initialize" do
+  describe '#initialize' do
     subject { response }
 
     it { should be_a RedboothRuby::Request::Response }
-    it { expect(subject.data).to eq("response" => "ok") }
+    it { expect(subject.data).to eq('response' => 'ok') }
     it { expect(subject.body).to eq(body) }
     it { expect(subject.headers).to eq(headers) }
     it { expect(subject.status).to eq(status) }

@@ -1,4 +1,4 @@
-require "codeclimate-test-reporter"
+require 'codeclimate-test-reporter'
 CodeClimate::TestReporter.start
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
@@ -24,5 +24,4 @@ end
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
-  config.extend VCR::RSpec::Macros
 end

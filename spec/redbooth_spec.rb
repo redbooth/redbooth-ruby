@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe RedboothRuby do
   describe '.request' do
@@ -8,7 +8,7 @@ describe RedboothRuby do
       end
     end
 
-    context "with an invalid api key" do
+    context 'with an invalid api key' do
       let(:consumer_key) { '_your_consumen_key_' }
       let(:consumer_secret) { '_your_consumen_secret_' }
       let(:access_token) do
@@ -20,7 +20,7 @@ describe RedboothRuby do
       let(:client) { RedboothRuby::Client.new(session) }
       let(:session) { RedboothRuby::Session.new(access_token) }
       let(:redbooth_protocol) { RedboothRuby.configuration[:use_ssl] ? 'https' : 'http' }
-      let(:redbooth_url) { "#{redbooth_protocol}://#{RedboothRuby.configuration[:api_base]}/#{RedboothRuby.configuration[:api_base_path]}/#{RedboothRuby.configuration[:api_version]}" }
+      let(:redbooth_url) { "#{ redbooth_protocol }://#{ RedboothRuby.configuration[:api_base] }/#{ RedboothRuby.configuration[:api_base_path] }/#{ RedboothRuby.configuration[:api_version] }" }
 
       before(:each) do
         RedboothRuby.config do |configuration|
@@ -28,7 +28,7 @@ describe RedboothRuby do
           configuration[:consumer_secret] = consumer_secret
         end
         WebMock.stub_request(:any,
-                             /#{RedboothRuby.configuration[:api_base]}/
+                             /#{ RedboothRuby.configuration[:api_base] }/
                             ).to_return(body: '{}')
       end
 
@@ -38,7 +38,7 @@ describe RedboothRuby do
                      { session: session }
                     )
         expect(WebMock).to have_requested(:get,
-                                      "#{redbooth_url}/user?param_name=param_value"
+                                      "#{ redbooth_url }/user?param_name=param_value"
                                       )
       end
 
@@ -51,18 +51,18 @@ describe RedboothRuby do
                         )
         expect(WebMock).to have_requested(
           :get,
-          "#{redbooth_url}/user?client=client_id&order=created_at_desc"
+          "#{ redbooth_url }/user?client=client_id&order=created_at_desc"
         )
       end
 
-      it "doesn't add a question mark if no params" do
-        RedboothRuby.request(:post, nil, "user", {}, { session: session })
-        expect(WebMock).to have_requested(:post, "#{redbooth_url}/user")
+      it 'doesn\'t add a question mark if no params' do
+        RedboothRuby.request(:post, nil, 'user', {}, { session: session })
+        expect(WebMock).to have_requested(:post, "#{ redbooth_url }/user")
       end
 
-      it "uses the param id to construct the url" do
-        RedboothRuby.request(:post, nil, "user", {id: 'new_id'}, { session: session })
-        expect(WebMock).to have_requested(:post, "#{redbooth_url}/user/new_id")
+      it 'uses the param id to construct the url' do
+        RedboothRuby.request(:post, nil, 'user', { id: 'new_id' }, { session: session })
+        expect(WebMock).to have_requested(:post, "#{ redbooth_url }/user/new_id")
       end
     end
   end

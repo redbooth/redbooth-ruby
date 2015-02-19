@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe RedboothRuby::Organization, vcr: 'organization' do
   include_context 'authentication'
@@ -11,7 +11,7 @@ describe RedboothRuby::Organization, vcr: 'organization' do
     client.organization(:show, id: 1)
   end
 
-  describe "#initialize" do
+  describe '#initialize' do
     subject { organization }
 
     it { expect(subject.id).to eql 1 }
@@ -20,11 +20,11 @@ describe RedboothRuby::Organization, vcr: 'organization' do
     it { expect(subject.domain).to eql nil }
   end
 
-  describe ".show" do
+  describe '.show' do
     subject { organization }
 
-    it "makes a new GET request using the correct API endpoint to receive a specific organization" do
-      expect(RedboothRuby).to receive(:request).with(:get, nil, "organizations/1", {}, { session: session }).and_call_original
+    it 'makes a new GET request using the correct API endpoint to receive a specific organization' do
+      expect(RedboothRuby).to receive(:request).with(:get, nil, 'organizations/1', {}, { session: session }).and_call_original
       subject
     end
 
@@ -34,11 +34,11 @@ describe RedboothRuby::Organization, vcr: 'organization' do
     it { expect(subject.domain).to eql nil }
   end
 
-  describe ".update" do
+  describe '.update' do
     subject { client.organization(:update, id: 2, name: 'new test name') }
 
-    it "makes a new PUT request using the correct API endpoint to receive a specific organization" do
-      expect(RedboothRuby).to receive(:request).with(:put, nil, "organizations/2", { name: 'new test name' }, { session: session }).and_call_original
+    it 'makes a new PUT request using the correct API endpoint to receive a specific organization' do
+      expect(RedboothRuby).to receive(:request).with(:put, nil, 'organizations/2', { name: 'new test name' }, { session: session }).and_call_original
       subject
     end
 
@@ -46,10 +46,10 @@ describe RedboothRuby::Organization, vcr: 'organization' do
     it { expect(subject.id).to eql 2 }
   end
 
-  describe ".create" do
+  describe '.create' do
     subject { new_organization }
 
-    it "makes a new POST request using the correct API endpoint to create a specific organization" do
+    it 'makes a new POST request using the correct API endpoint to create a specific organization' do
       expect(RedboothRuby).to receive(:request).with(:post, nil, "organizations", create_organization_params, { session: session }).and_call_original
       subject
     end
@@ -57,21 +57,21 @@ describe RedboothRuby::Organization, vcr: 'organization' do
     it { expect(subject.name).to eql 'new Organization' }
   end
 
-  describe ".delete" do
+  describe '.delete' do
     subject { client.organization(:delete, id: new_organization.id) }
     before { allow_any_instance_of(RedboothRuby::Client).to receive(:sleep) }
 
-    it "makes a new DELETE request using the correct API endpoint to delete a specific organization" do
+    it 'makes a new DELETE request using the correct API endpoint to delete a specific organization' do
       expect(RedboothRuby).to receive(:request).with(:delete, nil, "organizations/#{new_organization.id}", {}, { session: session }).twice.and_call_original
       subject
     end
   end
 
-  describe ".index" do
+  describe '.index' do
     subject { client.organization(:index) }
 
-    it "makes a new PUT request using the correct API endpoint to receive a specific organization" do
-      expect(RedboothRuby).to receive(:request).with(:get, nil, "organizations", {}, { session: session }).and_call_original
+    it 'makes a new PUT request using the correct API endpoint to receive a specific organization' do
+      expect(RedboothRuby).to receive(:request).with(:get, nil, 'organizations', {}, { session: session }).and_call_original
       subject
     end
 

@@ -23,8 +23,8 @@ module RedboothRuby
           access_token.send(*request_data)
         end
       end
-      
-      # Downloads the desired file following redirects to 
+
+      # Downloads the desired file following redirects to
       # amazon s3 without authentication headers
       #
       def download_file_with_redirect
@@ -136,10 +136,10 @@ module RedboothRuby
 
       # Returns the api url for this request or default
       def api_url
-        url =  "#{api_url_method}#{api_url_domain}"
-        url += "#{RedboothRuby.configuration[:api_base]}"
-        url += "#{api_url_path}"
-        url += "#{api_url_version}"
+        url =  "#{ api_url_method}#{api_url_domain }"
+        url += "#{ RedboothRuby.configuration[:api_base] }"
+        url += "#{ api_url_path }"
+        url += "#{ api_url_version }"
         if @info
           url += @info.url
           if use_url_params? && !body_hash.empty?
@@ -159,7 +159,7 @@ module RedboothRuby
 
       def api_url_domain
         return '' unless domain
-        "#{domain}."
+        "#{ domain }."
       end
 
       def api_url_path

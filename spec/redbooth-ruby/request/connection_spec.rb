@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe RedboothRuby::Request::Connection do
   let(:consumer_key) { '_your_consumen_key_' }
@@ -21,7 +21,7 @@ describe RedboothRuby::Request::Connection do
   let(:client) { RedboothRuby::Client.new(session) }
   let(:session) { RedboothRuby::Session.new(access_token) }
   let(:redbooth_protocol) { RedboothRuby.configuration[:use_ssl] ? 'https' : 'http' }
-  let(:redbooth_url) { "#{redbooth_protocol}://#{RedboothRuby.configuration[:api_base]}/#{RedboothRuby.configuration[:api_base_path]}/#{RedboothRuby.configuration[:api_version]}" }
+  let(:redbooth_url) { "#{ redbooth_protocol }://#{ RedboothRuby.configuration[:api_base] }/#{ RedboothRuby.configuration[:api_base_path] }/#{ RedboothRuby.configuration[:api_version] }" }
 
   before :each do
     RedboothRuby.config do |configuration|
@@ -64,9 +64,9 @@ describe RedboothRuby::Request::Connection do
       expect(connection.request_data).to eq(
         [
           :post,
-          "#{redbooth_url}/some/path",
-          { body: { email: "abc_abc.com",
-                    event_types: ["user.created", "user.failed", "team.created", "documents.available"] }
+          "#{ redbooth_url }/some/path",
+          { body: { email: 'abc_abc.com',
+                    event_types: ['user.created', 'user.failed', 'team.created', 'documents.available'] }
           }
         ]
       )
@@ -75,8 +75,8 @@ describe RedboothRuby::Request::Connection do
 
   def params
     {
-      email: "abc_abc.com",
-      event_types: ["user.created","user.failed", "team.created", "documents.available"]
+      email: 'abc_abc.com',
+      event_types: ['user.created', 'user.failed', 'team.created', 'documents.available']
     }
   end
 end

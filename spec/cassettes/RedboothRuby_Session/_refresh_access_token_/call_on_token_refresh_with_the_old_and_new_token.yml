@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://redbooth.com/oauth2/token
+    body:
+      encoding: UTF-8
+      string: client_id=_your_consumer_key_&client_secret=_your_consumer_secret_&grant_type=refresh_token&refresh_token=_your_user_refresh_token_
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 17 Feb 2015 19:04:21 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - ae886c7b4f2c7fed8d6777b92282938d
+      X-Runtime:
+      - '0.098434'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '185'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"_your_new_user_token_","token_type":"bearer","expires_in":7200,"refresh_token":"_your_new_user_refresh_token_","scope":"all"}'
+    http_version:
+  recorded_at: Tue, 17 Feb 2015 19:04:22 GMT
+recorded_with: VCR 2.9.3

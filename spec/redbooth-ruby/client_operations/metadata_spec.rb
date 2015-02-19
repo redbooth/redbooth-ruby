@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe RedboothRuby::ClientOperations::Metadata, vcr: 'metadata' do
   include_context 'authentication'
@@ -10,10 +10,10 @@ describe RedboothRuby::ClientOperations::Metadata, vcr: 'metadata' do
   end
   let(:endpoint) { 'metadata/search' }
 
-  describe ".metadata" do
+  describe '.metadata' do
     subject { client.metadata(search_params) }
 
-    it "makes a new GET request using the correct API endpoint to receive notes collection" do
+    it 'makes a new GET request using the correct API endpoint to receive notes collection' do
       expect(RedboothRuby).to receive(:request).with(:get, nil, endpoint, search_params, { session: session }).and_call_original
       subject
     end

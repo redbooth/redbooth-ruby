@@ -47,9 +47,9 @@ module RedboothRuby
       def verify_authentication_header
         case raw_response.headers['WWW-Authenticate']
         when /error\=\"invalid_token\".*expired/
-          fail OauhtTokenExpired
+          fail OauthTokenExpired
         when /error\=\"invalid_token\".*revoked/
-          fail OauhtTokenRevoked
+          fail OauthTokenRevoked
         end
       end
 

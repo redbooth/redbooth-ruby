@@ -28,7 +28,7 @@ module RedboothRuby
     #
     # @param [String||Symbol] action name of the action to execute over
     # @param [Hash] options for the execution
-    # @returns the execution return or nil
+    # @return the execution return or nil
     #
     # @example
     #   session = RedboothRuby::Session.new(api_key: '_your_api_key_', auth_token: '_aut_token_for_the_user')
@@ -51,43 +51,9 @@ module RedboothRuby
     # @param [String||Symbol] resource_name name of the resource to execute over
     # @param [String||Symbol] action name of the action to execute over
     # @param [Hash] options for the execution
-    # @returns the execution return or nil
+    # @return the execution return or nil
     def perform!(resource_name, action, options = {})
-      fail RedboothRuby::AuthenticationError unless session
-      resource(resource_name).send(action, options_with_session(options))
-    rescue Processing => processing
-      delay = processing.response.data["retry_after"] || 10
-      retry_in(delay, resource_name, action, options)
+      ClientOperations::Perform.new(resource_name, action, session, options).perform!
     end
-
-    # Retryes the request in the given time
-    # either calls the given proc options[:retry]
-    # or executes it in this thread
-    #
-    def retry_in(delay, *args)
-      if options[:retry]
-        options[:retry].call(delay)
-      else
-        sleep(delay)
-        perform!(*args)
-      end
-    end
-
-    # Merge the given options with the session for use the api
-    #
-    # @param [Hash] options options to merge with session
-    # @return [Hash]
-    def options_with_session(options={})
-      options.merge(session: @session)
-    end
-
-    # Get the api resource model class by his name
-    #
-    # @param [String||Symbol] name name of the resource
-    # @return [Copy::Base] resource to use the api
-    def resource(name)
-      eval('RedboothRuby::' + camelize(name)) rescue nil
-    end
-
   end
 end

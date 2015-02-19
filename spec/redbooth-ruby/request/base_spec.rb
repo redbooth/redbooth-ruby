@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe RedboothRuby::Request::Base do
   let(:consumer_key) { '_your_consumen_key_' }
@@ -18,12 +18,12 @@ describe RedboothRuby::Request::Base do
     end
   end
 
-  describe "#perform" do
+  describe '#perform' do
     it 'raises AuthenticationError if request is not valid' do
       allow(request_base).to receive(:valid?).and_return(false)
       expect{request_base.perform}.to raise_error{ RedboothRuby::AuthenticationError }
     end
-    it "performs an https request" do
+    it 'performs an https request' do
       allow_any_instance_of(RedboothRuby::Request::Base).to receive(:valid?).and_return(true)
 
       expect(connection).to receive(:set_request_data)
@@ -34,7 +34,7 @@ describe RedboothRuby::Request::Base do
     end
   end
 
-  describe "#valid?" do
+  describe '#valid?' do
     it 'is not valid if no info object given' do
       expect(RedboothRuby::Request::Base.new(nil)).to_not be_valid
     end

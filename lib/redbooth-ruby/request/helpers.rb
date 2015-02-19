@@ -23,7 +23,7 @@ module RedboothRuby
             result[name.to_s] = normalize_params(value)
           when Array
             value.each_with_index do |item_value, index|
-              result["#{name.to_s}[#{index}]"] = item_value.to_s
+              result["#{ name.to_s }[#{ index }]"] = item_value.to_s
             end
           else
             result[name.to_s] = value.to_s
