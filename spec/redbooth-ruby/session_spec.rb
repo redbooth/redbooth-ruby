@@ -74,12 +74,17 @@ describe RedboothRuby::Session, vcr: 'session' do
   end
 
   describe '#refresh_access_token!' do
-    subject(:access_token) { session.access_token }
+    context 'updates intance variables' do
+      before { session.refresh_access_token! }
+      it { expect(session.token).to eql('_your_new_user_token_') }
+      it { expect(session.refresh_token).to eql('_your_new_user_refresh_token_') }
+      it { expect(session.expires_in).to eql(7200) }
+    end
 
-    it 'refreshes the access token' do
-      session.refresh_access_token!
-      expect(access_token.token).to eql('_your_new_user_token_')
-      expect(access_token.refresh_token).to eql('_your_new_user_refresh_token_')
+    context 'refreshes the access_token' do
+      before { session.refresh_access_token! }
+      it { expect(session.access_token.token).to eql('_your_new_user_token_') }
+      it { expect(session.access_token.refresh_token).to eql('_your_new_user_refresh_token_') }
     end
 
     it 'call `on_token_refresh` with the old and new token' do
