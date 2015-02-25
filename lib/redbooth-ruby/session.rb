@@ -53,7 +53,10 @@ module RedboothRuby
       new_access_token = access_token.refresh!
       if new_access_token
         on_token_refresh.call(access_token, new_access_token) if on_token_refresh.is_a?(Proc)
-        @access_token = new_access_token
+        @token = new_access_token.token
+        @refresh_token = new_access_token.refresh_token
+        @expires_in = new_access_token.expires_in
+        @access_token = nil
       end
       new_access_token
     end
