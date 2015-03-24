@@ -8,3 +8,4 @@ gem 'webmock'
 gem 'pry'
 gem 'multipart-post', '>= 1.1.0'
 gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'net-http-persistent'
