@@ -24,6 +24,7 @@ module RedboothRuby
       @consumer_secret = opts[:consumer_secret] || RedboothRuby.configuration[:consumer_secret]
       @oauth_verifier = opts[:oauth_verifier]
       @oauth_token = opts[:oauth_token]
+      @http_adapter = opts[:http_adapter] || :net_http_persistent
     end
 
     def valid?
@@ -32,7 +33,9 @@ module RedboothRuby
     end
 
     def client
-      @client ||= OAuth2::Client.new(consumer_key, consumer_secret, OAUTH_URLS)
+      @client ||= OAuth2::Client.new(consumer_key, consumer_secret, OAUTH_URLS) do |builder|
+        builder.adapter = @http_adapter
+      end
     end
 
     def get_access_token_url
