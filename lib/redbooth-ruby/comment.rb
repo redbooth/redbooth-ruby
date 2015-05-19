@@ -15,6 +15,7 @@ module RedboothRuby
                   :target_type,
                   :minutes,
                   :upload_ids,
+                  :file_ids,
                   :assigned_id,
                   :previous_assigned_id,
                   :due_on,
