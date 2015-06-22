@@ -34,7 +34,7 @@ module RedboothRuby
 
     def client
       @client ||= OAuth2::Client.new(consumer_key, consumer_secret, OAUTH_URLS) do |builder|
-        builder.adapter = @http_adapter
+        builder.adapter @http_adapter
       end
     end
 
