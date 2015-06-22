@@ -7,7 +7,7 @@ module RedboothRuby
   DOMAIN_BASE = nil
   API_BASE_PATH = 'api'
   API_VERSION = '3'
-  ROOT_PATH   = File.dirname(__FILE__)
+  ROOT_PATH   = ::File.dirname(__FILE__)
 
   autoload :Base,           'redbooth-ruby/base'
   autoload :Client,         'redbooth-ruby/client'
