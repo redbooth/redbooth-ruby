@@ -6,7 +6,7 @@ require 'redbooth-ruby/version'
 Gem::Specification.new do |s|
   s.name        = 'redbooth-ruby'
   s.version     = RedboothRuby::VERSION
-  s.authors     = ['Andres Bravo', 'Carlos Saura']
+  s.authors     = ['Andres Bravo', 'Carlos Saura', 'Bruno Pedro']
   s.email       = ['support@redbooth.com']
   s.homepage    = 'https://github.com/teambox/redbooth-ruby'
   s.summary     = %q{API wrapper for Redbooth.}
