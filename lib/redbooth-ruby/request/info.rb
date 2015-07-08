@@ -1,7 +1,7 @@
 module RedboothRuby
   module Request
     class Info
-      attr_accessor :http_method, :api_url, :data, :subdomain, :session, :base_path
+      attr_accessor :http_method, :api_url, :data, :subdomain, :session, :base_path, :options
 
       def initialize(http_method, subdomain, api_url, data, options = {})
         @http_method = http_method
@@ -10,6 +10,7 @@ module RedboothRuby
         @data        = data
         @base_path   = RedboothRuby.configuration[:api_base_path]
         @session     = options[:session]
+        @options     = options
       end
 
       def url

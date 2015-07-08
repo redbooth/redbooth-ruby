@@ -1,0 +1,179 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/files?per_page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Redbooth-From-Cache:
+      - 'off'
+      Paginationlinks:
+      - <http://localhost:3000/api/3/files?page=2&per_page=1>; rel="next", <http://localhost:3000/api/3/files?page=11&per_page=1>;
+        rel="last"
+      Paginationtotalpages:
+      - '11'
+      Paginationperpage:
+      - '1'
+      Paginationcurrentpage:
+      - '1'
+      Paginationtotalobjects:
+      - '11'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"ae01415e8048e399fd81f25d26c6e310"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0bfe336727051d89857050ce15c31358
+      X-Runtime:
+      - '0.213858'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: UTF-8
+      string: '[{"created_at":1436345699,"updated_at":1436353739,"id":11,"name":"Security
+        Report <script>alert(''filename'').txt","backend":"redbooth","project_id":14,"parent_id":10,"backend_id":"8","is_dir":false,"is_downloadable":true,"is_previewable":true,"is_embeddable":false,"is_private":false,"mime_type":"text/plain","public_token":null,"pinned":false,"size":0,"user_id":8,"can_be_moved":true,"can_be_deleted":true,"type":"File"}]'
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 13:14:29 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/api/3/files/11/download/original/Security%20Report%20%3Cscript%3Ealert('filename').txt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Authorization:
+      - Bearer _frank_access_token_
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=31557600
+      Content-Disposition:
+      - attachment; filename="Security Report <script>alert('filename').txt"
+      Content-Transfer-Encoding:
+      - binary
+      Content-Type:
+      - text/plain
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Request-Id:
+      - cd130f8e7b0b9e1e2cde9936b0fcaeb6
+      X-Runtime:
+      - '0.227045'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.1 codename Death Proof
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+        kt5wJ9UoDfJdnu+5f2dA9cFkrfQGo4Bl4k/y441ozBIMWLs6/GeKum5QeCJ1
+        n9HGH4tfCWCNFuAbXQCvSv5xsHoBUEsHCGnP65qyAAAAKAEAAFBLAwQUAAgI
+        CABwPLtEAAAAAAAAAAAAAAAAEwAAAFtDb250ZW50X1R5cGVzXS54bWytk8tO
+        QjEQhp/Ad2i6JbTgwhjDgYWXpZqIDzC2czgNvaVTbm9vzwGMGgQTWPUy//zf
+        3zYdTdbOsiUmMsFXfCgGnKFXQRs/q/j79Kl/yxll8Bps8FjxDRKfjK9G001E
+        YqXZU8WbnOOdlKQadEAiRPSlUofkIJdlmskIag4zlNeDwY1UwWf0uZ9bDz4e
+        PWANC5vZ47psb4MktMTZ/VbYsioOMVqjIJe6XHr9i9LfEUTp7DTUmEi9IuDy
+        IKGt/A3Y9b2Um0lGI3uFlJ/BFZVcW6kTrMoF0X4yFMfdDsQNdW0U6qAWrrSI
+        nVHvOJfyxiKdDaOYEDQ1iNlZsTU9RW4goX7LqT32pQN89z6RYxXS/COE+cUj
+        lFE4MP4f/E5MshvOf/mfQb789zlk99HGn1BLBwjZpyj5KwEAAKgDAABQSwEC
+        FAAUAAgICABwPLtEH5pgKMwAAADuAQAAGAAAAAAAAAAAAAAAAAAAAAAAeGwv
+        ZHJhd2luZ3MvZHJhd2luZzEueG1sUEsBAhQAFAAICAgAcDy7RKqIj89YAQAA
+        FQMAABgAAAAAAAAAAAAAAAAAEgEAAHhsL3dvcmtzaGVldHMvc2hlZXQxLnht
+        bFBLAQIUABQACAgIAHA8u0QucoNDtAAAACoBAAAjAAAAAAAAAAAAAAAAALAC
+        AAB4bC93b3Jrc2hlZXRzL19yZWxzL3NoZWV0MS54bWwucmVsc1BLAQIUABQA
+        CAgIAHA8u0SvvYJ0dAAAAIAAAAAUAAAAAAAAAAAAAAAAALUDAAB4bC9zaGFy
+        ZWRTdHJpbmdzLnhtbFBLAQIUABQACAgIAHA8u0QTKIolpgEAALUDAAANAAAA
+        AAAAAAAAAAAAAGsEAAB4bC9zdHlsZXMueG1sUEsBAhQAFAAICAgAcDy7RE/d
+        OZc8AQAA2wIAAA8AAAAAAAAAAAAAAAAATAYAAHhsL3dvcmtib29rLnhtbFBL
+        AQIUABQACAgIAHA8u0QmD+2r2AAAADUCAAAaAAAAAAAAAAAAAAAAAMUHAAB4
+        bC9fcmVscy93b3JrYm9vay54bWwucmVsc1BLAQIUABQACAgIAHA8u0Rpz+ua
+        sgAAACgBAAALAAAAAAAAAAAAAAAAAOUIAABfcmVscy8ucmVsc1BLAQIUABQA
+        CAgIAHA8u0TZpyj5KwEAAKgDAAATAAAAAAAAAAAAAAAAANAJAABbQ29udGVu
+        dF9UeXBlc10ueG1sUEsFBgAAAAAJAAkAWQIAADwLAAAAAA==
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 13:14:30 GMT
+recorded_with: VCR 2.9.3
