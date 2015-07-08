@@ -2,6 +2,7 @@ require 'net/http/post/multipart'
 
 module RedboothRuby
   module Request
+    # Connection class
     class Connection
       include Helpers
       attr_reader :access_token, :request_data
@@ -28,30 +29,69 @@ module RedboothRuby
       # amazon s3 without authentication headers
       #
       def download_file_with_redirect
-          max_redirects = access_token.options.fetch(:max_redirects, 20)
-          response = access_token.send(:get, URI.encode(api_url), { redirect_count: max_redirects + 1 })
-          if [302, 301].include? response.status
-            url = response.headers['Location']
-            uri = URI.parse(url)
-            req = Net::HTTP::Get.new(uri)
-            http = Net::HTTP.new(uri.host , Net::HTTP.https_default_port)
-            http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-            http.use_ssl = RedboothRuby.configuration[:use_ssl]
-            http.start do |inner_http|
-              inner_http.request(req)
+        max_redirects = access_token.options.fetch(:max_redirects, 20)
+        response = access_token.send(
+          :get,
+          URI.encode(api_url),
+          redirect_count: max_redirects + 1
+        )
+        return response unless [302, 301].include? response.status
+
+        url = response.headers['Location']
+        uri = URI.parse(url)
+        http = download_http(uri)
+        http.start do |inner_http|
+          download_file(uri, inner_http)
+        end
+      end
+
+      # Generate a download http from a URI
+      #
+      # @param [URI] uri The URI to use
+      def download_http(uri)
+        http = Net::HTTP.new(uri.host, Net::HTTP.https_default_port)
+        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+        http.use_ssl = RedboothRuby.configuration[:use_ssl]
+        http
+      end
+
+      # Download a file using different strategies
+      #
+      # @param [URI] uri The URI to use
+      # @param [Net::HTTP] http The http to use
+      # @return [Mixed] The downloaded file or the result of the download
+      def download_file(uri, http)
+        if @info.options.key?(:download_path)
+          download_to_path(uri, http, @info.options[:download_path])
+        else
+          http.request(Net::HTTP::Get.new(uri))
+        end
+      end
+
+      # Download a file to a path
+      #
+      # @param [URI] uri The URI to use
+      # @param [Net::HTTP] http The http to use
+      # @param [String] path The path to save the file to
+      # @return [Mixed] The result of the operation
+      def download_to_path(uri, http, path)
+        request = Net::HTTP::Get.new uri
+
+        http.request request do |response|
+          open path, 'w' do |io|
+            response.read_body do |chunk|
+              io.write chunk
             end
-          else
-            response
+            io.write "\n"
           end
+        end
       end
 
       def set_request_data
         @request_data = []
         @request_data << @info.http_method if @info
         @request_data << api_url
-        unless use_url_params?
-          @request_data << { body: body_hash }
-        end
+        @request_data << { body: body_hash } unless use_url_params?
       end
 
       protected
@@ -62,18 +102,22 @@ module RedboothRuby
       def multipart_request
         ::File.open(body_file_attrs[:local_path]) do |file|
           req = Net::HTTP::Post::Multipart.new(
-              api_url,
-              body_hash.merge(
-               'asset' => UploadIO.new(file,
-                                       'application/octet-stream',
-                                        body_file_attrs[:name]
-                                      )
+            api_url,
+            body_hash.merge(
+              'asset' => UploadIO.new(
+                file,
+                'application/octet-stream',
+                body_file_attrs[:name]
               )
+            )
           )
           req['Authorization'] = "Bearer #{access_token.token}"
           # access_token.sign! req
           if RedboothRuby.configuration[:use_ssl]
-            http = Net::HTTP.new(RedboothRuby.configuration[:api_base] , Net::HTTP.https_default_port)
+            http = Net::HTTP.new(
+              RedboothRuby.configuration[:api_base],
+              Net::HTTP.https_default_port
+            )
             http.verify_mode = OpenSSL::SSL::VERIFY_NONE
             http.use_ssl = RedboothRuby.configuration[:use_ssl]
           else
@@ -138,13 +182,11 @@ module RedboothRuby
       def api_url
         url =  "#{ api_url_method}#{api_url_domain }"
         url += "#{ RedboothRuby.configuration[:api_base] }"
-        url += "#{ api_url_path }"
-        url += "#{ api_url_version }"
+        url += "#{ api_url_path }#{ api_url_version }"
         if @info
           url += @info.url
-          if use_url_params? && !body_hash.empty?
-            url += '?' + encoded_www_body
-          end
+          url += '?' + encoded_www_body if use_url_params? &&
+                                           !body_hash.empty?
         end
         url
       end

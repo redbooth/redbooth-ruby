@@ -26,9 +26,13 @@ module RedboothRuby
 
   # Returns a blop with the file data
   #
+  # @param [String] style The style to use
+  # @param [String] path The path to save the file to
   # @return [String] the object metadata
-  def download(style='original')
-    request = RedboothRuby.request(:download, nil, "files/#{id}/download/#{style}/#{name}", {}, { session: session })
+  def download(style='original', path=nil)
+    options = { session: session }
+    options[:download_path] = path unless path.nil?
+    request = RedboothRuby.request(:download, nil, "files/#{id}/download/#{style}/#{name}", {}, options)
     request.body
   end
 
