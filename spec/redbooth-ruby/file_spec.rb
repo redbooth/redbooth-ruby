@@ -93,4 +93,12 @@ describe RedboothRuby::File, vcr: 'files' do
       open("#{ File.dirname(__FILE__) }/../../temp/spec/files/test_download.txt", 'w') { |f| f.puts subject }
     end
   end
+
+  describe '.download_to_path' do
+    it 'downloads a file to a path' do
+      collection = client.file(:index, per_page: 1)
+      file = collection.all.first
+      file.download('original', "#{ File.dirname(__FILE__) }/../../temp/spec/files/test_download_to_path.txt")
+    end
+  end
 end
