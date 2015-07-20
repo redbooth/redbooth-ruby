@@ -7,12 +7,7 @@ module RedboothRuby
     attr_accessor :refresh_token, :expires_in, :auto_refresh_token, :on_token_refresh
     attr_accessor :consumer_key, :consumer_secret
     attr_accessor :oauth_verifier, :oauth_token
-
-    OAUTH_URLS =  {
-      site: 'https://redbooth.com/api/3',
-      authorize_url: 'https://redbooth.com/oauth2/authorize',
-      token_url: 'https://redbooth.com/oauth2/token'
-    }
+    attr_accessor :oauth_urls
 
     def initialize(opts = {})
       @token = opts[:token]
@@ -24,6 +19,13 @@ module RedboothRuby
       @consumer_secret = opts[:consumer_secret] || RedboothRuby.configuration[:consumer_secret]
       @oauth_verifier = opts[:oauth_verifier]
       @oauth_token = opts[:oauth_token]
+      oauth2_base = opts[:oauth2_base] || RedboothRuby.configuration[:oauth2_base] || 'redbooth.com'
+      oauth_site = "https://#{oauth2_base}/api/3"
+      @oauth_urls = {
+        site: "https://#{oauth2_base}/api/3",
+        authorize_url: "https://#{oauth2_base}/oauth2/authorize",
+        token_url: "https://#{oauth2_base}/oauth2/token"
+      }
     end
 
     def valid?
@@ -32,11 +34,11 @@ module RedboothRuby
     end
 
     def client
-      @client ||= OAuth2::Client.new(consumer_key, consumer_secret, OAUTH_URLS)
+      @client ||= OAuth2::Client.new(consumer_key, consumer_secret, @oauth_urls)
     end
 
     def get_access_token_url
-      uri = URI.parse(OAUTH_URLS[:token_url])
+      uri = URI.parse(@oauth_urls[:token_url])
       params = URI.decode_www_form(uri.query.to_s)
       params << ['oauth_verifier', oauth_verifier] if oauth_verifier
       params << ['oauth_token', oauth_token] if oauth_token

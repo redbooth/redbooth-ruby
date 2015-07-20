@@ -7,21 +7,36 @@ describe RedboothRuby::Session, vcr: 'session' do
   let(:auto_refresh_token) { true }
   let(:consumer_key) { '_your_consumer_key_' }
   let(:consumer_secret) { '_your_consumer_secret_' }
+  let(:oauth2_base) { nil }
   let(:session) do
     RedboothRuby::Session.new(token: token, refresh_token: refresh_token,
       expires_in: expires_in, auto_refresh_token: auto_refresh_token,
-      consumer_key: consumer_key, consumer_secret: consumer_secret)
+      consumer_key: consumer_key, consumer_secret: consumer_secret, oauth2_base: oauth2_base)
   end
 
   describe '#initialize' do
     subject { session }
-
     it { expect(session.token).to eql token }
     it { expect(session.refresh_token).to eql refresh_token }
     it { expect(session.expires_in).to eql expires_in }
     it { expect(session.auto_refresh_token).to eql auto_refresh_token }
     it { expect(session.consumer_key).to eql consumer_key }
     it { expect(session.consumer_secret).to eql consumer_secret }
+
+    context 'with default values' do
+      let(:oauth2_base) { nil }
+      it { expect(session.oauth_urls[:site]).to eql "https://redbooth.com/api/3" }
+      it { expect(session.oauth_urls[:authorize_url]).to eql "https://redbooth.com/oauth2/authorize" }
+      it { expect(session.oauth_urls[:token_url]).to eql "https://redbooth.com/oauth2/token"}
+    end
+
+    context 'with configurable values'  do
+      let(:oauth2_base) { 'foo.bar' }
+      it { expect(session.oauth_urls[:site]).to eql "https://#{oauth2_base}/api/3" }
+      it { expect(session.oauth_urls[:authorize_url]).to eql "https://#{oauth2_base}/oauth2/authorize" }
+      it { expect(session.oauth_urls[:token_url]).to eql "https://#{oauth2_base}/oauth2/token"}
+    end
+
   end
 
   describe '#valid?' do
@@ -43,25 +58,35 @@ describe RedboothRuby::Session, vcr: 'session' do
 
   describe '#get_access_token_url' do
     subject { session.get_access_token_url }
-    it { should eql 'https://redbooth.com/oauth2/token' }
+    let(:oauth2_base) { 'foo.bar' }
 
-    context 'when oauth_verifier is present' do
+    context 'when oauth2_base is default' do
+      let(:oauth2_base) { nil }
+      it { should eql 'https://redbooth.com/oauth2/token' }
+    end
+
+    context 'when  oauth2_base is custom' do
+      it { should eql "https://#{oauth2_base}/oauth2/token" }
+    end
+
+    context 'when oauth_verifier is present and default oauth endpoint' do
       before { session.oauth_verifier = '_your_user_oauth_verifier_token_' }
-      it { should eql 'https://redbooth.com/oauth2/token?oauth_verifier=_your_user_oauth_verifier_token_' }
+      it { should eql "https://#{oauth2_base}/oauth2/token?oauth_verifier=_your_user_oauth_verifier_token_" }
     end
 
-    context 'when oauth_token is present' do
+    context 'when oauth_token is present and default oauth endpoint' do
       before { session.oauth_token = '_your_user_oauth_token_' }
-      it { should eql 'https://redbooth.com/oauth2/token?oauth_token=_your_user_oauth_token_' }
+      it { should eql "https://#{oauth2_base}/oauth2/token?oauth_token=_your_user_oauth_token_" }
     end
 
-    context 'when oauth_verifier and oauth_token are present' do
+    context 'when oauth_verifier and oauth_token are present and default oauth endpoint' do
       before do
         session.oauth_verifier = '_your_user_oauth_verifier_token_'
         session.oauth_token = '_your_user_oauth_token_'
       end
-      it { should eql 'https://redbooth.com/oauth2/token?oauth_verifier=_your_user_oauth_verifier_token_&oauth_token=_your_user_oauth_token_' }
+      it { should eql "https://#{oauth2_base}/oauth2/token?oauth_verifier=_your_user_oauth_verifier_token_&oauth_token=_your_user_oauth_token_" }
     end
+
   end
 
   describe '#access_token' do
