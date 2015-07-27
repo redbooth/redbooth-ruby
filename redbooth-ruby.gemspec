@@ -6,7 +6,7 @@ require 'redbooth-ruby/version'
 Gem::Specification.new do |s|
   s.name        = 'redbooth-ruby'
   s.version     = RedboothRuby::VERSION
-  s.authors     = ['Andres Bravo', 'Carlos Saura', 'Bruno Pedro', 'Oscar Ferrer']
+  s.authors     = ['Andres Bravo', 'Carlos Saura', 'Bruno Pedro', 'Oscar Ferrer', 'Ivan Ilves']
   s.email       = ['support@redbooth.com']
   s.homepage    = 'https://github.com/teambox/redbooth-ruby'
   s.summary     = %q{API wrapper for Redbooth.}
@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.3'
 
   s.add_dependency 'json', '>= 1.8.1'
-  s.add_dependency 'oauth2', '>= 0.9.3'
+  s.add_dependency 'oauth2', '~> 0.8'
   s.add_dependency(%q<multipart-post>, ['>= 1.1.0'])
 
   s.add_development_dependency 'rspec'
