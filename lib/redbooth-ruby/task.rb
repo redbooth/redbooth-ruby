@@ -17,6 +17,7 @@ module RedboothRuby
                   :urgent,
                   :user_id,
                   :position,
+                  :row_order,
                   :last_activity_id,
                   :record_conversion_type,
                   :record_conversion_id,
@@ -32,6 +33,5 @@ module RedboothRuby
                   :due_on,
                   :created_at,
                   :updated_at
-
   end
 end
