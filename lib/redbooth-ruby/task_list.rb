@@ -14,7 +14,6 @@ module RedboothRuby
                   :start_on,
                   :finish_on,
                   :position,
-                  :row_order,
                   :archived,
                   :archived_tasks_count,
                   :tasks_count,

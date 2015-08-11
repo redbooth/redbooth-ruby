@@ -18,7 +18,6 @@ module RedboothRuby
                   :token,
                   :updated_by_id,
                   :deleted,
-                  :row_order,
                   :created_at,
                   :updated_at
   end
