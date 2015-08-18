@@ -34,7 +34,9 @@ module RedboothRuby
     end
 
     def client
-      @client ||= OAuth2::Client.new(consumer_key, consumer_secret, @oauth_urls)
+      options = @oauth_urls
+      options[:raise_errors] = false
+      @client ||= OAuth2::Client.new(consumer_key, consumer_secret, options)
     end
 
     def get_access_token_url
