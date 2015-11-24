@@ -9,23 +9,24 @@ Gem::Specification.new do |s|
   s.authors     = ['Andres Bravo', 'Carlos Saura', 'Bruno Pedro', 'Oscar Ferrer', 'Ivan Ilves']
   s.email       = ['support@redbooth.com']
   s.homepage    = 'https://github.com/teambox/redbooth-ruby'
-  s.summary     = %q{API wrapper for Redbooth.}
-  s.description = %q{API wrapper for Redbooth.}
+  s.summary     = 'API wrapper for Redbooth.'
+  s.description = s.summary
 
   s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.test_files    = `git ls-files -- {spec}/*`.split("\n")
   s.require_paths = ['lib']
 
   s.required_ruby_version = '>= 1.9.3'
 
-  s.add_dependency 'json', '>= 1.8.1'
+  s.add_dependency 'json', '~> 1.8'
   s.add_dependency 'oauth2', '>= 0.8'
-  s.add_dependency(%q<multipart-post>, ['>= 1.1.0'])
+  s.add_dependency 'multipart-post', '~> 2.0'
 
-  s.add_development_dependency 'rspec'
-  s.add_development_dependency 'pry'
-  s.add_development_dependency 'vcr'
-  s.add_development_dependency 'fakeweb'
-  s.add_development_dependency 'rack-test'
+  s.add_development_dependency 'rspec', '~> 3.4'
+  s.add_development_dependency 'pry', '~> 0.10'
+  s.add_development_dependency 'vcr', '~> 3.0'
+  s.add_development_dependency 'rake', '~> 10.4'
+  s.add_development_dependency 'webmock', '~> 1.22'
+  s.add_development_dependency 'rack-test', '~> 0.6'
+  s.add_development_dependency 'codeclimate-test-reporter', '~> 0.4'
 end

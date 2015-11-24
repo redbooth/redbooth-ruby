@@ -14,22 +14,19 @@ describe RedboothRuby::ClientOperations::Perform do
   describe '#initialize' do
     subject { performer }
 
-    it { expect(performer.resource_name).to eql :user }
-    it { expect(performer.action).to eql :show }
-    it { expect(performer.session).to eql session }
+    it { expect(performer.resource_name).to eql(:user) }
+    it { expect(performer.action).to eql(:show) }
+    it { expect(performer.session).to eql(session) }
   end
 
   describe '#perform!' do
-    it 'is private' do
-      expect{ performer.perform! }.to raise_error
-    end
     it 'raises RedboothRuby::AuthenticationError if session is invalid' do
       allow(performer).to receive(:session).and_return(nil)
-      expect{ performer.perform! }.to raise_error(RedboothRuby::AuthenticationError)
+      expect { performer.perform! }.to raise_error(RedboothRuby::AuthenticationError)
     end
     it 'calls to the given resource' do
       allow(RedboothRuby::User).to receive(:show).and_return(RedboothRuby::User.new)
-      expect(RedboothRuby::User).to receive(:show).with({ session: session })
+      expect(RedboothRuby::User).to receive(:show).with(session: session)
 
       performer.perform!
     end
@@ -112,9 +109,6 @@ describe RedboothRuby::ClientOperations::Perform do
   end
 
   describe '#options_with_session' do
-    it 'is private' do
-      expect{ performer.options_with_session({}) }.to raise_error
-    end
     it 'adds the session to the given options' do
       expect(performer.send(:options_with_session, {})).to include(:session)
       expect(performer.send(:options_with_session, {})[:session]).to eql(session)
@@ -122,9 +116,6 @@ describe RedboothRuby::ClientOperations::Perform do
   end
 
   describe '#resource' do
-    it 'is private' do
-      expect{ performer.resource('user') }.to raise_error
-    end
     it 'gives the correct api resource class' do
       expect(performer.send(:resource, 'user')).to eql(RedboothRuby::User)
     end
