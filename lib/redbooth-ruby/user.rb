@@ -4,7 +4,7 @@ module RedboothRuby
     include RedboothRuby::Operations::Show
 
     attr_accessor :id, :email, :first_name, :last_name, :developer, :created_time,
-      :emails, :storage, :confirmed, :user_id
+      :emails, :storage, :confirmed, :user_id, :username
 
     def id
       @id || @user_id
