@@ -3,7 +3,7 @@
 Redbooth-Ruby
 ======
 
-This is a Ruby wrapper for redbooth's API.
+This is a Ruby wrapper for Redbooth's API.
 
 Documentation
 =====
@@ -35,7 +35,7 @@ RedboothRuby.config do |configuration|
 end
 ```
 
-in fact this last step is optional (yes! we support multiple applications) but if as most fo the humans you use only one redbooth app, this is the easyest way to go.
+in fact this last step is optional (yes! we support multiple applications) but if you, as most humans, use only one Redbooth app, this is the easiest way to go.
 
 
 Oauth
@@ -47,7 +47,7 @@ using omniauth? :+1: good choice, just try this gem
 
   *[teambox/omniauth-redbooth](https://github.com/teambox/omniauth-redbooth)*
 
-not using omniauth,? no prob oauth implementation comming soon
+not using omniauth,? no prob oauth implementation coming soon
 
   ...
 
@@ -64,13 +64,13 @@ session = RedboothRuby::Session.new(
 client = RedboothRuby::Client.new(session)
 ```
 
-Now you can perform any user api call inside the clien wrapper
+Now you can perform any user api call inside the client wrapper
 
 ```Ruby
 client.me(:show)
 ```
 
-If you have multiple applications or you just want to ve explicit use the application credentials inside the session creation
+If you have multiple applications or you just want to be explicit use the application credentials inside the session creation
 
 ```Ruby
 session = RedboothRuby::Session.new(
@@ -122,7 +122,7 @@ Redbooth API is ready to transform any endpoint to async performing in order to 
 
 To know the real response of this request you just need to perform the same request once the retry-after time passed.
 
-In the client we handle this work for you by waiting and repeating the request if needed, but if you want to perform the retry method in any other way (renqueue the job for instance) you should declare it in the client initialize process:
+In the client we handle this work for you by waiting and repeating the request if needed, but if you want to perform the retry method in any other way (enqueue the job for instance) you should declare it in the client initialize process:
 
 ```Ruby
 client = RedboothRuby::Client.new(session, retry: -> { |time|  YourFancyJob.enque_in(time, params) })
@@ -403,7 +403,7 @@ client.person(:delete, id: 123)
 Memberships
 =====
 
-Memberships is the redbooth relation between organization and users containing the role information
+Memberships is the Redbooth relation between organization and users containing the role information
 
 ```
 |-------|         |------------|         |--------------|
@@ -490,10 +490,10 @@ client.conversation(:delete, id: 123)
 Comments
 =====
 
-Comments are the redbooth resources containing the `Task` and `Conversation` Content.
+Comments are the Redbooth resources containing the `Task` and `Conversation` Content.
 It also contains the information about the task status changes, assigned changes and due_data changes.
 
-To consume the comments endpoint you allways need to provide a `target_type` and `target_id`. This is needed for performance reasons.
+To consume the comments endpoint you always need to provide a `target_type` and `target_id`. This is needed for performance reasons.
 
 Lists comments in your visibility scope
 
@@ -613,12 +613,12 @@ client.subtask(:delete, id: 123)
 Files
 =====
 
-Files in redbooth could be uploaded or choosen form other service providers (Copy, Dropbox, Gdrive, Box, Signnow, ...). This client allows you to browse or create files in redbooth api.
+Files in Redbooth could be uploaded or chosen form other service providers (Copy, Dropbox, Gdrive, Box, Signnow, ...). This client allows you to browse or create files in Redbooth api.
 
 Lists files in your visibility scope.
 
 ```Ruby
-files_colilection = client.file(:index)
+files_collection = client.file(:index)
 files = files_collection.all
 ```
 
@@ -665,7 +665,7 @@ open('/path/to/your_new_file.txt', 'w') { |f| f.puts file.download }
 Search
 =====
 
-You can search throught any redbooth entity by using the search method. There is some filter params available:
+You can search through any Redbooth entity by using the search method. There is some filter params available:
 
 * `query`: Regex like query to search
 
@@ -685,7 +685,7 @@ Metadata
 
 ADVISE: Redbooth metadata API is in `Beta` status so use this under your own risk.
 
-Metadata API allows you to add custo key value attributes to objects inside redbooth and search by those key value attributes.
+Metadata API allows you to add custom key value attributes to objects inside Redbooth and search by those key value attributes.
 This is really helpful when doing API syncs or tiny implementations in top of the Redbooth API.
 
 Fetch object metadata
@@ -694,13 +694,13 @@ Fetch object metadata
 task.metadata
 ```
 
-Update object metadata by adding new keys or overwriding the exisiting ones but not touching the others if there is any one.
+Update object metadata by adding new keys or overriding the existing ones but not touching the others if there is any one.
 
 ```Ruby
 task.metadata_merge("new_key" => "new value")
 ```
 
-Restore user metadata by overwiritng the existing ones.
+Restore user metadata by overriding the existing ones.
 
 ```Ruby
 task.metadata = {"key" => "value"}
