@@ -19,7 +19,7 @@ module RedboothRuby
       def valid?
         return false unless info
         return false unless info.session
-        return false unless info.session.valid?
+        # return false unless info.session.valid?
         true
       end
 

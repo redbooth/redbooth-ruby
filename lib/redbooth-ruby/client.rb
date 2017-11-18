@@ -17,7 +17,7 @@ module RedboothRuby
     # @param options [Hash] client options
     # @option options [Proc] retry (the client will handle) Retry block to be executed when client hits an async endpoint
     def initialize(session, options={})
-      raise RedboothRuby::AuthenticationError unless session.valid?
+      raise RedboothRuby::AuthenticationError unless session
       @session = session
       @options = options
       self
